@@ -18,13 +18,11 @@
  */
 
 #include <iostream>
-#include "gui.hpp"
 
 using namespace std;
 
 int main()
 {
-   cout<<"Main function"<<endl;
-   gui::testGuiFunction();
+   cout<<"I am the main function, I currently do nothing. Please come back later..."<<endl;
    return 0;
 }
