@@ -39,6 +39,12 @@ file(
 )
 
 set(
+    headers
+    ${header_files}
+    PARENT_SCOPE
+)
+
+set(
   header_list
   ""
 )
@@ -50,8 +56,8 @@ endforeach()
 list(REMOVE_DUPLICATES header_list)
 
 set(
-  headers
-  ${headers}
+  header_dirs
+  ${header_dirs}
   ${header_list}
   PARENT_SCOPE
 )
