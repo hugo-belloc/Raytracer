@@ -18,11 +18,15 @@
  */
 
 #include <iostream>
-
+#include "WindowView.hpp"
 using namespace std;
 
 int main()
 {
-   cout<<"I am the main function, I currently do nothing. Please come back later..."<<endl;
+   gui::WindowView view(200,200);
+   view.display();
+   cout<<"I am the main function, I currently do nothing\
+ but display an empty window.\n Please come back later..."<<endl;
+
    return 0;
 }
