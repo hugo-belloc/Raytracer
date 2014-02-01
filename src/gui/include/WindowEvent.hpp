@@ -4,6 +4,7 @@
 #include <iostream>
 namespace gui
 {
+
 enum KeyState
 {
     KEY_PRESSED,
@@ -17,11 +18,12 @@ enum KeyState
 class WindowEvent
 {
 public :
-    WindowEvent();
+    WindowEvent(KeyState _state);
     ~WindowEvent();
 
 private :
-
+    KeyState _state;
+    std::string _key;
 };
 
 }

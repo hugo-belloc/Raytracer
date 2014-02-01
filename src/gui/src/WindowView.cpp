@@ -11,10 +11,13 @@ namespace gui
 {
 
 /**
- * @brief init all the necessary librairies.
+ * @brief init all the necessary librairies. In order
+ * to later display the window.
  */
 void WindowView::init(int width,int height)
 {
+    _model=new WindowModel();
+
     if(!glfwInit())
      {
          std::cerr<<"Failed to GLFW"<<std::endl;
@@ -62,9 +65,14 @@ WindowView::WindowView(int width, int height)
 
 WindowView::~WindowView()
 {
+    delete _model;
     glfwTerminate();
 }
 
+/**
+ * @brief Display a windowView untils the
+ * programm quits.
+ */
 void WindowView::display()
 {
     do
@@ -79,9 +87,19 @@ void WindowView::display()
 
 }
 
+/**
+ * @brief resize the window
+ * @param width the new width of the window
+ * @param height the new height of the window
+ */
 void WindowView::resize(int width,int height)
 {
    glfwSetWindowSize(width,height);
+}
+
+WindowModel * WindowView::getModel()
+{
+    return _model;
 }
 
 }

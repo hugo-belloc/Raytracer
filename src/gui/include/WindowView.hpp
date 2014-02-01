@@ -18,19 +18,22 @@ class WindowView : public Observable<WindowEvent>
 {
 
 public :
+
+   
     WindowView();
     WindowView(int width,int height);
-
     virtual ~WindowView();
 
     void display();
     void resize(int width,int height);
+    WindowModel * getModel();
 
 private:
-   void init(int width,int height);
+    void init(int width,int height);
 
     int _width;
     int _height;
+    WindowModel * _model;
 };
 
 }
