@@ -56,13 +56,20 @@ add_subdirectory(src)
 #### Creating main executable ####
 include_directories(${header_dirs})
 
+add_library(
+    raytracer_src_lib
+    STATIC
+    ${src}
+)
+
+ #link_directories(${LIBRARY_OUTPUT_PATH})
+
 add_executable(
   raytracer
-  ${src}
   ${main}
   ${headers}
 )
-target_link_libraries(raytracer ${GL_LIBRARIES}  glfw ) 
+target_link_libraries(raytracer raytracer_src_lib ${GL_LIBRARIES}  glfw )
 
 #### Creating tests executable ####
 if (CMAKE_BUILD_TYPE STREQUAL "DEBUG")
@@ -74,9 +81,8 @@ if (CMAKE_BUILD_TYPE STREQUAL "DEBUG")
     get_filename_component(test_name ${test_file} NAME_WE)
     add_executable(
        ${TESTS_DIR}/${test_name}
-       ${src}
        ${test_file}
     )
-  target_link_libraries(${TESTS_DIR}/${test_name} ${GL_LIBRARIES}  glfw ) 
+  target_link_libraries(${TESTS_DIR}/${test_name} raytracer_src_lib ${GL_LIBRARIES} glfw )
   endforeach()
 endif()
