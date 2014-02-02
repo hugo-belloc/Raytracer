@@ -33,6 +33,16 @@ if(APPLE)
   set(GL_LIBRARIES ${GL_LIBRARIES} "-framework Cocoa" "-framework IOkit")
 endif()
 
+### Finding the SFML library ###
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
+find_package(SFML 2 COMPONENTS system window graphics REQUIRED)
+if(SFML_FOUND)
+    include_directories(${SFML_INCLUDE_DIR})
+else(SFML_FOUND)
+    message("SFML library was not found")
+endif(SFML_FOUND)
+
+
 #####  Setting up some global variables to produce the executables   #####
 
 # Contains everythings but main and tests
@@ -69,7 +79,7 @@ add_executable(
   ${main}
   ${headers}
 )
-target_link_libraries(raytracer raytracer_src_lib ${GL_LIBRARIES}  glfw )
+target_link_libraries(raytracer raytracer_src_lib ${GL_LIBRARIES}  glfw ${SFML_LIBRARIES})
 
 #### Creating tests executable ####
 if (CMAKE_BUILD_TYPE STREQUAL "DEBUG")
@@ -83,6 +93,6 @@ if (CMAKE_BUILD_TYPE STREQUAL "DEBUG")
        ${TESTS_DIR}/${test_name}
        ${test_file}
     )
-  target_link_libraries(${TESTS_DIR}/${test_name} raytracer_src_lib ${GL_LIBRARIES} glfw )
+  target_link_libraries(${TESTS_DIR}/${test_name} raytracer_src_lib ${GL_LIBRARIES} glfw ${SFML_LIBRARIES})
   endforeach()
 endif()
