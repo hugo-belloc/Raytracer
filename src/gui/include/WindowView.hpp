@@ -2,7 +2,7 @@
 #define WINDOWVIEW_HPP
 
 #include <iostream>
-
+#include <SFML/Window.hpp>
 
 #include "Observable.hpp"
 #include "WindowEvent.hpp"
@@ -14,25 +14,22 @@ namespace gui
  * @brief This class contains a view of
  * the main window of the gui.
  */
-class WindowView : public Observable<WindowEvent>
+    class WindowView : public Observable<WindowEvent>//, public 
 {
 
 public :
 
    
-    WindowView();
-    WindowView(int width,int height);
+    WindowView(int width,int height,const std::string &title="Raytracer");
     virtual ~WindowView();
 
-    void display();
-    void resize(int width,int height);
+    void beginMainLoop();
+    void resize(unsigned int width,unsigned int height);
     WindowModel * getModel();
 
 private:
-    void init(int width,int height);
-
-    int _width;
-    int _height;
+    sf::ContextSettings getInitialContext();
+    sf::Window _window;
     WindowModel * _model;
 };
 

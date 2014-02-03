@@ -2,104 +2,97 @@
 #include <stack>
 #include <vector>
 #include <GL/glew.h>
-#include <GL/glfw.h>
 #define GLM_SWIZZLE
 #include <glm/glm.hpp>
+
+#include <SFML/Graphics.hpp>
+#include <SFML/OpenGL.hpp>
 
 #include "WindowView.hpp"
 namespace gui
 {
-
 /**
- * @brief init all the necessary librairies. In order
- * to later display the window.
+ * @brief Create the opengl context that we will need
+ * later during the construction of the WindowView.
+ * @return the ContextSetting generated
  */
-void WindowView::init(int width,int height)
-{
-    _model=new WindowModel();
+    sf::ContextSettings WindowView::getInitialContext()
+    {
+	sf::ContextSettings settings;
+	settings.depthBits = 24;
+	settings.antialiasingLevel = 4;
+	settings.majorVersion = 3;
+	settings.minorVersion = 0;
 
-    if(!glfwInit())
-     {
-         std::cerr<<"Failed to GLFW"<<std::endl;
-	 exit(-1);
-     }
-     //glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4); // 4x antialiasing
-     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR,3);
-     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 3);
-     glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-     if(!glfwOpenWindow(width,height,0,100,0,0,32,0,GLFW_WINDOW))
-     {
-         std::cerr<<"Failed to open a window"<<std::endl;
-         glfwTerminate();
-	 exit(-1);
-     }
-
-     glewExperimental=true;
-     if (glewInit() != GLEW_OK) {
-        std::cerr<<"Failed to initialize GLEW"<<std::endl;
-	exit(-1);
-     }
-      // Dark blue background
-      glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-
-}
-
-/**
- * @brief Construct a window with null
- * size.
- */
-WindowView::WindowView()
-{
-   init(0,0);
-}
+	return settings;
+    }
 
 /**
  * @brief Construct a window with a specified size
  * @param width the initial width of the WindowView
  * @param height the initial height of the WindowView
+ * @return the window constructed
  */
-WindowView::WindowView(int width, int height)
-{
-   init(width,height);
-}
+    WindowView::WindowView(int width, int height,
+			   const std::string &title):
+	_window(sf::VideoMode(width,height),title,
+		sf::Style::Default,getInitialContext()),
+	_model(new WindowModel)
+    {
+	_window.setVerticalSyncEnabled(true);
+	glClearColor(0.4f, 0.0f, 0.0f, 0.0f);
+    }
 
-WindowView::~WindowView()
-{
-    delete _model;
-    glfwTerminate();
-}
+    WindowView::~WindowView()
+    {
+	delete _model;
+    }
 
 /**
  * @brief Display a windowView untils the
- * programm quits.
+ * programm quits and handle the event.
  */
-void WindowView::display()
-{
-    do
-      {
-          // Clear the screen
-          glClear( GL_COLOR_BUFFER_BIT );
+    void WindowView::beginMainLoop()
+    {
+	while(_window.isOpen())
+	{
+	    sf::Event event;
+	    while(_window.pollEvent(event))
+	    {
+            
+		switch(event.type)
+		{
+		    case sf::Event::Closed:
+			_window.close();
+			break;
+		    case sf::Event::Resized:		
+			glViewport(0, 0, event.size.width, event.size.height);
+			break;
+		    default:
+			break;
+		
+		}
+	    }
+	    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	 // Swap buffers
-         glfwSwapBuffers();
+	    _window.display();
+	}
+
     }
-    while( glfwGetKey( GLFW_KEY_ESC ) != GLFW_PRESS && glfwGetWindowParam( GLFW_OPENED ) );
-
-}
 
 /**
  * @brief resize the window
  * @param width the new width of the window
  * @param height the new height of the window
  */
-void WindowView::resize(int width,int height)
-{
-   glfwSetWindowSize(width,height);
-}
+    void WindowView::resize(unsigned int width,unsigned int height)
+    {
+	_window.setSize(sf::Vector2u(width,height));
+    }
 
-WindowModel * WindowView::getModel()
-{
-    return _model;
-}
+    WindowModel * WindowView::getModel()
+    {
+	return _model;
+    }
 
 }

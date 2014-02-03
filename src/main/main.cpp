@@ -24,7 +24,7 @@ using namespace std;
 int main()
 {
    gui::WindowView view(200,200);
-   view.display();
+   view.beginMainLoop();
    cout<<"I am the main function, I currently do nothing\
  but display an empty window.\n Please come back later..."<<endl;
 
