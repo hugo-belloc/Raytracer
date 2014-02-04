@@ -3,6 +3,6 @@ Raytracer
 
 To be able to use this sofware you need the
 folowing libraries: 
-	- glfw v2
+	- glfw v2 (for the moment)
 	- glew
-	- freeimage
+	- sfml version >=2

@@ -31,7 +31,6 @@ namespace gui
  * @brief Construct a window with a specified size
  * @param width the initial width of the WindowView
  * @param height the initial height of the WindowView
- * @return the window constructed
  */
     WindowView::WindowView(int width, int height,
 			   const std::string &title):
@@ -40,7 +39,15 @@ namespace gui
 	_model(new WindowModel)
     {
 	_window.setVerticalSyncEnabled(true);
-	glClearColor(0.4f, 0.0f, 0.0f, 0.0f);
+	
+	    glewExperimental=true;
+	    if (glewInit() != GLEW_OK) 
+	    {
+		std::cerr<<"Failed to initialize GLEW"<<std::endl;
+		exit(-1);
+	    }
+
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     WindowView::~WindowView()
@@ -74,7 +81,7 @@ namespace gui
 		}
 	    }
 	    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+	    (_model->getCurrentContent())->display();
 	    _window.display();
 	}
 

@@ -5,7 +5,6 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <vector>
 #include <GL/glew.h>
-#include "loadShader.hpp"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>

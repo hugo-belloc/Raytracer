@@ -10,14 +10,27 @@ namespace gui
  * @brief Represents one type of content
  * that can be displayed in the window.
  */
-class WindowContent
-{
-public :
-    virtual ~WindowContent();
-    virtual void display()=0;
+    class WindowContent
+    {
+    public :
+/**
+ * Virtual destructor ...
+ */
+	virtual ~WindowContent();
 
-private:
-};
+/**
+ * This methode is to be executed just before the 
+ * WindowModel transit from a content to another
+ */
+	virtual void onTransition()=0;
+
+/**
+ * The methode call to display a content
+ */
+	virtual void display()=0;
+
+    private:
+    };
 
 }
 #endif // WINDOWCONTENT_HPP
