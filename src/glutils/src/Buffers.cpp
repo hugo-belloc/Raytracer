@@ -27,22 +27,25 @@
 
 using namespace std;
 
-void makeVBO(GLuint * vbo,GLfloat * data,unsigned int size)
+namespace glutils
 {
-   glGenBuffers(1,vbo);
-   glBindBuffer(GL_ARRAY_BUFFER,*vbo);
-   glBufferData(GL_ARRAY_BUFFER,size,
-		data,GL_STATIC_DRAW);
-   glBindBuffer(GL_ARRAY_BUFFER, 0);
+   void makeVBO(GLuint * vbo,GLfloat * data,unsigned int size)
+   {
+      glGenBuffers(1,vbo);
+      glBindBuffer(GL_ARRAY_BUFFER,*vbo);
+      glBufferData(GL_ARRAY_BUFFER,size,
+		   data,GL_STATIC_DRAW);
+      glBindBuffer(GL_ARRAY_BUFFER, 0);
+   }
+
+   void makeIBO(GLuint * ibo,GLuint * indices,unsigned int size)
+   {
+      glGenBuffers(1,ibo);
+      glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,*ibo);
+      glBufferData(GL_ELEMENT_ARRAY_BUFFER,size,
+		   indices,GL_STATIC_DRAW);
+      glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+   }
+
+
 }
-
-void makeIBO(GLuint * ibo,GLuint * indices,unsigned int size)
-{
-   glGenBuffers(1,ibo);
-   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,*ibo);
-   glBufferData(GL_ELEMENT_ARRAY_BUFFER,size,
-		indices,GL_STATIC_DRAW);
-   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-}
-
-

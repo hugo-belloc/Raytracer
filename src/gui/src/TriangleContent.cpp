@@ -47,9 +47,9 @@ namespace gui
 	    0,1,2
 	 };
 
-      makeVBO(&_vbo,positions,sizeof(positions));
-      makeIBO(&_ibo,indices,sizeof(indices));
-      makeSimpleVAO(&_vao,_vbo,_ibo);
+      glutils::makeVBO(&_vbo,positions,sizeof(positions));
+      glutils::makeIBO(&_ibo,indices,sizeof(indices));
+      glutils::makeSimpleVAO(&_vao,_vbo,_ibo);
       
    }
 

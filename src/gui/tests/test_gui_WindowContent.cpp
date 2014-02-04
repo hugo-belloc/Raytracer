@@ -32,12 +32,22 @@ using namespace std;
 
 int main()
 {
-   gui::WindowView view(200,200);
+   gui::WindowView view(512,512);
 
+   sf::Image img;
+   img.loadFromFile("etc/chesterfield_arrow512.png");
+   //img.create(512,512,sf::Color::Blue);
+   for(unsigned int i=0;i+100<img.getSize().x;i++)
+   {
+      for(unsigned int j=10;j<30;j++)
+      {
+   	 img.setPixel(i,j,sf::Color::Red);
+      }
+   }
    gui::WindowModel * model=view.getModel();
    
-    model->addContent(new gui::TriangleContent);
-   model->addContent(new gui::ImageContent);
+   model->addContent(new gui::TriangleContent);
+   model->addContent(new gui::ImageContent(img));
    model->nextContent();
 
    view.beginMainLoop();

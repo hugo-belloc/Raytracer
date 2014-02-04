@@ -36,8 +36,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
-
-void makeVBO(GLuint * vbo,GLfloat * data,unsigned int size);
-void makeIBO(GLuint * ibo,GLuint * indices,unsigned int size);
+namespace glutils
+{
+   void makeVBO(GLuint * vbo,GLfloat * data,unsigned int size);
+   void makeIBO(GLuint * ibo,GLuint * indices,unsigned int size);
+}
 
 #endif

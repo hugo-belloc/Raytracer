@@ -23,16 +23,20 @@ namespace gui
    class ImageContent : public WindowContent
    {
    public :
-      ImageContent();
+      ImageContent(const sf::Image & image);
       virtual ~ImageContent();
       virtual void onTransition();
       virtual void display();
 
    private :
-      GLuint _vbo;
-      GLuint _ibo;
+      sf::Image _image;
       sf::Shader _shader;
+      GLuint _positionsBuffer;
+      GLuint _texCoordsBuffer;
+      GLuint _indexBuffer;
+      GLuint _textureImageBuffer;
       GLuint _vao;      
+      
    };
 }
 #endif
