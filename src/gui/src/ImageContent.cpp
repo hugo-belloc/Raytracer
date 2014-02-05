@@ -18,28 +18,9 @@
 
 #include "Vao.hpp"
 #include "Buffers.hpp"
+#include "utilsTexture2D.hpp"
 #include "ImageContent.hpp"
-namespace glutils
-{
-   void makeTexture2D(GLuint *textureID,const sf::Image & image)
-   {
-   
-      GLuint width=image.getSize().x;
-      GLuint height=image.getSize().y;
 
-      glGenTextures(1,textureID);
-      glBindTexture(GL_TEXTURE_2D,*textureID);
-      glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,
-		   width,height,0,	GL_RGBA,
-		   GL_UNSIGNED_BYTE,image.getPixelsPtr());
-      glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-		      GL_LINEAR);
-      
-      glEnable(GL_TEXTURE_2D);
-      glActiveTexture(GL_TEXTURE0);
-      
-   }
-}
 namespace gui
 {
    ImageContent::ImageContent(const sf::Image & image):
@@ -75,8 +56,7 @@ namespace gui
       glutils::makeIBO(&_indexBuffer,indices,sizeof(indices));
       glutils::makeTexture2D(&_textureImageBuffer,_image);
       glutils::makeTextureVAO(&_vao,_positionsBuffer,
-			      _texCoordsBuffer,_indexBuffer,
-			      _textureImageBuffer);
+			      _texCoordsBuffer,_indexBuffer);
       
    }
 
@@ -96,7 +76,9 @@ namespace gui
       
       sf::Shader::bind(&_shader);
       glBindVertexArray(_vao);
+      glBindTexture(GL_TEXTURE_2D,_textureImageBuffer);
       glDrawElements(GL_TRIANGLES,6, GL_UNSIGNED_INT, 0);
+      glBindTexture(GL_TEXTURE_2D,0);
       glBindVertexArray(0);
       sf::Shader::bind(0);
    }

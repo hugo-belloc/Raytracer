@@ -33,8 +33,7 @@ namespace glutils
    }
 
    void makeTextureVAO(GLuint *vao,GLuint positionBuffer,
-		       GLuint texCoordsBuffer,GLuint ibo,
-		       GLuint texImageBuffer)
+		       GLuint texCoordsBuffer,GLuint ibo)
    {
       glGenVertexArrays(1, vao);
       glBindVertexArray(*vao);
@@ -48,12 +47,10 @@ namespace glutils
       glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
       glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-      glBindTexture(GL_TEXTURE_2D,texImageBuffer);
 
       glBindVertexArray(0);
       glBindBuffer(GL_ARRAY_BUFFER, 0);
       glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
-      //glBindTexture(GL_TEXTURE_2D,0);
 
       glDisableVertexAttribArray(0);
       glDisableVertexAttribArray(1);
