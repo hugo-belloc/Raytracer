@@ -11,29 +11,33 @@
 
 /**
  * @author Hugo Belloc <hugo.belloc@ecole.ensicaen.fr> 
- * @date Mon Jan  6 2014
+ * @date Sat Feb  8 2014
  * 
  */
 
 /**
- * @file loadShader.hpp
+ * @file utils_glm.hpp
  *  
  * Description of the program objectives.
  * All necessary references.
  */
 
 
-#ifndef _LOADSHADER_HEADER_H
-#define _LOADSHADER_HEADER_H
+#ifndef _UTILS_GLM_HEADER_H
+#define _UTILS_GLM_HEADER_H
 
 #include <iostream>
-#include <GL/glew.h>
-#include <GL/glfw.h>
 #define GLM_SWIZZLE
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-GLuint LoadShaders(const char * vertex_file_path,
-		   const char * fragment_file_path);
+inline std::ostream & operator<<( std::ostream & os,
+			   const glm::vec3 & vector)
+{
+   os<<"("<<vector.x<<","<<vector.y<<","<<vector.z<<")";
+   return os;
+}
+
+
 #endif

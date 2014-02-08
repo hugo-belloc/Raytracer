@@ -73,7 +73,15 @@ namespace gui
 			_window.close();
 			break;
 		    case sf::Event::Resized:		
-			glViewport(0, 0, event.size.width, event.size.height);
+			glViewport(0, 0, event.size.width,
+				   event.size.height);
+			break;
+		    case sf::Event::KeyPressed:
+			if(event.key.code == sf::Keyboard::A)
+			{
+			    _model->nextContent();
+			}
+			    
 			break;
 		    default:
 			break;
