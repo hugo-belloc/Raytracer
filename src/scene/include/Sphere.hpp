@@ -25,21 +25,27 @@
 
 #ifndef _SPHERE_HEADER_H
 #define _SPHERE_HEADER_H
-#include "utils_glm.hpp"
-
-class Sphere
+#include "Shape.hpp"
+namespace scene
 {
-public :
-   Sphere(glm::vec3 center,float radius);
-   void setCenter(glm::vec3 center);
-   glm::vec3 getCenter();
-   float getRadius();
-   void setRadius(float radius);
-   //Intersection intersect(const Ray & ray);
+   class Sphere:public Shape
+   {
+   public :
+      Sphere(const glm::vec3& center,float radius);
+      virtual ~Sphere();
+      void setCenter(const glm::vec3 &center);
+      glm::vec3 getCenter()const;
+      float getRadius()const;
+      void setRadius(float radius);
+      virtual bool intersect(const ray::Ray & ray,Intersection & intersection) const;
+      virtual void displayTTY()const;
 
-private :
-   glm::vec3 _center;
-   float _radius;
-};
+   private :
+      glm::vec3 _center;
+      float _radius;
+   };
+}
+
+
 
 #endif

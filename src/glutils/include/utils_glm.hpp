@@ -31,6 +31,14 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <cmath>
+
+#ifdef __linux__
+#define _USE_MATH_DEFINES
+#else
+	#define M_PI 3.141592653589793
+	#define INFINITY 1e8
+#endif
 
 inline std::ostream & operator<<( std::ostream & os,
 			   const glm::vec3 & vector)

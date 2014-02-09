@@ -31,9 +31,9 @@ namespace ray
  * @param tmax the minimum value during parametrisation
  */
    Ray::Ray(const glm::vec3 & origin ,const glm::vec3 & direction,
-	    RayType type,float tmax, float tmin):
-      _origin(origin),_direction(direction),_type(type),
-      _tmax(tmax),_tmin(tmin),_bounces((int)type)
+	    RayType type,float tmin, float tmax):
+      _origin(origin),_direction(glm::normalize(direction)),
+      _type(type), _tmin(tmin),_tmax(tmax),_bounces((int)type)
    {}
 
 /**
@@ -41,7 +41,7 @@ namespace ray
  */
    Ray::~Ray()
    {}
-
+   
 /**
  * Compute on point coordinate along the ray.
  * by origin+t*direction
@@ -53,6 +53,19 @@ namespace ray
    {
       return _origin+_direction*t;
    }
+   
+   Ray & Ray::operator=(const Ray & ray)
+   {
+      _origin=ray._origin;
+      _direction=ray._direction;
+      _type=ray._type;
+      _tmax=ray._tmax;
+      _tmin=ray._tmin;
+      _bounces=ray._bounces;
+
+      return *this;
+   }
+
 
 /**
  * Return the nomber of bounces left. When it
@@ -84,17 +97,17 @@ namespace ray
       return _tmin;
    }   
    
-   void Ray::display()const
+   void Ray::displayTTY()const
    {
-      std::cout<<"["<<"origin="<<_origin;
-      std::cout<<",direction="<<_direction<<"]";
+      std::cout<<"Ray[origin="<<_origin;
+      std::cout<<",direction="<<_direction<<"]"<<std::endl;
    }
-   glm::vec3 Ray::getOrigin()
+   glm::vec3 Ray::getOrigin()const
    {
       return _origin;
    }
 
-   glm::vec3 Ray::getDirection()
+   glm::vec3 Ray::getDirection()const
    {
       return _direction;
    }

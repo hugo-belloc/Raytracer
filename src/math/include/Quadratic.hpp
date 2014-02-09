@@ -21,12 +21,12 @@
 namespace math
 {
 
-   class Quadric
+   class Quadratic
    {
    public :
-      Quadric(float a,float b,float c);
+      Quadratic(float a,float b,float c);
       bool solvable() const;
-      bool solve(float & value) const;
+       bool solve(float & minValue,float & maxValue) const;
 
    private :
       float _a;
