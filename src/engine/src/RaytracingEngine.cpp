@@ -43,8 +43,7 @@ namespace engine
 	       glm::vec3 color(0,0,0);
 	       glm::vec3 pointHit=inter.getPoint();
 	       glm::vec3 normalHit=inter.getNormal();
-	       materials::Material * materialHit=inter.getMaterial();
-	       
+	       materials::Material * materialHit=inter.getMaterial();	       
 	       //for each light
 	       for(scene::Scene::iterator_light it=scene.begin();
 		   it!=scene.end();++it)
@@ -52,14 +51,14 @@ namespace engine
 		 
 		  glm::vec3 direction=(*it)->getPosition()-pointHit;
 		  //cast a shadow ray
-		  ray::Ray shadowRay(pointHit,direction,ray::ShadowRay,0,
+		  ray::Ray shadowRay(pointHit,direction,ray::ShadowRay,0.1,
 				     camera->getFarPlan());
 		  scene::Intersection dummyInter;
 		  //if light is not blocked then
 		  if(!scene.intersect(shadowRay,dummyInter))
 		  {
 		     glm::vec3 matColor= materialHit->computeBRDF(shadowRay,
-								 normalHit);
+								  normalHit);
 		     glm::vec3 lightColor=(*it)->powerAt(pointHit);
 		     //cout<<"Mat :"<<matColor<<endl;
 		     //cout<<"Light:"<<lightColor<<endl;
@@ -67,6 +66,10 @@ namespace engine
 								  lightColor);
 		     color+=lightContribution;
 		  }
+		  // else
+		  // {
+		  //    cout<<"noir:"<<i<<","<<j<<endl;
+		  // }
 	       }
 	       sf::Color colorSFML = conversions::glmToColorSfml(color);
 	       _image->setPixel(i,j,colorSFML);

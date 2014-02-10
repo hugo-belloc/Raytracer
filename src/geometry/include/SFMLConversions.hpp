@@ -40,9 +40,9 @@ namespace conversions
     inline sf::Color glmToColorSfml(const glm::vec3 & vec)
     {
 	glm::vec3 vecScale=vec*255.f;
-	float x=vecScale.x;
-	float y=vecScale.y;
-	float z=vecScale.z;
+	float x=(vecScale.x>255)?255:vecScale.x;
+	float y=(vecScale.y>255)?255:vecScale.y;
+	float z=(vecScale.z>255)?255:vecScale.z;
 	return sf::Color((unsigned int)x,
 			 (unsigned int)y,
 			 (unsigned int)z);

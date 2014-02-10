@@ -34,13 +34,20 @@ int main()
 					vec3(0,1,0),0.001,1000.f,WIDTH,
 					HEIGHT,45.f);
    Sphere *sphere=new Sphere(vec3(0,0,0),1.0);
-   Material *mat=new Material(vec3(1,0,0));
-   Object *objSphere=new Object(sphere,mat);
-   LightPoint *light=new LightPoint(20,vec3(-6,0,0),vec3(1,1,1),1.0);
-   Scene scene(cam);
-   scene.addObject(objSphere);
-   scene.addLightPoint(light);
+   Sphere *sphere2=new Sphere(vec3(2,1,0),2.3);
+   Material *red=new Material(vec3(1,0,0));
+   Material *green=new Material(vec3(0,1,0));
    
+   Object *redSphere=new Object(sphere,red);
+   Object * greenSphere=new Object(sphere2,green);
+   LightPoint *light=new LightPoint(30,vec3(-6,-5,0),vec3(1,1,1),1.0);
+   LightPoint *light2=new LightPoint(20,vec3(-6,2,0),vec3(1,1,1),1.0);
+   Scene scene(cam);
+   scene.addObject(redSphere);
+   scene.addObject(greenSphere);
+
+   scene.addLightPoint(light);
+   scene.addLightPoint(light2);
    engine.raytrace(scene);
    img.saveToFile("img.png");
    
