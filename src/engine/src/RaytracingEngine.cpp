@@ -49,6 +49,7 @@ namespace engine
 	       for(scene::Scene::iterator_light it=scene.begin();
 		   it!=scene.end();++it)
 	       {
+		 
 		  glm::vec3 direction=(*it)->getPosition()-pointHit;
 		  //cast a shadow ray
 		  ray::Ray shadowRay(pointHit,direction,ray::ShadowRay,0,
@@ -60,6 +61,8 @@ namespace engine
 		     glm::vec3 matColor= materialHit->computeBRDF(shadowRay,
 								 normalHit);
 		     glm::vec3 lightColor=(*it)->powerAt(pointHit);
+		     //cout<<"Mat :"<<matColor<<endl;
+		     //cout<<"Light:"<<lightColor<<endl;
 		     glm::vec3 lightContribution=componentProduct(matColor,
 								  lightColor);
 		     color+=lightContribution;

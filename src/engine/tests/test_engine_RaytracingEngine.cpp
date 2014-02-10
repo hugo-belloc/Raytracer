@@ -22,17 +22,21 @@ using namespace camera;
 using namespace engine;
 using namespace materials;
 using namespace light;
+
+#define WIDTH 500
+#define HEIGHT 500
 int main()
 {
    sf::Image img;
    RaytracingEngine engine(&img);
-   img.create(50,50,sf::Color::Blue);
+   img.create(WIDTH,HEIGHT,sf::Color(0,0,20));
    PinholeCamera *cam=new PinholeCamera(vec3(-5,0,1),vec3(0,0,0),
-		 vec3(0,1,0),0.001,1000.f,50,50,45.f);
+					vec3(0,1,0),0.001,1000.f,WIDTH,
+					HEIGHT,45.f);
    Sphere *sphere=new Sphere(vec3(0,0,0),1.0);
    Material *mat=new Material(vec3(1,0,0));
    Object *objSphere=new Object(sphere,mat);
-   LightPoint *light=new LightPoint(20,vec3(-6,0,0),vec3(0,0,0),1.0);
+   LightPoint *light=new LightPoint(20,vec3(-6,0,0),vec3(1,1,1),1.0);
    Scene scene(cam);
    scene.addObject(objSphere);
    scene.addLightPoint(light);
