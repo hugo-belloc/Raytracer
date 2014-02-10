@@ -16,27 +16,38 @@
 #ifndef _SFMLCONVERSIONS_HEADER_H
 #define _SFMLCONVERSIONS_HEADER_H
 
-#include <iostream>
-#define GLM_SWIZZLE
-#include <glm/glm.hpp>
-#include <glm/gtc/type_ptr.hpp>
+
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp>
 #include <SFML/OpenGL.hpp>
+#include "utils_glm.hpp"
 
-namespace geometry
+
+// namespace geometry
+// {
+namespace conversions
 {
-   namespace conversions
-   {
-      inline sf::Vector3f sfmlToGlm(const glm::vec3 & vec)
-      {
-	 return sf::Vector3f(vec.x,vec.y,vec.z);
-      }
+    // inline sf::Vector3f sfmlToGlm(const glm::vec3 & vec)
+    // {
+    // 	return sf::Vector3f(vec.x,vec.y,vec.z);
+    // }
 
-      inline sf::Vector3f glmToSfml(const glm::vec3 & vec)
-      {
-	 return glm::vec3(vec.x,vec.y,vec.z);
-      }
-   }
+    // inline sf::Vector3f glmToSfml(const glm::vec3 & vec)
+    // {
+    // 	return glm::vec3(vec.x,vec.y,vec.z);
+    // }
+
+    inline sf::Color glmToColorSfml(const glm::vec3 & vec)
+    {
+	glm::vec3 vecScale=vec*255.f;
+	float x=vecScale.x;
+	float y=vecScale.y;
+	float z=vecScale.z;
+	return sf::Color((unsigned int)x,
+			 (unsigned int)y,
+			 (unsigned int)z);
+    }
 }
+// }
 
 #endif

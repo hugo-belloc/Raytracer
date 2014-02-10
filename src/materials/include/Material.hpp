@@ -17,19 +17,22 @@
 
 #include <string>
 #include <map>
-
 #include "utils_glm.hpp"
 #include "MaterialProperties.hpp"
-
-class Material
+#include "Ray.hpp"
+namespace materials
 {
-public :
-   Material();
-   glm::vec3 computeBRDF(const ray::Ray &orig,
-      const Intersect & inter);
+   class Material
+   {
+   public :
+      Material(const glm::vec3 & color);
+      glm::vec3 computeBRDF(const ray::Ray &shadowRay,
+			    const glm::vec3 & normal)const;
+      void displayTTY()const;
 
-private :
-   MaterialProperties properties;
-};
+   private :
+      MaterialProperties _properties;
+   };
+}
 
 #endif

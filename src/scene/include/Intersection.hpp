@@ -16,6 +16,7 @@
 #define _INTERSECTION_HEADER_H
 
 #include "utils_glm.hpp"
+#include "Material.hpp"
 namespace scene
 {
    class Intersection
@@ -23,17 +24,21 @@ namespace scene
    public :
       Intersection();
       Intersection(const glm::vec3 & hitPoint,
-		   const glm::vec3 & normal);
+		   const glm::vec3 & normal,
+		   materials::Material * material=0);
       glm::vec3 getPoint()const;
       glm::vec3 getNormal()const;
       void setPoint(const glm::vec3 & point);
       void setNormal(const glm::vec3 & normal);
+      materials::Material * getMaterial()const;
+      void setMaterial(materials::Material * mat);      
       Intersection & operator=(const Intersection & intersection);
       void displayTTY();
 
    private :
       glm::vec3 _hitPoint;
       glm::vec3 _normal;
+      materials::Material * _material;
 
    };
 }

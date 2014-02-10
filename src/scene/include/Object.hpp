@@ -18,7 +18,7 @@
 
 #include "utils_glm.hpp"
 #include "Ray.hpp"
-//#include "Mat"
+#include "Material.hpp"
 #include "Shape.hpp"
 
 namespace scene
@@ -26,10 +26,18 @@ namespace scene
    class Object
    {
    public :
-
+      Object(scene::Shape * shape,
+	    materials::Material * material);
+      ~Object();
+      bool intersect(const ray::Ray & ray,
+		     Intersection & intersection)const;
+      materials::Material * getMaterial()const;
+      
+      void diplayTTY()const;
 
    private :
-
+      scene::Shape * _shape;
+      materials::Material * _material;
    };
 }
 #endif

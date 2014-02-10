@@ -31,6 +31,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/norm.hpp>
+#include <glm/gtx/component_wise.hpp>
 #include <cmath>
 
 #ifdef __linux__
@@ -47,5 +49,9 @@ inline std::ostream & operator<<( std::ostream & os,
    return os;
 }
 
+inline glm::vec3 componentProduct(const glm::vec3 & a,const glm::vec3 b)
+{
+   return glm::vec3(a.x*b.x,a.y*b.y,a.z*b.z);
+}
 
 #endif
