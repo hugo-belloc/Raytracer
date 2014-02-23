@@ -23,8 +23,8 @@ Intersection.hpp
 src/camera/include/Camera.hpp
 utils_glm.hpp
 src/camera/include/utils_glm.hpp
-Ray.hpp
-src/camera/include/Ray.hpp
+CameraRay.hpp
+src/camera/include/CameraRay.hpp
 
 src/camera/include/PinholeCamera.hpp
 utils_glm.hpp
@@ -69,6 +69,14 @@ map
 -
 utils_glm.hpp
 src/materials/include/utils_glm.hpp
+
+src/ray/include/CameraRay.hpp
+iostream
+-
+utils_glm.hpp
+src/ray/include/utils_glm.hpp
+Ray.hpp
+src/ray/include/Ray.hpp
 
 src/ray/include/Ray.hpp
 iostream

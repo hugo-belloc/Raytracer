@@ -8,6 +8,7 @@ CMakeFiles/tests/test_camera_PinholeCamera.dir/src/camera/tests/test_camera_Pinh
  src/glutils/include/utils_glm.hpp
  src/materials/include/Material.hpp
  src/materials/include/MaterialProperties.hpp
+ src/ray/include/CameraRay.hpp
  src/ray/include/Ray.hpp
  src/scene/include/Intersection.hpp
  src/scene/include/Shape.hpp

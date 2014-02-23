@@ -15,15 +15,15 @@ namespace materials
    Material::Material(const glm::vec3 & color):_properties()
    {
       _properties.setVectorProperty("color",color);
-      _properties.setVectorProperty("reflexion",0.0);
-      _properties.setVectorProperty("transmission",0.0);
+      _properties.setScalarProperty("reflexion",0.0);
+      _properties.setScalarProperty("transmission",0.0);
    }
 
    Material::Material(const glm::vec3 & color, float reflexion, float transmission):_properties()
    {
       _properties.setVectorProperty("color",color);
-      _properties.setVectorProperty("reflexion",reflexion);
-      _properties.setVectorProperty("transmission",transmission);
+      _properties.setScalarProperty("reflexion",reflexion);
+      _properties.setScalarProperty("transmission",transmission);
    }
 
 

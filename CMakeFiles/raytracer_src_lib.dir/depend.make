@@ -4,12 +4,14 @@
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o: src/camera/src/Camera.cpp
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o: src/camera/include/Camera.hpp
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o: src/glutils/include/utils_glm.hpp
+CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o: src/ray/include/CameraRay.hpp
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o: src/ray/include/Ray.hpp
 
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o: src/camera/src/PinholeCamera.cpp
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o: src/camera/include/Camera.hpp
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o: src/camera/include/PinholeCamera.hpp
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o: src/glutils/include/utils_glm.hpp
+CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o: src/ray/include/CameraRay.hpp
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o: src/ray/include/Ray.hpp
 
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/engine/src/RaytracingEngine.cpp
@@ -85,6 +87,7 @@ CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/glut
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/light/include/LightPoint.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/materials/include/Material.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/materials/include/MaterialProperties.hpp
+CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/ray/include/CameraRay.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/ray/include/Ray.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/scene/include/Intersection.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/scene/include/Object.hpp
@@ -629,6 +632,7 @@ CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/glutils/include/
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/light/include/LightPoint.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/materials/include/Material.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/materials/include/MaterialProperties.hpp
+CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/ray/include/CameraRay.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/ray/include/Ray.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/scene/include/Intersection.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/scene/include/Object.hpp

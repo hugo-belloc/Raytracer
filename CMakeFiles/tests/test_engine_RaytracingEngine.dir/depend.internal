@@ -74,6 +74,7 @@ CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_R
  src/light/include/LightPoint.hpp
  src/materials/include/Material.hpp
  src/materials/include/MaterialProperties.hpp
+ src/ray/include/CameraRay.hpp
  src/ray/include/Ray.hpp
  src/scene/include/Intersection.hpp
  src/scene/include/Object.hpp

@@ -5,12 +5,14 @@ CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o
  /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/camera/src/Camera.cpp
  src/camera/include/Camera.hpp
  src/glutils/include/utils_glm.hpp
+ src/ray/include/CameraRay.hpp
  src/ray/include/Ray.hpp
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o
  /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/camera/src/PinholeCamera.cpp
  src/camera/include/Camera.hpp
  src/camera/include/PinholeCamera.hpp
  src/glutils/include/utils_glm.hpp
+ src/ray/include/CameraRay.hpp
  src/ray/include/Ray.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o
  /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/engine/src/RaytracingEngine.cpp
@@ -86,6 +88,7 @@ CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o
  src/light/include/LightPoint.hpp
  src/materials/include/Material.hpp
  src/materials/include/MaterialProperties.hpp
+ src/ray/include/CameraRay.hpp
  src/ray/include/Ray.hpp
  src/scene/include/Intersection.hpp
  src/scene/include/Object.hpp
@@ -630,6 +633,7 @@ CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o
  src/light/include/LightPoint.hpp
  src/materials/include/Material.hpp
  src/materials/include/MaterialProperties.hpp
+ src/ray/include/CameraRay.hpp
  src/ray/include/Ray.hpp
  src/scene/include/Intersection.hpp
  src/scene/include/Object.hpp

@@ -16,7 +16,7 @@
 #define _CAMERA_HEADER_H
 
 #include "utils_glm.hpp"
-#include "Ray.hpp"
+#include "CameraRay.hpp"
 namespace camera
 {
    class Camera
@@ -30,7 +30,7 @@ namespace camera
       virtual glm::mat4 getPerspectiveMatrice()const=0;
       virtual glm::mat4 getViewPerspectiveMatrice()const;
 
-      virtual ray::Ray  generateRay(unsigned int i,unsigned int j) const=0;
+      virtual ray::CameraRay generateRay(unsigned int i,unsigned int j) const=0;
     
       //getter and setter
       virtual void setPosition(const glm::vec3 & pos);
