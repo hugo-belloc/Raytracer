@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/math/tests/test_math_quadratic.cpp
+iostream
+-
+Quadratic.hpp
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/math/tests/Quadratic.hpp
+
+src/math/include/Quadratic.hpp
+iostream
+-
+cmath
+-
+algorithm
+-
+

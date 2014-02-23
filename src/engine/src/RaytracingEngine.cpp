@@ -51,7 +51,7 @@ namespace engine
 		 
 		  glm::vec3 direction=(*it)->getPosition()-pointHit;
 		  //cast a shadow ray
-		  ray::Ray shadowRay(pointHit,direction,ray::ShadowRay,0.1,
+		  ray::Ray shadowRay(pointHit,direction,0.1,
 				     camera->getFarPlan());
 		  scene::Intersection dummyInter;
 		  //if light is not blocked then

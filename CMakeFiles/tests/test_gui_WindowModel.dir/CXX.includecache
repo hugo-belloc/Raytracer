@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/test_gui_WindowModel.cpp
+iostream
+-
+string
+-
+WindowContent.hpp
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/WindowContent.hpp
+WindowModel.hpp
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/WindowModel.hpp
+
+src/gui/include/WindowContent.hpp
+
+src/gui/include/WindowModel.hpp
+iostream
+-
+vector
+-
+WindowContent.hpp
+src/gui/include/WindowContent.hpp
+

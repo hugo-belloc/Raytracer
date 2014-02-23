@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/light/tests/test_light_LightPoint.cpp
+LightPoint.hpp
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/light/tests/LightPoint.hpp
+
+src/glutils/include/utils_glm.hpp
+iostream
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+glm/gtx/norm.hpp
+-
+glm/gtx/component_wise.hpp
+-
+cmath
+-
+
+src/light/include/LightPoint.hpp
+utils_glm.hpp
+src/light/include/utils_glm.hpp
+

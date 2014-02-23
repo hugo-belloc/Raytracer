@@ -20,22 +20,10 @@
 
 namespace ray
 {
-
-   enum RayType
-   {
-      CameraRay=1,
-      ShadowRay=0
-   };
-
-   /**
-    * This class represents a ray in the modelisation
-    * in short, a ray is a point + a direction.
-    */
    class Ray
    {
    public :
-      Ray(const glm::vec3 &origin,const glm::vec3 & direction,
-	  RayType type,float tmin, float tmax);
+      Ray(const glm::vec3 &origin,const glm::vec3 & direction,float tmin, float tmax);
       virtual ~Ray();
       glm::vec3 operator()(float t) const;
       Ray & operator=(const Ray & ray);
@@ -48,10 +36,11 @@ namespace ray
       glm::vec3 getOrigin()const;
       glm::vec3 getDirection()const;
 
+      virtual glm::vec3 getColor() const;
+
    private :
       glm::vec3 _origin;
       glm::vec3 _direction;
-      RayType _type;
       mutable float _tmin;
       mutable float _tmax;
       int _bounces;

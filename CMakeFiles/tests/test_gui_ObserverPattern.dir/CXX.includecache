@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/test_gui_ObserverPattern.cpp
+iostream
+-
+string
+-
+Observer.hpp
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/Observer.hpp
+Observable.hpp
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/Observable.hpp
+
+src/gui/include/Observable.hpp
+Observer.hpp
+src/gui/include/Observer.hpp
+set
+-
+
+src/gui/include/Observer.hpp
+iostream
+-
+
