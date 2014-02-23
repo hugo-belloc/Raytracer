@@ -952,6 +952,30 @@ src/math/tests/test_math_quadratic.cpp.s:
 	$(MAKE) -f CMakeFiles/tests/test_math_quadratic.dir/build.make CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.s
 .PHONY : src/math/tests/test_math_quadratic.cpp.s
 
+src/ray/src/CameraRay.o: src/ray/src/CameraRay.cpp.o
+.PHONY : src/ray/src/CameraRay.o
+
+# target to build an object file
+src/ray/src/CameraRay.cpp.o:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o
+.PHONY : src/ray/src/CameraRay.cpp.o
+
+src/ray/src/CameraRay.i: src/ray/src/CameraRay.cpp.i
+.PHONY : src/ray/src/CameraRay.i
+
+# target to preprocess a source file
+src/ray/src/CameraRay.cpp.i:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.i
+.PHONY : src/ray/src/CameraRay.cpp.i
+
+src/ray/src/CameraRay.s: src/ray/src/CameraRay.cpp.s
+.PHONY : src/ray/src/CameraRay.s
+
+# target to generate assembly for a file
+src/ray/src/CameraRay.cpp.s:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.s
+.PHONY : src/ray/src/CameraRay.cpp.s
+
 src/ray/src/Ray.o: src/ray/src/Ray.cpp.o
 .PHONY : src/ray/src/Ray.o
 
@@ -975,6 +999,78 @@ src/ray/src/Ray.s: src/ray/src/Ray.cpp.s
 src/ray/src/Ray.cpp.s:
 	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.s
 .PHONY : src/ray/src/Ray.cpp.s
+
+src/ray/src/ReflexionRay.o: src/ray/src/ReflexionRay.cpp.o
+.PHONY : src/ray/src/ReflexionRay.o
+
+# target to build an object file
+src/ray/src/ReflexionRay.cpp.o:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o
+.PHONY : src/ray/src/ReflexionRay.cpp.o
+
+src/ray/src/ReflexionRay.i: src/ray/src/ReflexionRay.cpp.i
+.PHONY : src/ray/src/ReflexionRay.i
+
+# target to preprocess a source file
+src/ray/src/ReflexionRay.cpp.i:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.i
+.PHONY : src/ray/src/ReflexionRay.cpp.i
+
+src/ray/src/ReflexionRay.s: src/ray/src/ReflexionRay.cpp.s
+.PHONY : src/ray/src/ReflexionRay.s
+
+# target to generate assembly for a file
+src/ray/src/ReflexionRay.cpp.s:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.s
+.PHONY : src/ray/src/ReflexionRay.cpp.s
+
+src/ray/src/ShadowRay.o: src/ray/src/ShadowRay.cpp.o
+.PHONY : src/ray/src/ShadowRay.o
+
+# target to build an object file
+src/ray/src/ShadowRay.cpp.o:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o
+.PHONY : src/ray/src/ShadowRay.cpp.o
+
+src/ray/src/ShadowRay.i: src/ray/src/ShadowRay.cpp.i
+.PHONY : src/ray/src/ShadowRay.i
+
+# target to preprocess a source file
+src/ray/src/ShadowRay.cpp.i:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.i
+.PHONY : src/ray/src/ShadowRay.cpp.i
+
+src/ray/src/ShadowRay.s: src/ray/src/ShadowRay.cpp.s
+.PHONY : src/ray/src/ShadowRay.s
+
+# target to generate assembly for a file
+src/ray/src/ShadowRay.cpp.s:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.s
+.PHONY : src/ray/src/ShadowRay.cpp.s
+
+src/ray/src/TransmissionRay.o: src/ray/src/TransmissionRay.cpp.o
+.PHONY : src/ray/src/TransmissionRay.o
+
+# target to build an object file
+src/ray/src/TransmissionRay.cpp.o:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o
+.PHONY : src/ray/src/TransmissionRay.cpp.o
+
+src/ray/src/TransmissionRay.i: src/ray/src/TransmissionRay.cpp.i
+.PHONY : src/ray/src/TransmissionRay.i
+
+# target to preprocess a source file
+src/ray/src/TransmissionRay.cpp.i:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.i
+.PHONY : src/ray/src/TransmissionRay.cpp.i
+
+src/ray/src/TransmissionRay.s: src/ray/src/TransmissionRay.cpp.s
+.PHONY : src/ray/src/TransmissionRay.s
+
+# target to generate assembly for a file
+src/ray/src/TransmissionRay.cpp.s:
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.s
+.PHONY : src/ray/src/TransmissionRay.cpp.s
 
 src/ray/tests/test_ray_Ray.o: src/ray/tests/test_ray_Ray.cpp.o
 .PHONY : src/ray/tests/test_ray_Ray.o
@@ -1250,9 +1346,21 @@ help:
 	@echo "... src/math/tests/test_math_quadratic.o"
 	@echo "... src/math/tests/test_math_quadratic.i"
 	@echo "... src/math/tests/test_math_quadratic.s"
+	@echo "... src/ray/src/CameraRay.o"
+	@echo "... src/ray/src/CameraRay.i"
+	@echo "... src/ray/src/CameraRay.s"
 	@echo "... src/ray/src/Ray.o"
 	@echo "... src/ray/src/Ray.i"
 	@echo "... src/ray/src/Ray.s"
+	@echo "... src/ray/src/ReflexionRay.o"
+	@echo "... src/ray/src/ReflexionRay.i"
+	@echo "... src/ray/src/ReflexionRay.s"
+	@echo "... src/ray/src/ShadowRay.o"
+	@echo "... src/ray/src/ShadowRay.i"
+	@echo "... src/ray/src/ShadowRay.s"
+	@echo "... src/ray/src/TransmissionRay.o"
+	@echo "... src/ray/src/TransmissionRay.i"
+	@echo "... src/ray/src/TransmissionRay.s"
 	@echo "... src/ray/tests/test_ray_Ray.o"
 	@echo "... src/ray/tests/test_ray_Ray.i"
 	@echo "... src/ray/tests/test_ray_Ray.s"

@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/Ray.cpp
-Ray.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/Ray.hpp
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/CameraRay.cpp
+CameraRay.hpp
+/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/CameraRay.hpp
 
 src/glutils/include/utils_glm.hpp
 iostream
@@ -25,6 +25,14 @@ glm/gtx/component_wise.hpp
 -
 cmath
 -
+
+src/ray/include/CameraRay.hpp
+iostream
+-
+utils_glm.hpp
+src/ray/include/utils_glm.hpp
+Ray.hpp
+src/ray/include/Ray.hpp
 
 src/ray/include/Ray.hpp
 iostream

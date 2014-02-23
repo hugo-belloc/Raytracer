@@ -26,8 +26,11 @@ namespace ray
    public :
       ReflexionRay(const glm::vec3 &origin,const glm::vec3 & direction, float tmin, float tmax);
       virtual ~ReflexionRay();
-
       virtual glm::vec3 getColor() const;
+   
+   private:
+      float specularCoefficient;
+
    };
 
 }

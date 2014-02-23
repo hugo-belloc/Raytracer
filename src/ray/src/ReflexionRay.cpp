@@ -35,7 +35,7 @@ namespace ray
    /**
  * Virtual destructor
  */
-   ReflexionRay::~Ray()
+   ReflexionRay::~ReflexionRay()
    {}
    
 

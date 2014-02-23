@@ -583,10 +583,30 @@ CMakeFiles/raytracer_src_lib.dir/src/materials/src/MaterialProperties.cpp.o
 CMakeFiles/raytracer_src_lib.dir/src/math/src/Quadratic.cpp.o
  /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/math/src/Quadratic.cpp
  src/math/include/Quadratic.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o
+ /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/CameraRay.cpp
+ src/glutils/include/utils_glm.hpp
+ src/ray/include/CameraRay.hpp
+ src/ray/include/Ray.hpp
 CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o
  /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/Ray.cpp
  src/glutils/include/utils_glm.hpp
  src/ray/include/Ray.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o
+ /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/ReflexionRay.cpp
+ src/glutils/include/utils_glm.hpp
+ src/ray/include/Ray.hpp
+ src/ray/include/ReflexionRay.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o
+ /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/ShadowRay.cpp
+ src/glutils/include/utils_glm.hpp
+ src/ray/include/Ray.hpp
+ src/ray/include/ShadowRay.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o
+ /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/TransmissionRay.cpp
+ src/glutils/include/utils_glm.hpp
+ src/ray/include/Ray.hpp
+ src/ray/include/TransmissionRay.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Intersection.cpp.o
  /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/scene/src/Intersection.cpp
  src/glutils/include/utils_glm.hpp

@@ -583,9 +583,29 @@ CMakeFiles/raytracer_src_lib.dir/src/materials/src/MaterialProperties.cpp.o: src
 CMakeFiles/raytracer_src_lib.dir/src/math/src/Quadratic.cpp.o: src/math/src/Quadratic.cpp
 CMakeFiles/raytracer_src_lib.dir/src/math/src/Quadratic.cpp.o: src/math/include/Quadratic.hpp
 
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o: src/ray/src/CameraRay.cpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o: src/glutils/include/utils_glm.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o: src/ray/include/CameraRay.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o: src/ray/include/Ray.hpp
+
 CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o: src/ray/src/Ray.cpp
 CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o: src/glutils/include/utils_glm.hpp
 CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o: src/ray/include/Ray.hpp
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o: src/ray/src/ReflexionRay.cpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o: src/glutils/include/utils_glm.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o: src/ray/include/Ray.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o: src/ray/include/ReflexionRay.hpp
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o: src/ray/src/ShadowRay.cpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o: src/glutils/include/utils_glm.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o: src/ray/include/Ray.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o: src/ray/include/ShadowRay.hpp
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o: src/ray/src/TransmissionRay.cpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o: src/glutils/include/utils_glm.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o: src/ray/include/Ray.hpp
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o: src/ray/include/TransmissionRay.hpp
 
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Intersection.cpp.o: src/scene/src/Intersection.cpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Intersection.cpp.o: src/glutils/include/utils_glm.hpp

@@ -279,9 +279,32 @@ CMakeFiles/raytracer_src_lib.dir/src/glutils/src/Buffers.cpp.o.provides: CMakeFi
 
 CMakeFiles/raytracer_src_lib.dir/src/glutils/src/Buffers.cpp.o.provides.build: CMakeFiles/raytracer_src_lib.dir/src/glutils/src/Buffers.cpp.o
 
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o: src/ray/src/ReflexionRay.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_11)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/ReflexionRay.cpp
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/ReflexionRay.cpp > CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.i
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/ReflexionRay.cpp -o CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.s
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o.requires:
+.PHONY : CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o.requires
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o.provides: CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o.requires
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o.provides.build
+.PHONY : CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o.provides
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o.provides.build: CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o
+
 CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o: src/ray/src/Ray.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/Ray.cpp
 
@@ -302,9 +325,78 @@ CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o.provides: CMakeFiles/rayt
 
 CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o.provides.build: CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o
 
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o: src/ray/src/TransmissionRay.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_13)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/TransmissionRay.cpp
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/TransmissionRay.cpp > CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.i
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/TransmissionRay.cpp -o CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.s
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o.requires:
+.PHONY : CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o.requires
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o.provides: CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o.requires
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o.provides.build
+.PHONY : CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o.provides
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o.provides.build: CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o: src/ray/src/ShadowRay.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_14)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/ShadowRay.cpp
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/ShadowRay.cpp > CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.i
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/ShadowRay.cpp -o CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.s
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o.requires:
+.PHONY : CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o.requires
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o.provides: CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o.requires
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o.provides.build
+.PHONY : CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o.provides
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o.provides.build: CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o: src/ray/src/CameraRay.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_15)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/CameraRay.cpp
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/CameraRay.cpp > CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.i
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/src/CameraRay.cpp -o CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.s
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o.requires:
+.PHONY : CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o.requires
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o.provides: CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o.requires
+	$(MAKE) -f CMakeFiles/raytracer_src_lib.dir/build.make CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o.provides.build
+.PHONY : CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o.provides
+
+CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o.provides.build: CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o
+
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/engine/src/RaytracingEngine.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/engine/src/RaytracingEngine.cpp
 
@@ -327,7 +419,7 @@ CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o.provides.
 
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o: src/camera/src/Camera.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/camera/src/Camera.cpp
 
@@ -350,7 +442,7 @@ CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o.provides.build: CMa
 
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o: src/camera/src/PinholeCamera.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/camera/src/PinholeCamera.cpp
 
@@ -373,7 +465,7 @@ CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o.provides.bui
 
 CMakeFiles/raytracer_src_lib.dir/src/materials/src/Material.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/materials/src/Material.cpp.o: src/materials/src/Material.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/materials/src/Material.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/materials/src/Material.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/materials/src/Material.cpp
 
@@ -396,7 +488,7 @@ CMakeFiles/raytracer_src_lib.dir/src/materials/src/Material.cpp.o.provides.build
 
 CMakeFiles/raytracer_src_lib.dir/src/materials/src/MaterialProperties.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/materials/src/MaterialProperties.cpp.o: src/materials/src/MaterialProperties.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/materials/src/MaterialProperties.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/materials/src/MaterialProperties.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/materials/src/MaterialProperties.cpp
 
@@ -419,7 +511,7 @@ CMakeFiles/raytracer_src_lib.dir/src/materials/src/MaterialProperties.cpp.o.prov
 
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowContent.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowContent.cpp.o: src/gui/src/WindowContent.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowContent.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowContent.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/src/WindowContent.cpp
 
@@ -442,7 +534,7 @@ CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowContent.cpp.o.provides.build:
 
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/TriangleContent.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/TriangleContent.cpp.o: src/gui/src/TriangleContent.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/gui/src/TriangleContent.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/gui/src/TriangleContent.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/src/TriangleContent.cpp
 
@@ -465,7 +557,7 @@ CMakeFiles/raytracer_src_lib.dir/src/gui/src/TriangleContent.cpp.o.provides.buil
 
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowController.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowController.cpp.o: src/gui/src/WindowController.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowController.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowController.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/src/WindowController.cpp
 
@@ -488,7 +580,7 @@ CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowController.cpp.o.provides.bui
 
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowView.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowView.cpp.o: src/gui/src/WindowView.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_20)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowView.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowView.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/src/WindowView.cpp
 
@@ -511,7 +603,7 @@ CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowView.cpp.o.provides.build: CM
 
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowEvent.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowEvent.cpp.o: src/gui/src/WindowEvent.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_21)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowEvent.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowEvent.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/src/WindowEvent.cpp
 
@@ -534,7 +626,7 @@ CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowEvent.cpp.o.provides.build: C
 
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/ImageContent.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/ImageContent.cpp.o: src/gui/src/ImageContent.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_22)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/gui/src/ImageContent.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/gui/src/ImageContent.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/src/ImageContent.cpp
 
@@ -557,7 +649,7 @@ CMakeFiles/raytracer_src_lib.dir/src/gui/src/ImageContent.cpp.o.provides.build: 
 
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowModel.cpp.o: CMakeFiles/raytracer_src_lib.dir/flags.make
 CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowModel.cpp.o: src/gui/src/WindowModel.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_23)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_27)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowModel.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/raytracer_src_lib.dir/src/gui/src/WindowModel.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/src/WindowModel.cpp
 
@@ -590,7 +682,11 @@ raytracer_src_lib_OBJECTS = \
 "CMakeFiles/raytracer_src_lib.dir/src/glutils/src/Vao.cpp.o" \
 "CMakeFiles/raytracer_src_lib.dir/src/glutils/src/utilsTexture2D.cpp.o" \
 "CMakeFiles/raytracer_src_lib.dir/src/glutils/src/Buffers.cpp.o" \
+"CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o" \
 "CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o" \
+"CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o" \
+"CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o" \
+"CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o" \
 "CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o" \
 "CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o" \
 "CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o" \
@@ -617,7 +713,11 @@ lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/light/src/Light
 lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/glutils/src/Vao.cpp.o
 lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/glutils/src/utilsTexture2D.cpp.o
 lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/glutils/src/Buffers.cpp.o
+lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o
 lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o
+lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o
+lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o
+lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o
 lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o
 lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o
 lib/libraytracer_src_lib.a: CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o
@@ -650,7 +750,11 @@ CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/
 CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/glutils/src/Vao.cpp.o.requires
 CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/glutils/src/utilsTexture2D.cpp.o.requires
 CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/glutils/src/Buffers.cpp.o.requires
+CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/ray/src/ReflexionRay.cpp.o.requires
 CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/ray/src/Ray.cpp.o.requires
+CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/ray/src/TransmissionRay.cpp.o.requires
+CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/ray/src/ShadowRay.cpp.o.requires
+CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/ray/src/CameraRay.cpp.o.requires
 CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o.requires
 CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/camera/src/Camera.cpp.o.requires
 CMakeFiles/raytracer_src_lib.dir/requires: CMakeFiles/raytracer_src_lib.dir/src/camera/src/PinholeCamera.cpp.o.requires
