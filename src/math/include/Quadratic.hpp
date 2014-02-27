@@ -26,7 +26,7 @@ namespace math
    public :
       Quadratic(float a,float b,float c);
       bool solvable() const;
-       bool solve(float & minValue,float & maxValue) const;
+      bool solve(float & minValue,float & maxValue) const;
 
    private :
       float _a;

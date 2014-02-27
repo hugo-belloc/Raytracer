@@ -26,51 +26,59 @@
 #include "Vao.hpp"
 #include "Buffers.hpp"
 #include "TriangleContent.hpp"
+using namespace std;
 
 namespace gui
 {
-   TriangleContent::TriangleContent():_shader()
-   {
+    TriangleContent::TriangleContent():_prog()//_shader()
+    {
 
-      _shader.loadFromFile("etc/uniformColor.vert",
-			   "etc/uniformColor.frag");
-      _shader.setParameter("uniformColor",1.0,1.0,1.0);
-      GLfloat positions[]=
-	 {
-	    -1,-1, 0,
-	    -1, 1, 0,
-	    1,-1, 0 
-	 };
+	/*_shader.loadFromFile("etc/uniformColor.vert",
+			     "etc/uniformColor.frag");
+			     _shader.setParameter("uniformColor",1.0,1.0,1.0);*/
 
-      GLuint indices[]=
-	 {
-	    0,1,2
-	 };
+	_prog.loadFromFiles("etc/uniformColor.vert",
+			    "etc/uniformColor.frag");
+	_prog.setUniform("uniformColor",glm::vec3(1.0,0,0));
+	GLfloat positions[]=
+	    {
+		-1,-1, 0,
+		-1, 1, 0,
+		 1,-1, 0 
+	    };
 
-      glutils::makeVBO(&_vbo,positions,sizeof(positions));
-      glutils::makeIBO(&_ibo,indices,sizeof(indices));
-      glutils::makeSimpleVAO(&_vao,_vbo,_ibo);
+	GLuint indices[]=
+	    {
+		0,1,2
+	    };
+
+	glutils::makeVBO(&_vbo,positions,sizeof(positions));
+	glutils::makeIBO(&_ibo,indices,sizeof(indices));
+	glutils::makeSimpleVAO(&_vao,_vbo,_ibo);
       
-   }
+    }
 
-   TriangleContent::~TriangleContent()
-   {
-      glDeleteBuffers(1,&_vbo);
-      glDeleteBuffers(1,&_ibo);
-      glDeleteVertexArrays(1,&_vao);
-   }
+    TriangleContent::~TriangleContent()
+    {
+	glDeleteBuffers(1,&_vbo);
+	glDeleteBuffers(1,&_ibo);
+	glDeleteVertexArrays(1,&_vao);
+    }
 
-   void TriangleContent::onTransition()
-   {}
+    void TriangleContent::onTransition()
+    {}
 
-   void TriangleContent::display()
-   {
-      sf::Shader::bind(&_shader);
-      glBindVertexArray(_vao);
-      glDrawElements(GL_TRIANGLES,3, GL_UNSIGNED_INT, 0);
-      glBindVertexArray(0);
-      sf::Shader::bind(0);
-   }
+    void TriangleContent::display()
+    {
+	//sf::Shader::bind(&_shader);
+	glUseProgram(_prog.getId());
+	_prog.setUniform("uniformColor",glm::vec3(1.0,0.0,0.0));
+	glBindVertexArray(_vao);
+	glDrawElements(GL_TRIANGLES,3, GL_UNSIGNED_INT, 0);
+	glBindVertexArray(0);
+	glUseProgram(0);
+	//sf::Shader::bind(0);
+    }
 
 
 }

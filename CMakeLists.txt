@@ -68,7 +68,7 @@ include_directories(${header_dirs})
 
 add_library(
     raytracer_src_lib
-    STATIC
+    SHARED
     ${src}
 )
 
@@ -79,7 +79,7 @@ add_executable(
   ${main}
   ${headers}
 )
-target_link_libraries(raytracer raytracer_src_lib ${GL_LIBRARIES}  glfw ${SFML_LIBRARIES})
+target_link_libraries(raytracer raytracer_src_lib ${GL_LIBRARIES} ${SFML_LIBRARIES})
 
 #### Creating tests executable ####
 if (CMAKE_BUILD_TYPE STREQUAL "DEBUG")

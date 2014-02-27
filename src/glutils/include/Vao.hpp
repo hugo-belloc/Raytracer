@@ -31,5 +31,8 @@ namespace glutils
    void makeSimpleVAO(GLuint *vao,GLuint vbo,GLuint ibo);
    void makeTextureVAO(GLuint *vao,GLuint positionBuffer,
 		       GLuint texCoordsBuffer,GLuint ibo);
+   void makeNormalVAO(GLuint *vao,GLuint positionBuffer,
+		       GLuint normalBuffer,GLuint ibo);
+
 }
 #endif

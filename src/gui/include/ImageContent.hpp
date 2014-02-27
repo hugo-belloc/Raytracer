@@ -27,7 +27,6 @@ namespace gui
       virtual ~ImageContent();
       virtual void onTransition();
       virtual void display();
-
    private :
       sf::Image _image;
       sf::Shader _shader;
