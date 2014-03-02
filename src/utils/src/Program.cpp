@@ -4,31 +4,13 @@
  * 
  */
 
-#include <fstream>
 #include <vector>
+
+#include "FileLoader.hpp"
 #include "Program.hpp"
 
 using namespace std;
 
-/**
- * Simple function that read a file content
- * and pack it in a string
- * @param path the path to the file
- * @return the file content
- */
-string fileContent(const string & path)
-{
-   std::string content;
-   std::ifstream stream(path, std::ios::in);
-   if(stream.is_open())
-   {
-      std::string Line = "";
-      while(getline(stream, Line))
-	 content += "\n" + Line;
-      stream.close();
-   }
-   return content;
-}
 
 namespace utils
 {
@@ -88,10 +70,11 @@ namespace utils
     */
    void Program::loadFromFiles(const std::string & vertexSrcPath,
 			       const std::string & fragSrcPath)      
-   {    
-      string vertexShaderCode=fileContent(vertexSrcPath);
-      string fragmentShaderCode=fileContent(fragSrcPath);
-      loadFromMemory(vertexShaderCode,fragmentShaderCode);  
+   {
+       utils::FileLoader loader;
+       string vertexShaderCode=loader.loadTextFile(vertexSrcPath);
+       string fragmentShaderCode=loader.loadTextFile(fragSrcPath);
+       loadFromMemory(vertexShaderCode,fragmentShaderCode);  
    }
 
    /**
