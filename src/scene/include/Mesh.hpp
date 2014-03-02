@@ -17,6 +17,7 @@
 #include <iostream>
 #include <vector>
 #include <stdexcept>
+#include <string>
 #include "utils_glm.hpp"
 #include <GL/glew.h>
 
@@ -72,8 +73,10 @@ namespace scene
 	unsigned int getFaceIndex(const iterator_face & it);
 	void displayTTY()const;
 
+	void clear();
+	bool empty();
 	GLuint computeVao();
-
+	void loadFromOBJFile(const std::string & path);
     private :
 	//bool isFaceRight(Face * face);
 	std::vector<GLfloat> getPositionArray();

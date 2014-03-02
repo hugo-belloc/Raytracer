@@ -31,12 +31,16 @@ using namespace camera;
 
 void setUniforms(Program & prog)
 {
-    PinholeCamera cam(vec3(-5, 2,0),vec3(0,0,0),
-     		      vec3(0,1,0),0.001,1000.f,512,
+    PinholeCamera cam(vec3(-5, 0,0),vec3(0,0,0),
+     		      vec3(0,0,1),0.001,1000.f,512,
      		      512,45.f);
 
-    prog.setUniform("modelViewMatrix",glm::translate(cam.getViewMatrice(),
-						     glm::vec3(0,-1,0)));
+    mat4 viewMat=cam.getViewMatrice();
+    mat4 modelMat=glm::mat4();
+    modelMat=glm::rotate(modelMat,45.0f,vec3(-0.2,-0.3,1));
+    modelMat = translate(viewMat*modelMat,vec3(0,0,-0.5));
+						     
+    prog.setUniform("modelViewMatrix",modelMat);
     prog.setUniform("projectionMatrix",cam.getPerspectiveMatrice());
     prog.setUniform("lightdirn",glm::vec3(-1,0.4,0.0));
     prog.setUniform("lightcolor",glm::vec3(1,1,1));

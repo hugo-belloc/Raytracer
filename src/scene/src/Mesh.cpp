@@ -4,9 +4,11 @@
  * 
  */
 
+#include <fstream>
 #include "Mesh.hpp"
 #include "Vao.hpp"
 #include "Buffers.hpp"
+
 
 using namespace std;
 
@@ -305,5 +307,59 @@ namespace scene
 	return indexs;
     }
 
+    
+    /**
+     * Check if whether the Mesh is empty (no faces
+     * and no vertexs)
+     */
+    bool Mesh::empty()
+    {
+	return _vertexs.empty() && _faces.empty();
+    }
+
+    /**
+     * Clear all the vertexs and the faces of the
+     * Mesh.
+     */
+    void Mesh::clear()
+    {
+	_vertexs.clear();
+	_faces.clear();
+    }
+
+    
+    void isMoreOrLessEqual()
+    {
+
+
+    }    
+
+    /**
+     * Load the Mesh geometry from a file in the 
+     * OBJ(Wavefront) format.
+     * 
+     * @param path the path to the OBJ file.
+     * @exception  std::invalid_argument is thrown if
+     * the file is not a correct OBJ file.
+     */
+    void Mesh::loadFromOBJFile(const std::string & path)
+    {
+	std::ifstream fileStream(path,std::ios::in);
+	std::set<Vertex*> 
+	
+	if(fileStream.is_open())
+	{
+	    std::string line;
+	    while(getline(fileStream,line))
+	    {
+		
+	    }
+	}
+	else
+	{
+	    throw std::invalid_argument("Could not open file "+path);
+	}
+
+    }
 
 }
