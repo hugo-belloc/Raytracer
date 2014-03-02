@@ -33,7 +33,7 @@ namespace gui
 	GLuint _vbo;
 	GLuint _ibo;
 //    sf::Shader _shader;
-	glutils::Program _prog;
+	utils::Program _prog;
 	GLuint _vao;      
     };
 }

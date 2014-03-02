@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace glutils
+namespace utils
 {
     void makeSimpleVAO(GLuint *vao,GLuint vbo,GLuint ibo)
     {

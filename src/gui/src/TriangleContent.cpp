@@ -52,9 +52,9 @@ namespace gui
 		0,1,2
 	    };
 
-	glutils::makeVBO(&_vbo,positions,sizeof(positions));
-	glutils::makeIBO(&_ibo,indices,sizeof(indices));
-	glutils::makeSimpleVAO(&_vao,_vbo,_ibo);
+	utils::makeVBO(&_vbo,positions,sizeof(positions));
+	utils::makeIBO(&_ibo,indices,sizeof(indices));
+	utils::makeSimpleVAO(&_vao,_vbo,_ibo);
       
     }
 

@@ -25,7 +25,7 @@
 using namespace std;
 using namespace gui;
 using namespace scene;
-using namespace glutils;
+using namespace utils;
 using namespace glm;
 using namespace camera;
 
@@ -156,7 +156,7 @@ MeshContent():_prog()
     }
 
 private :
-    glutils::Program _prog;
+    utils::Program _prog;
     GLuint _vao;      
     scene::Mesh * _mesh;
 };

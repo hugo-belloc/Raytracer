@@ -49,13 +49,13 @@ namespace gui
 	    1,3,2
 	 };
 
-      glutils::makeVBO(&_positionsBuffer,positions
+      utils::makeVBO(&_positionsBuffer,positions
 		       ,sizeof(positions));
-      glutils::makeVBO(&_texCoordsBuffer,texCoords
+      utils::makeVBO(&_texCoordsBuffer,texCoords
 		       ,sizeof(texCoords));
-      glutils::makeIBO(&_indexBuffer,indices,sizeof(indices));
-      glutils::makeTexture2D(&_textureImageBuffer,_image);
-      glutils::makeTextureVAO(&_vao,_positionsBuffer,
+      utils::makeIBO(&_indexBuffer,indices,sizeof(indices));
+      utils::makeTexture2D(&_textureImageBuffer,_image);
+      utils::makeTextureVAO(&_vao,_positionsBuffer,
 			      _texCoordsBuffer,_indexBuffer);
       
    }

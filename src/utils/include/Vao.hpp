@@ -26,7 +26,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
-namespace glutils
+namespace utils
 {
    void makeSimpleVAO(GLuint *vao,GLuint vbo,GLuint ibo);
    void makeTextureVAO(GLuint *vao,GLuint positionBuffer,

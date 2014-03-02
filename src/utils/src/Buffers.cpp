@@ -27,7 +27,7 @@
 
 using namespace std;
 
-namespace glutils
+namespace utils
 {
    void makeVBO(GLuint * vbo,GLfloat * data,unsigned int size)
    {

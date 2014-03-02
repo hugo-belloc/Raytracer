@@ -11,20 +11,20 @@
 
 /**
  * @author Hugo Belloc <hugo.belloc@ecole.ensicaen.fr> 
- * @date Wed Feb  5 2014
+ * @date Tue Feb  4 2014
  * 
  */
 
 /**
- * @file utilsTexture2D.hpp
+ * @file Buffers.hpp
  *  
  * Description of the program objectives.
  * All necessary references.
  */
 
 
-#ifndef _UTILSTEXTURE2D_HEADER_H
-#define _UTILSTEXTURE2D_HEADER_H
+#ifndef _BUFFERS_HEADER_H
+#define _BUFFERS_HEADER_H
 
 #include <iostream>
 #define GLM_SWIZZLE
@@ -36,10 +36,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
-
-namespace glutils
+namespace utils
 {
-   void makeTexture2D(GLuint *textureID,const sf::Image & image);
+   void makeVBO(GLuint * vbo,GLfloat * data,unsigned int size);
+   void makeIBO(GLuint * ibo,GLuint * indices,unsigned int size);
 }
 
 #endif

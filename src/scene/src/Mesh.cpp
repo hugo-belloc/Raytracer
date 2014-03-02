@@ -242,13 +242,13 @@ namespace scene
 	vector<GLfloat> normals=getNormalArray();
 	vector<GLuint> indexs=getIndexArray();      
 
-	glutils::makeVBO(&positionBuffer,&positions[0],
+	utils::makeVBO(&positionBuffer,&positions[0],
 			 positions.size()*sizeof(GLfloat));
-	glutils::makeVBO(&normalBuffer,&normals[0],
+	utils::makeVBO(&normalBuffer,&normals[0],
 			 normals.size()*sizeof(GLfloat));
-	glutils::makeIBO(&ibo,&indexs[0],indexs.size()*sizeof(GLuint));
-	glutils::makeNormalVAO(&vao,positionBuffer,normalBuffer,ibo);
-	//glutils::makeSimpleVAO(&vao,positionBuffer,ibo);
+	utils::makeIBO(&ibo,&indexs[0],indexs.size()*sizeof(GLuint));
+	utils::makeNormalVAO(&vao,positionBuffer,normalBuffer,ibo);
+	//utils::makeSimpleVAO(&vao,positionBuffer,ibo);
 
 	return vao;
     }
@@ -342,23 +342,23 @@ namespace scene
      * @exception  std::invalid_argument is thrown if
      * the file is not a correct OBJ file.
      */
-    void Mesh::loadFromOBJFile(const std::string & path)
+    void Mesh::loadFromOBJFile(const std::string & /*path*/)
     {
-	std::ifstream fileStream(path,std::ios::in);
-	std::set<Vertex*> 
+    // 	std::ifstream fileStream(path,std::ios::in);
+    // 	std::set<Vertex*> 
 	
-	if(fileStream.is_open())
-	{
-	    std::string line;
-	    while(getline(fileStream,line))
-	    {
+    // 	if(fileStream.is_open())
+    // 	{
+    // 	    std::string line;
+    // 	    while(getline(fileStream,line))
+    // 	    {
 		
-	    }
-	}
-	else
-	{
-	    throw std::invalid_argument("Could not open file "+path);
-	}
+    // 	    }
+    // 	}
+    // 	else
+    // 	{
+    // 	    throw std::invalid_argument("Could not open file "+path);
+    // 	}
 
     }
 

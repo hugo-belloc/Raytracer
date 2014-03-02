@@ -24,7 +24,7 @@
 
 #include "utilsTexture2D.hpp"
 
-namespace glutils
+namespace utils
 {
    void makeTexture2D(GLuint *textureID,const sf::Image & image)
    {

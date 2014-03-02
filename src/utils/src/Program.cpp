@@ -30,7 +30,7 @@ string fileContent(const string & path)
    return content;
 }
 
-namespace glutils
+namespace utils
 {
 /**
  * A basic constructor for a program, does

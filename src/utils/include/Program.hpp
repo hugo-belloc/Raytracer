@@ -19,7 +19,7 @@
 #include "utils_glm.hpp"
 #include <GL/glew.h>
 
-namespace glutils
+namespace utils
 {
     /**
      * A class containing a vertex shader and
