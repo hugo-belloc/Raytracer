@@ -197,17 +197,17 @@ void setUniforms(Program & prog)
     modelMat=glm::rotate(modelMat,180.0f,vec3(1,0,0));
     modelMat = translate(modelMat,vec3(0,0,-0.0));
 						     
-
     prog.setUniform("transparency",1.0f);
     prog.setUniform("modelViewMatrix",viewMat*modelMat);
     prog.setUniform("projectionMatrix",cam.getPerspectiveMatrice());
-    prog.setUniform("lightdirn",glm::vec3(0,1,0.0));
-    prog.setUniform("lightcolor",glm::vec3(1,1,1));
+
+    prog.setUniform("light.intensity",0.8f);
+    prog.setUniform("light.color",glm::vec3(1,1,1));
+    prog.setUniform("light.direction",glm::vec3(0,1,0.0));
+
+
     prog.setUniform("ambient",glm::vec3(0.02,0.01,0.05));
     prog.setUniform("diffuse",glm::vec3(0.7,0.4,0.4));
-
-
-
     
 }
 

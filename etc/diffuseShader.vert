@@ -10,10 +10,6 @@ out vec3 normal;
 uniform mat4 modelViewMatrix;
 uniform mat4 projectionMatrix;
 
-// Assume light is directional
-uniform vec3 lightdirn; 
-uniform vec3 lightcolor; 
-
 // material properties
 uniform vec3 ambient; 
 uniform vec3 diffuse; 
