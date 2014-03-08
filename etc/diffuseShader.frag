@@ -6,6 +6,7 @@ uniform vec3 lightcolor;
 // material properties
 uniform vec3 ambient; 
 uniform vec3 diffuse;
+uniform float transparency;
 
 in vec4 position;
 in vec3 normal; 
@@ -25,9 +26,9 @@ vec3 ComputeLightLambert(const in vec3 lightdirn, const in vec3 lightcolor, cons
 
 void main()
 {
-  fragColor=vec4(ambient,1);
+  fragColor=vec4(ambient,0);
   vec3 fragNormal = normal;
   fragNormal = normalize(fragNormal); 
   vec3 lambert = ComputeLightLambert(lightdirn, lightcolor, fragNormal, diffuse);
-  fragColor= fragColor+vec4(lambert,1);
+  fragColor= fragColor+vec4(lambert,transparency);
 }

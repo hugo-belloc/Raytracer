@@ -54,6 +54,7 @@ namespace scene
 
 	Mesh();
 	~Mesh();
+	void clear();
 	unsigned int getVertexsNumber()const;
 	unsigned int getFacesNumber()const;
 	void addVertex(Vertex * vertex);
@@ -73,7 +74,7 @@ namespace scene
 	unsigned int getFaceIndex(const iterator_face & it);
 	void displayTTY()const;
 
-	void clear();
+	
 	bool empty();
 	GLuint computeVao();
 	void loadFromOBJFile(const std::string & path);
