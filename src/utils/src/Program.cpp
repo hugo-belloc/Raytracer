@@ -20,7 +20,7 @@ namespace utils
  * must be loaded before being usable.
  */
     Program::Program():_progId(glCreateProgram()),_empty(true)
-    {  }
+    {}
 
 /**
  * Destructor : desallocate the memeory in the

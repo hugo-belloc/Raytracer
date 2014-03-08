@@ -18,12 +18,13 @@
 #include <SFML/OpenGL.hpp>
 #include <string>
 
+#include "FileLoader.hpp"
 #include "WindowContent.hpp"
 #include "WindowView.hpp"
 #include "Mesh.hpp"
 #include "PinholeCamera.hpp"
 #include "Program.hpp"
-
+#include "LightPoint.hpp"
 
 using namespace std;
 using namespace gui;
@@ -31,7 +32,7 @@ using namespace scene;
 using namespace utils;
 using namespace glm;
 using namespace camera;
-
+using namespace light;
 
 
 inline glm::vec3 torusPoint(double theta, double phi, double R, double r)
@@ -187,27 +188,32 @@ void createCube(Mesh & mesh,const glm::vec3 & center=vec3(0,0,0))
 
 void setUniforms(Program & prog)
 {
-    PinholeCamera cam(vec3(-5, 0,2),vec3(0,0,0),
+    PinholeCamera cam(vec3(-5, 0,0),vec3(0,0,0),
      		      vec3(0,0,1),0.01,100.f,512,
      		      512,45.f);
 
     mat4 viewMat=cam.getViewMatrice();
     mat4 modelMat=glm::mat4();
+
     modelMat=glm::rotate(modelMat,-90.0f,vec3(0,0,1));
     modelMat=glm::rotate(modelMat,180.0f,vec3(1,0,0));
-    modelMat = translate(modelMat,vec3(0,0,-0.0));
+    modelMat = translate(modelMat,vec3(0,0,0.2));
+
+    mat4 mvw = viewMat*modelMat;
 						     
     prog.setUniform("transparency",1.0f);
-    prog.setUniform("modelViewMatrix",viewMat*modelMat);
+    prog.setUniform("modelViewMatrix",mvw);
     prog.setUniform("projectionMatrix",cam.getPerspectiveMatrice());
+    mat3 normalMatrix= transpose(inverse(mat3(mvw)));
+    prog.setUniform("normalMatrix", normalMatrix);
 
-    prog.setUniform("light.intensity",0.8f);
-    prog.setUniform("light.color",glm::vec3(1,1,1));
-    prog.setUniform("light.direction",glm::vec3(0,1,0.0));
-
-
+    LightPoint light(5.f,vec3(-5.0f,0,3),vec3(0.3,1,0.3),0.2f);
+    light.setLightUniforms(prog,"light[0]",viewMat);    
+    LightPoint light2(5.f,vec3(-5.0f,0,-3),vec3(0.3,0.3,1),0.2f);
+    light2.setLightUniforms(prog,"light[1]",viewMat);
+    
     prog.setUniform("ambient",glm::vec3(0.02,0.01,0.05));
-    prog.setUniform("diffuse",glm::vec3(0.7,0.4,0.4));
+    prog.setUniform("diffuse",glm::vec3(0.7,0.7,0.7));
     
 }
 
@@ -216,11 +222,18 @@ class MeshContent : public WindowContent
 public :
     MeshContent(Mesh * mesh):_prog(),_mesh(mesh)
     {
-	_prog.loadFromFiles("etc/diffuseShader.vert",
-			    "etc/diffuseShader.frag");
-	_mesh->displayTTY();
+	FileLoader loader;
+	string vertexShaderCode=
+	    loader.loadTextFile("etc/diffuseShader.vert");
+	string fragmentShaderCode=
+	    loader.loadTextFile("etc/diffuseShader.frag");
+	string labelText="___LIGHTS_NUMBER___";
+	size_t labelPosition=fragmentShaderCode.find(labelText);
+	fragmentShaderCode.replace(labelPosition,labelText.size(),"2");
+	_prog.loadFromMemory(vertexShaderCode,
+			    fragmentShaderCode);
+
 	_vao=_mesh->computeVao();
-	//cout<<"VAO:"<<_vao<<endl;
     }
 
     virtual ~MeshContent()

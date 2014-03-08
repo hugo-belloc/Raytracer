@@ -9,6 +9,7 @@ out vec3 normal;
 
 uniform mat4 modelViewMatrix;
 uniform mat4 projectionMatrix;
+uniform mat3 normalMatrix;
 
 // material properties
 uniform vec3 ambient; 
@@ -19,6 +20,8 @@ void main()
     vec4 positionH=vec4(vertexPosition,1);
     gl_Position =  projectionMatrix * modelViewMatrix *  positionH;
     position=modelViewMatrix * positionH;
-    normal=normalize(vertexNormal);
+    normal=normalMatrix*vertexNormal;
+    normal=normalize(normal);
+    
 }
  

@@ -17,9 +17,16 @@
 #define _LIGHT_HEADER_H
 
 #include "utils_glm.hpp"
+#include "Program.hpp"
 
 namespace light
 {
+    /**
+     * This class represents a punctual light. It is power
+     * on a given point depends on the position of the light
+     * (proportional to 1/d² where d is the distance between the
+     * light source and the point).
+     **/
     class LightPoint
     {
     public :
@@ -35,7 +42,9 @@ namespace light
 	void setColor(const glm::vec3 & color);
 	float getFallOff()const;
 	void setFallOff(float fallOff);
-
+	void setLightUniforms(utils::Program & prog,
+			       const std::string & uniformName,
+			       const glm::mat4 & matViewWorld) const;
 	void displayTTY() const;
 
     private :
