@@ -15,16 +15,20 @@
 #include "Quadratic.hpp"
 #include "Sphere.hpp"
 
+
 using namespace std;
 
 namespace scene
 {
 
-    Sphere::Sphere(const glm::vec3 &center,float radius):/*Shape(),*/_center(center),_radius(radius)
+    Sphere::Sphere(const glm::vec3 &center,float radius):/*Shape(),*/_center(center),_radius(radius),_mesh(new Mesh)
     {}
 
     Sphere::~Sphere()
-    {}
+    {
+	delete _mesh;
+    }
+
     void  Sphere::setCenter(const glm::vec3 &center)
     {
 	_center=center;
@@ -46,7 +50,7 @@ namespace scene
     }
 
     bool Sphere::intersect(const ray::Ray & ray,
-		   Intersection & intersection)const 
+			   Intersection & intersection)const 
     {
 	glm::vec3 dir=ray.getDirection();
 	glm::vec3 oriToCenter=ray.getOrigin()-_center;
@@ -83,4 +87,79 @@ namespace scene
 	cout<<"Sphere"<<"[Center="<<_center;
 	cout<<",Radius="<<_radius<<"]"<<endl;
     }
+
+    /**
+     * Computes the position of a point on a sphere
+     * @param theta the first angle in radian
+     * @param phi the second angle in radiant
+     * @param r the radius
+     * @return the point computed
+     */
+    inline glm::vec3 spherePoint(double theta, double phi, double r,
+				 const glm::vec3 & center)
+    {
+	double x=r*cos(theta)*sin(phi);
+	double y=r*sin(theta)*sin(phi);
+	double z=r*cos(phi);
+
+	return glm::vec3(x,y,z)+center;
+    }
+
+
+     /**
+     * Computes the normal of a point on a sphere
+     * @param theta the first angle in radian
+     * @param phi the second angle in radiant
+     * @return the normal computed
+     */
+    inline glm::vec3 sphereNormal(double theta, double phi)
+    {
+   
+	double x=cos(theta)*sin(phi);
+	double y=sin(theta)*sin(phi);
+	double z=cos(phi);
+
+	return glm::vec3(x,y,z);
+    }
+
+    void Sphere::updateMesh(unsigned int resolution)
+    {
+	_mesh->clear();
+
+	double pi = M_PI;
+	double dTheta =(2.0*pi/((double)resolution));
+	double dPhi =(1.0*pi/((double)resolution));
+
+	long cmpt =0;
+
+	for(double theta =0 ;theta < (2.0*pi); theta += dTheta)
+	{
+	    for(double phi =0 ;phi < (1.0*pi); phi += dPhi)
+	    {
+		_mesh->addVertex(new Vertex(spherePoint(theta, phi, _radius,_center),
+					  sphereNormal(theta,phi)));
+		_mesh->addVertex(new Vertex(spherePoint(theta+dTheta, phi,_radius,_center),
+					  sphereNormal(theta+dTheta,phi)));
+		_mesh->addVertex(new Vertex(spherePoint(theta+dTheta,phi+dPhi, _radius,_center),
+					  sphereNormal(theta+dTheta,phi+dPhi)));
+		_mesh->addVertex(new Vertex(spherePoint(theta,phi+dPhi,_radius,_center),
+					  sphereNormal(theta,phi+dPhi)));
+
+		_mesh->addFace(new Face(cmpt,cmpt+1,cmpt+2));
+		_mesh->addFace(new Face(cmpt,cmpt+2,cmpt+3));
+
+		cmpt += 4;
+
+	    }
+	}
+
+	_mesh->updateVAO();
+
+    }
+
+    const Mesh * Sphere::getMesh() const
+    {
+	return _mesh;
+    }
+
 }

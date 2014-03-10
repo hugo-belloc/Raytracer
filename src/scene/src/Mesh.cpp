@@ -22,7 +22,7 @@ namespace scene
     /**
      * Create an empty Mesh
      */
-    Mesh::Mesh():_vertexs(),_faces()
+    Mesh::Mesh():_vertexs(),_faces(),_vao(0),_isVao(false)
     {}
 
     /**
@@ -53,6 +53,12 @@ namespace scene
 	}
 	_vertexs.clear();
 	_faces.clear();
+	if(_isVao)
+	{
+	    glDeleteVertexArrays(1,&_vao);
+	    _vao=0;
+	    _isVao=false;
+	}
     }
 
 
@@ -249,11 +255,18 @@ namespace scene
     }
 
     /**
-     * Compute and return the VAO for the Mesh.
+     * Compute and the Mesh VAO and update it.
      */
-    GLuint Mesh::computeVao()
+    void Mesh::updateVAO()
     {
-	GLuint positionBuffer,normalBuffer,ibo,vao;
+	if(_isVao)
+	{
+	    glDeleteVertexArrays(1,&_vao);
+	    _vao=0;
+	}
+	_isVao=true;
+
+	GLuint positionBuffer,normalBuffer,ibo;
 	vector<GLfloat> positions=getPositionArray();
 	vector<GLfloat> normals=getNormalArray();
 	vector<GLuint> indexs=getIndexArray();      
@@ -263,10 +276,23 @@ namespace scene
 	utils::makeVBO(&normalBuffer,&normals[0],
 		       normals.size()*sizeof(GLfloat));
 	utils::makeIBO(&ibo,&indexs[0],indexs.size()*sizeof(GLuint));
-	utils::makeNormalVAO(&vao,positionBuffer,normalBuffer,ibo);
-	//utils::makeSimpleVAO(&vao,positionBuffer,ibo);
+	utils::makeNormalVAO(&_vao,positionBuffer,normalBuffer,ibo);
+	//utils::makeSimpleVAO(&_vao,positionBuffer,ibo);	
+    }
 
-	return vao;
+    /**
+     * Call the OpenGL routines needed to draw the Mesh
+     * (if the openGL context has been well initialised
+     * and if a VAO has been computed)
+     */
+    void Mesh::draw() const
+    {
+	if(_isVao)
+	{
+	    glBindVertexArray(_vao);
+	    glDrawElements(GL_TRIANGLES,3*getFacesNumber(), GL_UNSIGNED_INT, 0);
+	    glBindVertexArray(0);
+	}
     }
 
     /**
@@ -478,6 +504,24 @@ not a quad nor a triangle");
 	_vertexs=vertexs;
 	_faces=faces;
 
+    }
+
+    bool Mesh::intersect(const ray::Ray & ray,
+			 Intersection & intersection)const
+    {
+	//TODO
+	return false;
+    }
+
+    void Mesh::updateMesh(unsigned int resolution)
+    {
+	//Do nothing since the mesh it itself...
+    }
+
+    const Mesh * Mesh::getMesh() const
+    {
+	//return itself
+	return this;
     }
 
 }

@@ -23,6 +23,7 @@
 
 #include "Vertex.hpp"
 #include "Face.hpp"
+#include "Shape.hpp"
 
 namespace scene
 {
@@ -30,7 +31,7 @@ namespace scene
      * This class is a representation of a Mesh made
      * with Vertexs and Faces.
      */
-    class Mesh
+    class Mesh : public Shape
     {
     public :
 	/**
@@ -53,7 +54,7 @@ namespace scene
 	typedef std::vector<Face*>::const_iterator const_iterator_face;
 
 	Mesh();
-	~Mesh();
+	virtual ~Mesh();
 	void clear();
 	unsigned int getVertexsNumber()const;
 	unsigned int getFacesNumber()const;
@@ -72,20 +73,34 @@ namespace scene
 	const_iterator_face begin_face() const;
 	const_iterator_face end_face() const;
 	unsigned int getFaceIndex(const iterator_face & it);
-	void displayTTY()const;
-
 	
+	void updateVAO();
+	void draw() const;
+		
 	bool empty();
-	GLuint computeVao();
+	
 	void loadFromOBJFile(const std::string & path);
+
+	// Methods of th Shape interface
+	virtual bool intersect(const ray::Ray & ray,
+			       Intersection & intersection)const;
+	virtual void displayTTY()const;
+	virtual void updateMesh(unsigned int resolution);
+	virtual const Mesh * getMesh() const;
+	
+	
     private :
-	//bool isFaceRight(Face * face);
+	
+
+        bool isFaceRight(Face * face);
 	std::vector<GLfloat> getPositionArray();
 	std::vector<GLfloat> getNormalArray();
 	std::vector<GLuint> getIndexArray();
 
 	std::vector<Vertex*> _vertexs;
 	std::vector<Face*> _faces;
+	GLuint _vao;
+	bool _isVao;
        
     };
 

@@ -22,16 +22,30 @@
 
 namespace scene
 {
-   class Shape
-   {
-   public :
-      virtual ~Shape();
-      virtual bool intersect(const ray::Ray & ray,Intersection & intersection)const=0;
-      virtual void displayTTY()const=0;
-      //later for rasterisation purpose
-      //Mesh toMesh() const;
+    class Mesh;
 
-   };
+    class Shape
+    {
+    public :
+	virtual ~Shape();
+	virtual bool intersect(const ray::Ray & ray,Intersection & intersection)const=0;
+	virtual void displayTTY()const=0;
+	//later for rasterisation purpose
+      
+	/**
+	 * Construct a Mesh that if an approximation for the Shape
+	 * @param resolution the resolution of the Mesh
+	 */
+	virtual void updateMesh(unsigned int resolution)=0;
+
+	/**
+	 * Return the last Mesh computed with the updateMesh
+	 * method.
+	 * @return a pointer to the Mesh
+	 **/
+	virtual const Mesh * getMesh() const=0;
+
+    };
 }
 
 #endif

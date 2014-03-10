@@ -20,6 +20,8 @@
 #include "utils_glm.hpp"
 #include "MaterialProperties.hpp"
 #include "Ray.hpp"
+#include "Program.hpp"
+
 namespace materials
 {
    class Material
@@ -29,6 +31,8 @@ namespace materials
       glm::vec3 computeBRDF(const ray::Ray &shadowRay,
 			    const glm::vec3 & normal)const;
       void displayTTY()const;
+      void setMaterialUniforms(utils::Program & prog)const;
+       
 
    private :
       MaterialProperties _properties;

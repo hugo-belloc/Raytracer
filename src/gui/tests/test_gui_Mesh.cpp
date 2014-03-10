@@ -17,14 +17,17 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
 #include <string>
+#include <sstream>
 
 #include "FileLoader.hpp"
 #include "WindowContent.hpp"
 #include "WindowView.hpp"
 #include "Mesh.hpp"
+#include "Sphere.hpp"
 #include "PinholeCamera.hpp"
 #include "Program.hpp"
 #include "LightPoint.hpp"
+#include "Material.hpp"
 
 using namespace std;
 using namespace gui;
@@ -33,7 +36,7 @@ using namespace utils;
 using namespace glm;
 using namespace camera;
 using namespace light;
-
+using namespace materials;
 
 inline glm::vec3 torusPoint(double theta, double phi, double R, double r)
 {
@@ -186,41 +189,17 @@ void createCube(Mesh & mesh,const glm::vec3 & center=vec3(0,0,0))
     }
 }
 
-void setUniforms(Program & prog)
-{
-    PinholeCamera cam(vec3(-5, 0,0),vec3(0,0,0),
-     		      vec3(0,0,1),0.01,100.f,512,
-     		      512,45.f);
 
-    mat4 viewMat=cam.getViewMatrice();
-    mat4 modelMat=glm::mat4();
-
-    modelMat=glm::rotate(modelMat,-90.0f,vec3(0,0,1));
-    modelMat=glm::rotate(modelMat,180.0f,vec3(1,0,0));
-    modelMat = translate(modelMat,vec3(0,0,0.2));
-
-    mat4 mvw = viewMat*modelMat;
-						     
-    prog.setUniform("transparency",1.0f);
-    prog.setUniform("modelViewMatrix",mvw);
-    prog.setUniform("projectionMatrix",cam.getPerspectiveMatrice());
-    mat3 normalMatrix= transpose(inverse(mat3(mvw)));
-    prog.setUniform("normalMatrix", normalMatrix);
-
-    LightPoint light(5.f,vec3(-5.0f,0,3),vec3(0.3,1,0.3),0.2f);
-    light.setLightUniforms(prog,"light[0]",viewMat);    
-    LightPoint light2(5.f,vec3(-5.0f,0,-3),vec3(0.3,0.3,1),0.2f);
-    light2.setLightUniforms(prog,"light[1]",viewMat);
-    
-    prog.setUniform("ambient",glm::vec3(0.02,0.01,0.05));
-    prog.setUniform("diffuse",glm::vec3(0.7,0.7,0.7));
-    
-}
 
 class MeshContent : public WindowContent
 {
 public :
-    MeshContent(Mesh * mesh):_prog(),_mesh(mesh)
+    MeshContent(const Mesh * mesh):_prog(),_mesh(mesh),
+				   _cam(vec3(-5, 0,0),vec3(0,0,0),
+					vec3(0,0,1),0.01,100.f,512,
+					512,45.f),
+				   _material(vec3(0.8,0.8,0.8)),
+				   _lights()
     {
 	FileLoader loader;
 	string vertexShaderCode=
@@ -231,15 +210,21 @@ public :
 	size_t labelPosition=fragmentShaderCode.find(labelText);
 	fragmentShaderCode.replace(labelPosition,labelText.size(),"2");
 	_prog.loadFromMemory(vertexShaderCode,
-			    fragmentShaderCode);
+			     fragmentShaderCode);
 
-	_vao=_mesh->computeVao();
+	_lights.push_back(new LightPoint(5.f,vec3(-5.0f,0,3),
+					 vec3(0.3,1,0.3),0.2f));
+	_lights.push_back(new LightPoint(5.f,vec3(-5.0f,0,-3),
+					 vec3(0.3,0.3,1),0.2f));
+
     }
 
     virtual ~MeshContent()
     {
 	glDeleteVertexArrays(1,&_vao);
 	delete _mesh;
+	for(unsigned int i=0;i<_lights.size();++i)
+	    delete _lights[i];
     }
 
     virtual void onTransition()
@@ -247,27 +232,56 @@ public :
 
     virtual void display()
     {
-	//glEnable(GL_CULL_FACE);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-
 	glEnable(GL_DEPTH_TEST);
+
 	glUseProgram(_prog.getId());
-	setUniforms(_prog);	
-	glBindVertexArray(_vao);
-	glDrawElements(GL_TRIANGLES,3*_mesh->getFacesNumber(), GL_UNSIGNED_INT, 0);
-	glBindVertexArray(0);
+	setUniforms();	
+	_mesh->draw();
 	glUseProgram(0);
+
 	glDisable(GL_DEPTH_TEST);
 	glClear(GL_DEPTH_BUFFER_BIT);
-	glDisable(GL_CULL_FACE);
     }
 
 private :
-    utils::Program _prog;
+    void setUniforms()
+    {
+	mat4 viewMat=_cam.getViewMatrice();
+	mat4 modelMat=glm::mat4();
+
+	modelMat=glm::rotate(modelMat,-90.0f,vec3(0,0,1));
+	modelMat=glm::rotate(modelMat,180.0f,vec3(1,0,0));
+	modelMat = translate(modelMat,vec3(0,0,0.2));
+
+	mat4 mvw = viewMat*modelMat;
+						     
+
+	_prog.setUniform("modelViewMatrix",mvw);
+	_prog.setUniform("projectionMatrix",_cam.getPerspectiveMatrice());
+	mat3 normalMatrix= transpose(inverse(mat3(mvw)));
+	_prog.setUniform("normalMatrix", normalMatrix);
+
+	
+	for(unsigned int i=0;i<_lights.size();++i)
+	{
+	    std::ostringstream convert;	    
+	    convert<<i;
+	    std::string lightname="light["+convert.str()+"]";
+	    _lights[i]->setLightUniforms(_prog,lightname,viewMat);  
+	}
+	_material.setMaterialUniforms(_prog);
+    
+    }
+
+    
+    Program _prog;
     GLuint _vao;      
-    scene::Mesh * _mesh;
+    const scene::Mesh * _mesh;
+    PinholeCamera _cam;
+    Material _material;
+    vector<LightPoint *> _lights;
 };
 
 
@@ -283,6 +297,7 @@ int main(int argc,char * argv[])
     WindowModel * model=view.getModel();
     Mesh * mesh=new Mesh;
     std::string input(argv[1]);
+    Sphere sphere(glm::vec3(0,0,0),1.0);
 
     if(input=="cube")
     {
@@ -295,14 +310,16 @@ int main(int argc,char * argv[])
     else if(input=="sphere")
     {
 	createSphere(*mesh,1.0,30);
+	
+	//sphere.updateMesh(30);
+	//model->addContent(new MeshContent(sphere.getMesh()));
+	
     }
     
     else
 	mesh->loadFromOBJFile(argv[1]);
 
-    //unsigned int nbVertexs =  mesh->getVertexsNumber();
-    //unsigned int nbFaces = mesh->getFacesNumber();
-
+    mesh->updateVAO();
     model->addContent(new MeshContent(mesh));
 
     view.beginMainLoop();
