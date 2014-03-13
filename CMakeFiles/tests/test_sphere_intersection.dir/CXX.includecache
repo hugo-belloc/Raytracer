@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/scene/tests/test_sphere_intersection.cpp
+/home/hicham/Desktop/projet/Raytracer/src/scene/tests/test_sphere_intersection.cpp
 iostream
 -
 Ray.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/scene/tests/Ray.hpp
+/home/hicham/Desktop/projet/Raytracer/src/scene/tests/Ray.hpp
 Intersection.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/scene/tests/Intersection.hpp
+/home/hicham/Desktop/projet/Raytracer/src/scene/tests/Intersection.hpp
 Sphere.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/scene/tests/Sphere.hpp
+/home/hicham/Desktop/projet/Raytracer/src/scene/tests/Sphere.hpp
 
 src/glutils/include/utils_glm.hpp
 iostream

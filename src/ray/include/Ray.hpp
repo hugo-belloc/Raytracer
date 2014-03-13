@@ -23,11 +23,12 @@ namespace ray
    class Ray
    {
    public :
-      Ray(const glm::vec3 &origin,const glm::vec3 & direction,float tmin, float tmax);
+      Ray(const glm::vec3 &origin,const glm::vec3 & direction,float tmin, float tmax, int bounces);
       virtual ~Ray();
       glm::vec3 operator()(float t) const;
       Ray & operator=(const Ray & ray);
       int getBounces() const;
+      void setBounces(int);
       void setTmin(float newTmin)const ;
       float getTmin()const;
       void setTmax(float newTmax)const ;

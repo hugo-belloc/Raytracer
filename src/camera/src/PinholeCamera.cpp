@@ -61,7 +61,7 @@ namespace camera
 	glm::vec3 pointCoordinates=getPosition()+getNearPlan()*view+
 	    h*x+v*y;
 	glm::vec3 rayDir=pointCoordinates-getPosition();
-	ray::CameraRay ray(getPosition(),rayDir,getNearPlan(),getFarPlan());
+	ray::CameraRay ray(getPosition(),rayDir,getNearPlan(),getFarPlan(),5);
 	return ray;
     }
     

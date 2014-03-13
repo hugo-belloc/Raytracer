@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/engine/tests/test_engine_RaytracingEngine.cpp
+/home/hicham/Desktop/projet/Raytracer/src/engine/tests/test_engine_RaytracingEngine.cpp
 RaytracingEngine.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/engine/tests/RaytracingEngine.hpp
+/home/hicham/Desktop/projet/Raytracer/src/engine/tests/RaytracingEngine.hpp
 PinholeCamera.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/engine/tests/PinholeCamera.hpp
+/home/hicham/Desktop/projet/Raytracer/src/engine/tests/PinholeCamera.hpp
 Sphere.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/engine/tests/Sphere.hpp
+/home/hicham/Desktop/projet/Raytracer/src/engine/tests/Sphere.hpp
 
 /usr/local/include/SFML/Config.hpp
 
@@ -573,6 +573,8 @@ SFML/Graphics.hpp
 -
 Scene.hpp
 src/engine/include/Scene.hpp
+ShadowRay.hpp
+src/engine/include/ShadowRay.hpp
 
 src/glutils/include/utils_glm.hpp
 iostream
@@ -628,6 +630,22 @@ iostream
 utils_glm.hpp
 src/ray/include/utils_glm.hpp
 
+src/ray/include/ReflexionRay.hpp
+iostream
+-
+utils_glm.hpp
+src/ray/include/utils_glm.hpp
+Ray.hpp
+src/ray/include/Ray.hpp
+
+src/ray/include/ShadowRay.hpp
+iostream
+-
+utils_glm.hpp
+src/ray/include/utils_glm.hpp
+Ray.hpp
+src/ray/include/Ray.hpp
+
 src/scene/include/Intersection.hpp
 utils_glm.hpp
 src/scene/include/utils_glm.hpp
@@ -645,6 +663,8 @@ Shape.hpp
 src/scene/include/Shape.hpp
 
 src/scene/include/Scene.hpp
+iostream
+-
 vector
 -
 iterator
@@ -661,6 +681,10 @@ Object.hpp
 src/scene/include/Object.hpp
 Camera.hpp
 src/scene/include/Camera.hpp
+ShadowRay.hpp
+src/scene/include/ShadowRay.hpp
+ReflexionRay.hpp
+src/scene/include/ReflexionRay.hpp
 
 src/scene/include/Shape.hpp
 utils_glm.hpp

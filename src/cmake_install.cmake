@@ -1,4 +1,4 @@
-# Install script for directory: /home/hicham/Desktop/ensi/s4/projet/Raytracer/src
+# Install script for directory: /home/hicham/Desktop/projet/Raytracer/src
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

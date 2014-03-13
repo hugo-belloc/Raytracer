@@ -75,6 +75,8 @@ CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_R
 CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.o: src/materials/include/MaterialProperties.hpp
 CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.o: src/ray/include/CameraRay.hpp
 CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.o: src/ray/include/Ray.hpp
+CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.o: src/ray/include/ReflexionRay.hpp
+CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.o: src/ray/include/ShadowRay.hpp
 CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.o: src/scene/include/Intersection.hpp
 CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.o: src/scene/include/Object.hpp
 CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.o: src/scene/include/Scene.hpp

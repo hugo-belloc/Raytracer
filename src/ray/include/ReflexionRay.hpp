@@ -24,7 +24,7 @@ namespace ray
    class ReflexionRay : public Ray
    {
    public :
-      ReflexionRay(const glm::vec3 &origin,const glm::vec3 & direction, float tmin, float tmax);
+      ReflexionRay(const glm::vec3 &origin,const glm::vec3 & direction, float tmin, float tmax, int bounces);
       virtual ~ReflexionRay();
       virtual glm::vec3 getColor() const;
    

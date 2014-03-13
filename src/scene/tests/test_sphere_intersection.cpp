@@ -18,7 +18,7 @@ using namespace scene;
 int main()
 {
    Sphere sphere(vec3(-3,0,0),2);
-   Ray ray(vec3(10,1,1),vec3(-1,0,0),100,0);
+   Ray ray(vec3(10,1,1),vec3(-1,0,0),100,0,5);
    sphere.displayTTY();
    ray.displayTTY();
    Intersection inter;

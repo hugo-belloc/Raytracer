@@ -34,6 +34,17 @@ namespace materials
       return _properties.getVectorProperty("color")*coeff;
    }
 
+   float Material::getReflexionAttenuation()
+   {
+      return _properties.getScalarProperty("reflexion");
+   }
+
+   float Material::getTransmissionAttenuation()
+   {
+      return _properties.getScalarProperty("transmission");
+   }
+
+
    void Material::displayTTY()const
    {
       cout<<"Material[";

@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/main/main.cpp
+/home/hicham/Desktop/projet/Raytracer/src/main/main.cpp
 iostream
 -
 WindowView.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/main/WindowView.hpp
+/home/hicham/Desktop/projet/Raytracer/src/main/WindowView.hpp
 
 /usr/local/include/SFML/Config.hpp
 

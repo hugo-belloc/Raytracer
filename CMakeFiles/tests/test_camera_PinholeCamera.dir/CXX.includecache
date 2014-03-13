@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/camera/tests/test_camera_PinholeCamera.cpp
+/home/hicham/Desktop/projet/Raytracer/src/camera/tests/test_camera_PinholeCamera.cpp
 iostream
 -
 utils_glm.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/camera/tests/utils_glm.hpp
+/home/hicham/Desktop/projet/Raytracer/src/camera/tests/utils_glm.hpp
 Ray.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/camera/tests/Ray.hpp
+/home/hicham/Desktop/projet/Raytracer/src/camera/tests/Ray.hpp
 PinholeCamera.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/camera/tests/PinholeCamera.hpp
+/home/hicham/Desktop/projet/Raytracer/src/camera/tests/PinholeCamera.hpp
 Sphere.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/camera/tests/Sphere.hpp
+/home/hicham/Desktop/projet/Raytracer/src/camera/tests/Sphere.hpp
 Intersection.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/camera/tests/Intersection.hpp
+/home/hicham/Desktop/projet/Raytracer/src/camera/tests/Intersection.hpp
 
 src/camera/include/Camera.hpp
 utils_glm.hpp

@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/light/tests/test_light_LightPoint.cpp
+/home/hicham/Desktop/projet/Raytracer/src/light/tests/test_light_LightPoint.cpp
 LightPoint.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/light/tests/LightPoint.hpp
+/home/hicham/Desktop/projet/Raytracer/src/light/tests/LightPoint.hpp
 
 src/glutils/include/utils_glm.hpp
 iostream

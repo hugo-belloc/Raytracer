@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/tests/test_ray_Ray.cpp
+/home/hicham/Desktop/projet/Raytracer/src/ray/tests/test_ray_Ray.cpp
 utils_glm.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/tests/utils_glm.hpp
+/home/hicham/Desktop/projet/Raytracer/src/ray/tests/utils_glm.hpp
 Ray.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/ray/tests/Ray.hpp
+/home/hicham/Desktop/projet/Raytracer/src/ray/tests/Ray.hpp
 
 src/glutils/include/utils_glm.hpp
 iostream

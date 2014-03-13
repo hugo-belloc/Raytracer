@@ -30,8 +30,8 @@ namespace ray
  * @param tmax the maximum value during parametrisation
  * @param tmax the minimum value during parametrisation
  */
-   Ray::Ray(const glm::vec3 & origin ,const glm::vec3 & direction,float tmin, float tmax):
-      _origin(origin),_direction(glm::normalize(direction)), _tmin(tmin),_tmax(tmax),_bounces(1)
+   Ray::Ray(const glm::vec3 & origin ,const glm::vec3 & direction,float tmin, float tmax, int bounces):
+      _origin(origin),_direction(glm::normalize(direction)), _tmin(tmin),_tmax(tmax),_bounces(bounces)
    {}
 
 /**
@@ -71,6 +71,10 @@ namespace ray
    int Ray::getBounces() const
    {
       return _bounces;
+   }
+   void Ray::setBounces(int bounces)
+   {
+      _bounces = bounces;
    }
 
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/test_gui_sfml.cpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/test_gui_sfml.cpp
 iostream
 -
 glm/glm.hpp

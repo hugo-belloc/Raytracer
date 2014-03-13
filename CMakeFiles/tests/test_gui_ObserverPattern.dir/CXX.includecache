@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/test_gui_ObserverPattern.cpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/test_gui_ObserverPattern.cpp
 iostream
 -
 string
 -
 Observer.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/Observer.hpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/Observer.hpp
 Observable.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/Observable.hpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/Observable.hpp
 
 src/gui/include/Observable.hpp
 Observer.hpp

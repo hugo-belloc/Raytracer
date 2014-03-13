@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/test_gui_WindowModel.cpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/test_gui_WindowModel.cpp
 iostream
 -
 string
 -
 WindowContent.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/WindowContent.hpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/WindowContent.hpp
 WindowModel.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/WindowModel.hpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/WindowModel.hpp
 
 src/gui/include/WindowContent.hpp
 

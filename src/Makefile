@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hicham/Desktop/ensi/s4/projet/Raytracer
+CMAKE_SOURCE_DIR = /home/hicham/Desktop/projet/Raytracer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hicham/Desktop/ensi/s4/projet/Raytracer
+CMAKE_BINARY_DIR = /home/hicham/Desktop/projet/Raytracer
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,14 +69,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/hicham/Desktop/ensi/s4/projet/Raytracer && $(CMAKE_COMMAND) -E cmake_progress_start /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/CMakeFiles/progress.marks
-	cd /home/hicham/Desktop/ensi/s4/projet/Raytracer && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles 0
+	cd /home/hicham/Desktop/projet/Raytracer && $(CMAKE_COMMAND) -E cmake_progress_start /home/hicham/Desktop/projet/Raytracer/CMakeFiles /home/hicham/Desktop/projet/Raytracer/src/CMakeFiles/progress.marks
+	cd /home/hicham/Desktop/projet/Raytracer && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hicham/Desktop/projet/Raytracer/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/hicham/Desktop/ensi/s4/projet/Raytracer && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/hicham/Desktop/projet/Raytracer && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -85,17 +85,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/hicham/Desktop/ensi/s4/projet/Raytracer && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/hicham/Desktop/projet/Raytracer && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/hicham/Desktop/ensi/s4/projet/Raytracer && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/hicham/Desktop/projet/Raytracer && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/hicham/Desktop/ensi/s4/projet/Raytracer && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/hicham/Desktop/projet/Raytracer && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -117,6 +117,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/hicham/Desktop/ensi/s4/projet/Raytracer && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/hicham/Desktop/projet/Raytracer && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

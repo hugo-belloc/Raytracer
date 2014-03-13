@@ -4,13 +4,13 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/engine/tests/test_engine_RaytracingEngine.cpp" "/home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.o"
+  "/home/hicham/Desktop/projet/Raytracer/src/engine/tests/test_engine_RaytracingEngine.cpp" "/home/hicham/Desktop/projet/Raytracer/CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles/raytracer_src_lib.dir/DependInfo.cmake"
+  "/home/hicham/Desktop/projet/Raytracer/CMakeFiles/raytracer_src_lib.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
@@ -19,15 +19,15 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/home/hicham/local_install/include"
   "."
   "src/geometry/include"
-  "src/scene/include"
+  "src/engine/include"
+  "src/ray/include"
+  "src/materials/include"
   "src/math/include"
   "src/light/include"
-  "src/glutils/include"
-  "src/ray/include"
-  "src/engine/include"
   "src/camera/include"
-  "src/materials/include"
   "src/gui/include"
+  "src/scene/include"
+  "src/glutils/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

@@ -15,6 +15,7 @@
 #ifndef _SCENE_HEADER_H
 #define _SCENE_HEADER_H
 
+#include <iostream>
 #include <vector>
 #include <iterator>
 #include "utils_glm.hpp"
@@ -23,6 +24,8 @@
 #include "LightPoint.hpp"
 #include "Object.hpp"
 #include "Camera.hpp"
+#include "ShadowRay.hpp"
+#include "ReflexionRay.hpp"
 
 namespace scene
 {
@@ -35,11 +38,12 @@ namespace scene
       ~Scene();
       void addObject(scene::Object * object);
       void addLightPoint(light::LightPoint * lightPoint);
-      bool intersect(const ray::Ray & ray,
-		     scene::Intersection & intersection);
+      bool intersect(const ray::Ray & ray, scene::Intersection & intersection);
       camera::Camera *getCamera();
       iterator_light  begin();
       iterator_light  end();
+
+      glm::vec3 getColor(const ray::Ray &);
 
    private :
       camera::Camera *_camera;

@@ -24,7 +24,7 @@ namespace ray
    class ShadowRay : public Ray
    {
    public :
-      ShadowRay(const glm::vec3 &origin,const glm::vec3 & direction, float tmin, float tmax);
+      ShadowRay(const glm::vec3 &origin,const glm::vec3 & direction, float tmin, float tmax, int bounces);
       virtual ~ShadowRay();
       virtual glm::vec3 getColor() const;
    };

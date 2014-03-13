@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/test_gui_WindowContent.cpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/test_gui_WindowContent.cpp
 iostream
 -
 TriangleContent.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/TriangleContent.hpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/TriangleContent.hpp
 ImageContent.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/ImageContent.hpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/ImageContent.hpp
 WindowModel.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/WindowModel.hpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/WindowModel.hpp
 WindowView.hpp
-/home/hicham/Desktop/ensi/s4/projet/Raytracer/src/gui/tests/WindowView.hpp
+/home/hicham/Desktop/projet/Raytracer/src/gui/tests/WindowView.hpp
 
 /usr/local/include/SFML/Config.hpp
 

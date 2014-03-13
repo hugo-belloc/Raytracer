@@ -17,6 +17,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Scene.hpp"
+#include "ShadowRay.hpp"
 
 namespace engine
 {

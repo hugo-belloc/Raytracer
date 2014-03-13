@@ -29,6 +29,10 @@ namespace materials
       Material(const glm::vec3 & color,float reflexion,float transmission);
       glm::vec3 computeBRDF(const ray::Ray &shadowRay,
 			    const glm::vec3 & normal)const;
+
+      float getReflexionAttenuation();
+      float getTransmissionAttenuation();
+      
       void displayTTY()const;
 
    private :

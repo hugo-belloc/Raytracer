@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hicham/Desktop/ensi/s4/projet/Raytracer
+CMAKE_SOURCE_DIR = /home/hicham/Desktop/projet/Raytracer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hicham/Desktop/ensi/s4/projet/Raytracer
+CMAKE_BINARY_DIR = /home/hicham/Desktop/projet/Raytracer
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tests/test_math_quadratic.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/tests/test_math_quadratic.dir/flags.make
 
 CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.o: CMakeFiles/tests/test_math_quadratic.dir/flags.make
 CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.o: src/math/tests/test_math_quadratic.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.o -c /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/math/tests/test_math_quadratic.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.o -c /home/hicham/Desktop/projet/Raytracer/src/math/tests/test_math_quadratic.cpp
 
 CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/math/tests/test_math_quadratic.cpp > CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/hicham/Desktop/projet/Raytracer/src/math/tests/test_math_quadratic.cpp > CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.i
 
 CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/hicham/Desktop/ensi/s4/projet/Raytracer/src/math/tests/test_math_quadratic.cpp -o CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/hicham/Desktop/projet/Raytracer/src/math/tests/test_math_quadratic.cpp -o CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.s
 
 CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.o.requires:
 .PHONY : CMakeFiles/tests/test_math_quadratic.dir/src/math/tests/test_math_quadratic.cpp.o.requires
@@ -107,6 +107,6 @@ CMakeFiles/tests/test_math_quadratic.dir/clean:
 .PHONY : CMakeFiles/tests/test_math_quadratic.dir/clean
 
 CMakeFiles/tests/test_math_quadratic.dir/depend:
-	cd /home/hicham/Desktop/ensi/s4/projet/Raytracer && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hicham/Desktop/ensi/s4/projet/Raytracer /home/hicham/Desktop/ensi/s4/projet/Raytracer /home/hicham/Desktop/ensi/s4/projet/Raytracer /home/hicham/Desktop/ensi/s4/projet/Raytracer /home/hicham/Desktop/ensi/s4/projet/Raytracer/CMakeFiles/tests/test_math_quadratic.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hicham/Desktop/projet/Raytracer && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hicham/Desktop/projet/Raytracer /home/hicham/Desktop/projet/Raytracer /home/hicham/Desktop/projet/Raytracer /home/hicham/Desktop/projet/Raytracer /home/hicham/Desktop/projet/Raytracer/CMakeFiles/tests/test_math_quadratic.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests/test_math_quadratic.dir/depend
 
