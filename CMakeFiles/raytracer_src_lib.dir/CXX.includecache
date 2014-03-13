@@ -86,6 +86,14 @@ src/ray/include/utils_glm.hpp
 Ray.hpp
 src/ray/include/Ray.hpp
 
+src/ray/include/TransmissionRay.hpp
+iostream
+-
+utils_glm.hpp
+src/ray/include/utils_glm.hpp
+Ray.hpp
+src/ray/include/Ray.hpp
+
 src/scene/include/Intersection.hpp
 utils_glm.hpp
 src/scene/include/utils_glm.hpp
@@ -125,6 +133,8 @@ ShadowRay.hpp
 src/scene/include/ShadowRay.hpp
 ReflexionRay.hpp
 src/scene/include/ReflexionRay.hpp
+TransmissionRay.hpp
+src/scene/include/TransmissionRay.hpp
 
 src/scene/include/Shape.hpp
 utils_glm.hpp

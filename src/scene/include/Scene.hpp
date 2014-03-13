@@ -26,6 +26,7 @@
 #include "Camera.hpp"
 #include "ShadowRay.hpp"
 #include "ReflexionRay.hpp"
+#include "TransmissionRay.hpp"
 
 namespace scene
 {

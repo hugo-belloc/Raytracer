@@ -1,5 +1,6 @@
 /**
  * @author Hugo Belloc <hugo.belloc@ecole.ensicaen.fr> 
+ * @author Hicham Benjelloun <hicham.benjelloun@ecole.ensicaen.fr> 
  * @date Sun Feb  9 2014
  * 
  */
@@ -100,7 +101,7 @@ namespace scene
 		it!=end();++it)
 	       {
 		  glm::vec3 direction=(*it)->getPosition()-pointHit;
-		  ray::ShadowRay shadowRay(pointHit,direction,0.1,
+		  ray::ShadowRay shadowRay(pointHit,direction,0.001,
 					   getCamera()->getFarPlan(),1);
 		  scene::Intersection dummyInter;
 		  if(!intersect(shadowRay,dummyInter))
@@ -116,18 +117,22 @@ namespace scene
 
 	    // Part 2 : Other rays
 	    // 2 steps : computing ray direction then getting color recursively
-
 	    if(currentRay.getBounces() > 0) // Test number of bounces remaining
 	       {
 		  // Reflexion ray
 		  glm::vec3 reflectedDirection = incident-2*glm::dot(incident,normalHit)*normalHit;
-		  ray::ReflexionRay reflexionRay(pointHit,reflectedDirection,0.1,getCamera()->getFarPlan(),currentRay.getBounces()-1);
-		  glm::vec3 reflectedColor = getColor(reflexionRay);
-		  color+=materialHit->getReflexionAttenuation()*reflectedColor;
-
+		  ray::ReflexionRay reflexionRay(pointHit,reflectedDirection,0.001,getCamera()->getFarPlan(),currentRay.getBounces()-1);
+		  color+=materialHit->getReflexionAttenuation()*getColor(reflexionRay);
 		  // Transmission ray
+		  glm::vec3 dummyVec = -incident+glm::dot(incident,normalHit)*normalHit;
+		  float sinT1 = glm::dot(dummyVec,dummyVec);
+		  float eta12 = materialHit->getTransmissionAttenuation();
+		  glm::vec3 dV1 = eta12 * incident;
+		  float dF1 = (eta12 * glm::dot(incident,normalHit) - sqrt(1-eta12*eta12*sinT1*sinT1) ); 
+		  glm::vec3 transmittedDirection = dV1 - dF1 * normalHit;  
+		  ray::TransmissionRay transmittedRay(pointHit,transmittedDirection,0.001,getCamera()->getFarPlan(),currentRay.getBounces()-1);
+		  color+=materialHit->getTransmissionAttenuation()*getColor(transmittedRay);
 	       }
-
 	 }
 
       return color;

@@ -91,6 +91,7 @@ CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/ray/
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/ray/include/Ray.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/ray/include/ReflexionRay.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/ray/include/ShadowRay.hpp
+CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/ray/include/TransmissionRay.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/scene/include/Intersection.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/scene/include/Object.hpp
 CMakeFiles/raytracer_src_lib.dir/src/engine/src/RaytracingEngine.cpp.o: src/scene/include/Scene.hpp
@@ -638,6 +639,7 @@ CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/ray/include/Came
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/ray/include/Ray.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/ray/include/ReflexionRay.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/ray/include/ShadowRay.hpp
+CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/ray/include/TransmissionRay.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/scene/include/Intersection.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/scene/include/Object.hpp
 CMakeFiles/raytracer_src_lib.dir/src/scene/src/Scene.cpp.o: src/scene/include/Scene.hpp

@@ -39,6 +39,7 @@ namespace engine
 	    for(unsigned int j=0;j<height;++j)
 	       {
 		  ray::Ray initialRay=camera->generateRay(i,j);
+		  initialRay.setBounces(10);
 		  glm::vec3 color(0,0,0);
 
 		  color+=scene.getColor(initialRay);
