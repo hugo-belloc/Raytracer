@@ -15,6 +15,7 @@
 #include "RaytracingEngine.hpp"
 #include "PinholeCamera.hpp"
 #include "Sphere.hpp"
+#include "WindowView.hpp"
 using namespace std;
 using namespace glm;
 using namespace scene;
@@ -22,6 +23,9 @@ using namespace camera;
 using namespace engine;
 using namespace materials;
 using namespace light;
+using namespace utils;
+using namespace gui;
+
 #include <cmath>
 
 #define WIDTH 1024
@@ -30,27 +34,30 @@ using namespace light;
 #define X_SPHERES -0.5
 #define PI 3.14159265
 
+
+
 int main()
 {
+    gui::WindowView view(WIDTH,HEIGHT);
     sf::Image img;
     RaytracingEngine engine(&img);
     img.create(WIDTH,HEIGHT,sf::Color(0,0,0));
     PinholeCamera *cam=new PinholeCamera(vec3(-5,0,0),vec3(0,0,0),
-					 vec3(0,1,0),0.001,1000.f,WIDTH,
-					 HEIGHT,45.f);
+    					 vec3(0,1,0),0.001,1000.f,WIDTH,
+    					 HEIGHT,45.f);
    
     Scene scene(cam);
 
     for(int i=0;i<NUMBER_SPHERES;++i)
     {
-	float angle=(2*PI*i)/NUMBER_SPHERES;
-	Sphere *sphere=new Sphere(vec3(X_SPHERES,cos(angle),
-				       sin(angle)),0.35);
-	Material *material=new Material(vec3(0,
-					     fabs(cos(angle/2)),
-					     fabs(sin(angle/2))));
+    	float angle=(2*PI*i)/NUMBER_SPHERES;
+    	Sphere *sphere=new Sphere(vec3(X_SPHERES,sin(angle),
+    				       cos(angle)),0.35);
+    	Material *material=new Material(vec3(0,
+    					     fabs(cos(angle/2)),
+    					     fabs(sin(angle/2))));
         Object *object=new Object(sphere,material);
-	scene.addObject(object);
+    	scene.addObject(object);
     }
    
     LightPoint *light=new LightPoint(40,vec3(-6,-5,0),vec3(1,1,1),1.0);

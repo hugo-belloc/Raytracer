@@ -7,8 +7,7 @@
 /**
  * @file RaytracingEngine.hpp
  *  
- * Description of the program objectives.
- * All necessary references.
+ *
  */
 
 
@@ -18,6 +17,10 @@
 #include <SFML/Graphics.hpp>
 #include "Scene.hpp"
 
+/**
+ * Define the differents render engine.
+ * Rasterisation and Raytracing.
+ */
 namespace engine
 {
    class RaytracingEngine

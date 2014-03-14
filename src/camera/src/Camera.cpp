@@ -24,7 +24,7 @@ namespace camera
       _position(position),_target(target),_up(up),
       _nearPlan(nearPlan),_farPlan(farPlan),
       _width(width),_height(height)
-   { }
+   {}
 
    Camera::~Camera()
    {}
@@ -89,7 +89,7 @@ namespace camera
       return _farPlan;
    }
 
-//
+
    void Camera::setHeight(unsigned int height)
    {
       _height=height;

@@ -42,9 +42,9 @@ namespace light
 	void setColor(const glm::vec3 & color);
 	float getFallOff()const;
 	void setFallOff(float fallOff);
-	void setLightUniforms(utils::Program & prog,
-			       const std::string & uniformName,
-			       const glm::mat4 & matViewWorld) const;
+	void setUniforms(const utils::Program & prog,
+			 const std::string & uniformName,
+			 const glm::mat4 & matViewWorld) const;
 	void displayTTY() const;
 
     private :

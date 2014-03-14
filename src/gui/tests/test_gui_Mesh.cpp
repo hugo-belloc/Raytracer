@@ -28,6 +28,7 @@
 #include "Program.hpp"
 #include "LightPoint.hpp"
 #include "Material.hpp"
+#include "Object.hpp"
 
 using namespace std;
 using namespace gui;
@@ -191,21 +192,20 @@ void createCube(Mesh & mesh,const glm::vec3 & center=vec3(0,0,0))
 
 
 
-class MeshContent : public WindowContent
+class ObjectContent : public WindowContent
 {
 public :
-    MeshContent(const Mesh * mesh):_prog(),_mesh(mesh),
+    ObjectContent(Object * object):_prog(),_object(object),
 				   _cam(vec3(-5, 0,0),vec3(0,0,0),
 					vec3(0,0,1),0.01,100.f,512,
-					512,45.f),
-				   _material(vec3(0.8,0.8,0.8)),
+					512,45.f),		   
 				   _lights()
     {
 	FileLoader loader;
 	string vertexShaderCode=
-	    loader.loadTextFile("etc/diffuseShader.vert");
+	    loader.loadTextFile("etc/shader.vert");
 	string fragmentShaderCode=
-	    loader.loadTextFile("etc/diffuseShader.frag");
+	    loader.loadTextFile("etc/shader.frag");
 	string labelText="___LIGHTS_NUMBER___";
 	size_t labelPosition=fragmentShaderCode.find(labelText);
 	fragmentShaderCode.replace(labelPosition,labelText.size(),"2");
@@ -219,10 +219,10 @@ public :
 
     }
 
-    virtual ~MeshContent()
+    virtual ~ObjectContent()
     {
 	glDeleteVertexArrays(1,&_vao);
-	delete _mesh;
+	delete _object;
 	for(unsigned int i=0;i<_lights.size();++i)
 	    delete _lights[i];
     }
@@ -238,7 +238,7 @@ public :
 
 	glUseProgram(_prog.getId());
 	setUniforms();	
-	_mesh->draw();
+	_object->draw();
 	glUseProgram(0);
 
 	glDisable(GL_DEPTH_TEST);
@@ -249,14 +249,12 @@ private :
     void setUniforms()
     {
 	mat4 viewMat=_cam.getViewMatrice();
-	mat4 modelMat=glm::mat4();
 
-	modelMat=glm::rotate(modelMat,-90.0f,vec3(0,0,1));
-	modelMat=glm::rotate(modelMat,180.0f,vec3(1,0,0));
-	modelMat = translate(modelMat,vec3(0,0,0.2));
+	// modelMat=glm::rotate(modelMat,-90.0f,vec3(0,0,1));
+	// modelMat=glm::rotate(modelMat,180.0f,vec3(1,0,0));
+	// modelMat = translate(modelMat,vec3(0,0,0.2));
 
-	mat4 mvw = viewMat*modelMat;
-						     
+	mat4 mvw = viewMat*_object->getModelMatrix();		     
 
 	_prog.setUniform("modelViewMatrix",mvw);
 	_prog.setUniform("projectionMatrix",_cam.getPerspectiveMatrice());
@@ -269,18 +267,17 @@ private :
 	    std::ostringstream convert;	    
 	    convert<<i;
 	    std::string lightname="light["+convert.str()+"]";
-	    _lights[i]->setLightUniforms(_prog,lightname,viewMat);  
+	    _lights[i]->setUniforms(_prog,lightname,viewMat);  
 	}
-	_material.setMaterialUniforms(_prog);
+	_object->setUniforms(_prog);
     
     }
 
     
     Program _prog;
+    Object * _object;
     GLuint _vao;      
-    const scene::Mesh * _mesh;
     PinholeCamera _cam;
-    Material _material;
     vector<LightPoint *> _lights;
 };
 
@@ -292,35 +289,38 @@ int main(int argc,char * argv[])
 	cerr<<"Bad number of argument"<<endl;
 	return -1;
     }
-    
+
     WindowView view(512,512);
     WindowModel * model=view.getModel();
-    Mesh * mesh=new Mesh;
-    std::string input(argv[1]);
-    Sphere sphere(glm::vec3(0,0,0),1.0);
-
-    if(input=="cube")
-    {
-	createCube(*mesh);
-    }
-    else if(input=="torus")
-    {
-	createTorus(*mesh,0.75,0.25,30);
-    }
-    else if(input=="sphere")
-    {
-	createSphere(*mesh,1.0,30);
-	
-	//sphere.updateMesh(30);
-	//model->addContent(new MeshContent(sphere.getMesh()));
-	
-    }
     
+    Shape * shape;
+    std::string input(argv[1]);
+    
+    if(input=="sphere")
+    {
+	shape = new Sphere(glm::vec3(0,0,0),1.0);
+    }
     else
-	mesh->loadFromOBJFile(argv[1]);
-
-    mesh->updateVAO();
-    model->addContent(new MeshContent(mesh));
+    {
+	Mesh * mesh=new Mesh;
+	
+	if(input=="cube")
+	{	
+	    createCube(*mesh);	    
+	}
+	else if(input=="torus")
+	{
+	    createTorus(*mesh,0.75,0.25,30);
+	}    
+	else
+	{
+	    mesh->loadFromOBJFile(argv[1]);
+	}
+	shape=mesh;
+    }
+    Object* object = new Object(shape,new Material(vec3(0.8,0.8,0.8)),
+				vec3(0,0,0),vec3(180,0,90));
+    model->addContent(new ObjectContent(object));
 
     view.beginMainLoop();
     return 0;

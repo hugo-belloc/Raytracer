@@ -45,8 +45,8 @@ namespace engine
 	       glm::vec3 normalHit=inter.getNormal();
 	       materials::Material * materialHit=inter.getMaterial();	       
 	       //for each light
-	       for(scene::Scene::iterator_light it=scene.begin();
-		   it!=scene.end();++it)
+	       for(scene::Scene::iterator_light it=scene.begin_light();
+		   it!=scene.end_light();++it)
 	       {
 		 
 		  glm::vec3 direction=(*it)->getPosition()-pointHit;

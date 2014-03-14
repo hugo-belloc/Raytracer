@@ -516,6 +516,7 @@ not a quad nor a triangle");
     void Mesh::updateMesh(unsigned int resolution)
     {
 	//Do nothing since the mesh it itself...
+	updateVAO();
     }
 
     const Mesh * Mesh::getMesh() const

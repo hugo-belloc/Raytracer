@@ -23,21 +23,54 @@
 
 namespace scene
 {
-   class Object
-   {
-   public :
-      Object(scene::Shape * shape,
-	    materials::Material * material);
-      ~Object();
-      bool intersect(const ray::Ray & ray,
-		     Intersection & intersection)const;
-      materials::Material * getMaterial()const;
-      
-      void diplayTTY()const;
+    /**
+     * An Object is a Shape to be displayed, a Material
+     * to configure it visual aspect, and some transformation
+     * properties (location,rotation,scale).
+     */
+    class Object
+    {
+    public :
+	/**
+	 * The default resolution used to converts
+	 * the Shapes in the object into Meshs.
+	 * Default is 20.
+	 */
+	static unsigned int defaultResolution;
 
-   private :
-      scene::Shape * _shape;
-      materials::Material * _material;
-   };
+	Object(scene::Shape * shape,
+	       materials::Material * material,
+	       const glm::vec3 & location=glm::vec3(0,0,0),
+	       const glm::vec3 & rotation=glm::vec3(0,0,0),
+	       const glm::vec3 & scale=glm::vec3(1,1,1));
+	~Object();
+	bool intersect(const ray::Ray & ray,
+		       Intersection & intersection)const;
+	materials::Material * getMaterial()const;      
+	void diplayTTY()const;
+
+	glm::vec3 getLocation() const;
+	glm::vec3 getRotation() const;
+	glm::vec3 getScale() const;
+	void setLocation(const glm::vec3 & location);
+	void setRotation(const glm::vec3 & rotation);
+	void setScale(const glm::vec3 & scale);
+	
+	glm::mat4 getModelMatrix()const;
+	
+	void updateMesh(unsigned int resolution);
+	void updateMesh();
+
+	void setUniforms(const utils::Program & prog) const;
+	void draw()const;
+	
+
+    private :
+	scene::Shape * _shape;
+	materials::Material * _material;
+	glm::vec3 _location;
+	glm::vec3 _rotation;
+	glm::vec3 _scale;
+    };
 }
 #endif

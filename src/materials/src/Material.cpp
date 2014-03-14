@@ -41,7 +41,7 @@ namespace materials
      * Set the uniform ambient,diffuse and tranparency uniforms
      * in a given program.
      */
-    void Material::setMaterialUniforms(utils::Program & prog)const
+    void Material::setUniforms(const utils::Program & prog)const
     {
 	prog.setUniform("ambient",
 			_properties.getVectorProperty("ambient"));

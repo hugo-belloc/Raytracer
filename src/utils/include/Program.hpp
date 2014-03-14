@@ -29,7 +29,7 @@ namespace utils
     {
     public :
 	Program();
-	explicit Program(const Program & otherProg);
+	Program(const Program & otherProg);
 	~Program();
 	GLuint getId() const;
 	bool isEmpty() const;
@@ -40,18 +40,21 @@ namespace utils
 	void loadFromMemory(const std::string & vertexShaderCode,
 			    const std::string &  fragmentShaderCode);
 
-	void setUniform(const std::string & name, GLint val);
-	void setUniform(const std::string & name, GLfloat val);
-	void setUniform(const std::string & name, const glm::vec3 & val);
-	void setUniform(const std::string & name, const glm::vec4 & val);
-	void setUniform(const std::string & name, const glm::mat3 & val,bool transpose=false);
-	void setUniform(const std::string & name, const glm::mat4 & val,bool transpose=false);
+	void setUniform(const std::string & name, GLint val) const;
+	void setUniform(const std::string & name, GLfloat val) const;
+	void setUniform(const std::string & name, const glm::vec3 & val) const;
+	void setUniform(const std::string & name, const glm::vec4 & val) const;
+	void setUniform(const std::string & name, const glm::mat3 & val,
+			bool transpose=false) const;
+	void setUniform(const std::string & name, const glm::mat4 & val,
+			bool transpose=false) const;
 
 	GLint getAttributeLocation(const std::string & name)const;
 	GLint getUniformLocation(const std::string & name)const;
 
     private :	
 	bool warnIfEmpty(const std::string & warning)const;
+
 	GLuint _progId;
 	bool _empty;
     };

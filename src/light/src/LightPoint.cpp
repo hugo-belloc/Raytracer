@@ -86,9 +86,9 @@ namespace light
      * to configure
      * @param matViewWorld : the model view matrice 
      */
-    void LightPoint::setLightUniforms(utils::Program & prog,
-			   const std::string & uniformName,
-			   const glm::mat4 & matViewWorld) const
+    void LightPoint::setUniforms(const utils::Program & prog,
+				 const std::string & uniformName,
+				 const glm::mat4 & matViewWorld) const
     {
 	prog.setUniform(uniformName+".power",_power);
 	glm::vec4 lightPosition=matViewWorld*glm::vec4(_position,1.0);

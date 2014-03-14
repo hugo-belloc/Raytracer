@@ -5,8 +5,8 @@
  */
 
 #include <vector>
-
 #include "FileLoader.hpp"
+
 #include "Program.hpp"
 
 using namespace std;
@@ -19,8 +19,9 @@ namespace utils
  * allocate the memory in the GPU. The program
  * must be loaded before being usable.
  */
-    Program::Program():_progId(glCreateProgram()),_empty(true)
-    {}
+    Program::Program():_progId(0),_empty(true)
+    {
+    }
 
 /**
  * Destructor : desallocate the memeory in the
@@ -28,7 +29,10 @@ namespace utils
  */
     Program::~Program()
     {
-	glDeleteProgram(_progId);
+	if(!_empty)
+	{	
+	    glDeleteProgram(_progId);
+	}
     }
 
 /**
@@ -58,7 +62,6 @@ namespace utils
     void Program::clear()
     {
 	glDeleteProgram(_progId);
-	_progId=glCreateProgram();
 	_empty=true;
     }
 
@@ -86,7 +89,7 @@ namespace utils
     void Program::loadFromMemory(const std::string & vertexShaderCode,
 				 const std::string &  fragmentShaderCode)
     {
-   
+	cout<<"Create the shaders"<<endl;
 	GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 	GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 	GLint Result = GL_FALSE;
@@ -116,7 +119,9 @@ namespace utils
 	glGetShaderInfoLog(FragmentShaderID, InfoLogLength, NULL, &FragmentShaderErrorMessage[0]);
 	cerr<<&FragmentShaderErrorMessage[0];
  
-	// Link the program   
+	// Link the program 
+	cout<<"Create the program"<<endl;
+	_progId= glCreateProgram();
 	glAttachShader(_progId, VertexShaderID);
 	glAttachShader(_progId, FragmentShaderID);
 	glLinkProgram(_progId);
@@ -140,7 +145,7 @@ namespace utils
      * @param name the name of the attribute
      * @param value the value of the attribute
      */ 
-    void Program::setUniform(const std::string & name, GLint val)
+    void Program::setUniform(const std::string & name, GLint val) const
     {
 	GLint location=getUniformLocation(name);
 	glUniform1i(location, val); 
@@ -149,9 +154,9 @@ namespace utils
     /**
      * Set a uniform float attribute in the Program
      * @param name the name of the attribute
-     * @param value the value of the attribute
+     * @param val the value of the attribute
      */ 
-    void Program::setUniform(const std::string & name, GLfloat val)
+    void Program::setUniform(const std::string & name, GLfloat val) const
     {
 	GLint location=getUniformLocation(name);
 	glUniform1f(location, val); 
@@ -160,9 +165,9 @@ namespace utils
     /**
      * Set a uniform vec3 attribute in the Program
      * @param name the name of the attribute
-     * @param value the value of the attribute
+     * @param val the value of the attribute
      */ 
-    void Program::setUniform(const std::string & name, const glm::vec3 & val)
+    void Program::setUniform(const std::string & name, const glm::vec3 & val) const
     {     
 	GLint location=getUniformLocation(name);
 	glUniform3fv(location, 1, glm::value_ptr(val));
@@ -171,11 +176,11 @@ namespace utils
     /**
      * Set a uniform vec4 attribute in the Program
      * @param name the name of the attribute
-     * @param value the value of the attribute
+     * @param val the value of the attribute
      * @param transpose if the matrice should be transpose before setting
      * it as a uniform
      */ 
-    void Program::setUniform(const std::string & name, const glm::vec4 & val)
+    void Program::setUniform(const std::string & name, const glm::vec4 & val) const
     {
 	GLint location=getUniformLocation(name);
 	glUniform4fv(location, 1, glm::value_ptr(val));
@@ -184,9 +189,10 @@ namespace utils
     /**
      * Set a uniform mat3 attribute in the Program
      * @param name the name of the attribute
-     * @param value the value of the attribute
+     * @param val the value of the attribute
      */ 
-    void Program::setUniform(const std::string & name, const glm::mat3 & val,bool transpose)
+    void Program::setUniform(const std::string & name, const glm::mat3 & val,
+			     bool transpose) const
     {
 	GLint location=getUniformLocation(name);
 	glUniformMatrix3fv(location, 1, transpose, glm::value_ptr(val));
@@ -195,9 +201,10 @@ namespace utils
     /**
      * Set a uniform mat4 attribute in the Program
      * @param name the name of the attribute
-     * @param value the value of the attribute
+     * @param val the value of the attribute
      */ 
-    void Program::setUniform(const std::string & name, const glm::mat4 & val,bool transpose)
+    void Program::setUniform(const std::string & name, const glm::mat4 & val,
+			     bool transpose) const
     {
 	GLint location=getUniformLocation(name);
 	glUniformMatrix4fv(location, 1, transpose, glm::value_ptr(val));

@@ -7,8 +7,7 @@
 /**
  * @file Material.hpp
  *  
- * Description of the program objectives.
- * All necessary references.
+ * Declaration of the Material class.
  */
 
 
@@ -31,7 +30,7 @@ namespace materials
       glm::vec3 computeBRDF(const ray::Ray &shadowRay,
 			    const glm::vec3 & normal)const;
       void displayTTY()const;
-      void setMaterialUniforms(utils::Program & prog)const;
+      void setUniforms(const utils::Program & prog)const;
        
 
    private :
