@@ -506,14 +506,14 @@ not a quad nor a triangle");
 
     }
 
-    bool Mesh::intersect(const ray::Ray & ray,
-			 Intersection & intersection)const
+    bool Mesh::intersect(const ray::Ray &,
+			 Intersection & )const
     {
 	//TODO
 	return false;
     }
 
-    void Mesh::updateMesh(unsigned int resolution)
+    void Mesh::updateMesh(unsigned int)
     {
 	//Do nothing since the mesh it itself...
 	updateVAO();

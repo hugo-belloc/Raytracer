@@ -16,6 +16,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Scene.hpp"
+#include "ShadowRay.hpp"
 
 /**
  * Define the differents render engine.
@@ -23,16 +24,16 @@
  */
 namespace engine
 {
-   class RaytracingEngine
-   {
-   public :
-      RaytracingEngine(sf::Image *image);
-      virtual ~RaytracingEngine();
-      void raytrace(scene::Scene &scene);
-      sf::Image * getImage()const;
-      void setImage(sf::Image * image);
-   private :
-      sf::Image * _image;
-   };
+    class RaytracingEngine
+    {
+    public :
+	RaytracingEngine(sf::Image *image);
+	virtual ~RaytracingEngine();
+	void raytrace(scene::Scene &scene,unsigned int bounces=3);
+	sf::Image * getImage()const;
+	void setImage(sf::Image * image);
+    private :
+	sf::Image * _image;
+    };
 }
 #endif

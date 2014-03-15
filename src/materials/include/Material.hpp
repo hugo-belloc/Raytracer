@@ -23,19 +23,30 @@
 
 namespace materials
 {
-   class Material
-   {
-   public :
-      Material(const glm::vec3 & color);
-      glm::vec3 computeBRDF(const ray::Ray &shadowRay,
-			    const glm::vec3 & normal)const;
-      void displayTTY()const;
-      void setUniforms(const utils::Program & prog)const;
-       
+    class Material
+    {
+    public :
+	Material(const glm::vec3 & color,
+		 float reflexion=0.0,float transmission=0.0,
+		 float mri=1.0);
+	glm::vec3 computeBRDF(const ray::Ray &shadowRay,
+			      const glm::vec3 & normal)const;
 
-   private :
-      MaterialProperties _properties;
-   };
+	float getReflexionAttenuation()const;
+	void setReflexionAttenuation(float reflexion);
+
+	float getTransmissionAttenuation()const;
+	void setTransmissionAttenuation(float transmission);
+
+	float getMRI()const;
+	void setMRI(float mri);
+       
+	void displayTTY()const;
+	void setUniforms(const utils::Program & prog)const;
+
+    private :
+	MaterialProperties _properties;
+    };
 }
 
 #endif

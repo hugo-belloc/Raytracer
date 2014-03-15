@@ -1,5 +1,6 @@
 /**
  * @author Hugo Belloc <hugo.belloc@ecole.ensicaen.fr> 
+ * @author Hicham Benjelloun <hicham.benjelloun@ecole.ensicaen.fr>
  * @date Mon Feb 10 2014
  * 
  */
@@ -23,7 +24,7 @@ namespace engine
    RaytracingEngine::~RaytracingEngine()
    {}
 
-   void RaytracingEngine::raytrace(scene::Scene & scene)
+    void RaytracingEngine::raytrace(scene::Scene & scene,unsigned int bounces)
    {
       unsigned int width=_image->getSize().x;
       unsigned int height=_image->getSize().y;
@@ -31,53 +32,25 @@ namespace engine
       camera->setWidth(width);
       camera->setHeight(height);
 
+      
       //for each pixel
       for(unsigned int i=0;i<width;++i)
-      {
-	 for(unsigned int j=0;j<height;++j)
 	 {
-	    ray::Ray currentRay=camera->generateRay(i,j);
-	    scene::Intersection inter;
-	    if(scene.intersect(currentRay,inter))
-	    {
-	       glm::vec3 color(0,0,0);
-	       glm::vec3 pointHit=inter.getPoint();
-	       glm::vec3 normalHit=inter.getNormal();
-	       materials::Material * materialHit=inter.getMaterial();	       
-	       //for each light
-	       for(scene::Scene::iterator_light it=scene.begin_light();
-		   it!=scene.end_light();++it)
+
+	    for(unsigned int j=0;j<height;++j)
+
 	       {
-		 
-		  glm::vec3 direction=(*it)->getPosition()-pointHit;
-		  //cast a shadow ray
-		  ray::Ray shadowRay(pointHit,direction,ray::ShadowRay,0.1,
-				     camera->getFarPlan());
-		  scene::Intersection dummyInter;
-		  //if light is not blocked then
-		  if(!scene.intersect(shadowRay,dummyInter))
-		  {
-		     glm::vec3 matColor= materialHit->computeBRDF(shadowRay,
-								  normalHit);
-		     glm::vec3 lightColor=(*it)->powerAt(pointHit);
-		     //cout<<"Mat :"<<matColor<<endl;
-		     //cout<<"Light:"<<lightColor<<endl;
-		     glm::vec3 lightContribution=componentProduct(matColor,
-								  lightColor);
-		     color+=lightContribution;
-		  }
-		  // else
-		  // {
-		  //    cout<<"noir:"<<i<<","<<j<<endl;
-		  // }
-	       }
-	       sf::Color colorSFML = conversions::glmToColorSfml(color);
-	       _image->setPixel(i,j,colorSFML);
+		  ray::Ray initialRay=camera->generateRay(i,j);
+		  initialRay.setBounces((int)bounces);
+		  glm::vec3 color(0,0,0);
+
+		  color+=scene.getColor(initialRay);
+		  // Converting color
+		  sf::Color colorSFML = conversions::glmToColorSfml(color);
+		  _image->setPixel(i,j,colorSFML);
 	       
-	    }
+	       }
 	 }
-      }
-      
    }
 
    sf::Image * RaytracingEngine::getImage()const

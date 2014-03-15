@@ -57,17 +57,17 @@ int main()
     {
 	float angle=(2*PI*i)/NUMBER_SPHERES;
 	Sphere *sphere=new Sphere(vec3(X_SPHERES,sin(angle),
-				       cos(angle)),0.35);
-	Material *material=new Material(vec3(0,
-					     fabs(cos(angle/2)),
-					     fabs(sin(angle/2))));
+				       cos(angle)),0.40);
+	Material *material=
+	    new Material(vec3(0,fabs(cos(angle/2)),fabs(sin(angle/2))),
+			 0.8,(i%3)?0:0.8,1.7);
 	Object *object=new Object(sphere,material);
 	scene.addObject(object);
     }
 
     Mesh * suzanne=new Mesh;
     suzanne->loadFromOBJFile("etc/suzanne.obj");
-    Material *matSuzanne=new Material(vec3(1,1,1));
+    Material *matSuzanne=new Material(vec3(1,1,1),0,0);
     Object * objSuzanne = new Object(suzanne,matSuzanne,
 				     vec3(0,0,0),vec3(180,0,90),
 				     vec3(0.5,0.5,0.5));
@@ -84,7 +84,7 @@ int main()
     gui::RaytracingContent * raytracingContent = 
 	new gui::RaytracingContent(scene);
     model->addContent(raytracingContent);
-    raytracingContent->update();
+    //raytracingContent->update();
     view.beginMainLoop();
    
     delete raytracingContent;

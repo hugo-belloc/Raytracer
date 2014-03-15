@@ -20,7 +20,7 @@ using namespace std;
 int main()
 {
    glm::vec3 origin(1,0,0), direction(1,1,0);
-   ray::Ray ray(origin,direction,ray::CameraRay,0,100);
+   ray::Ray ray(origin,direction,0,100,5);
    ray.displayTTY();
    cout<<ray(1.0)<<endl<<ray(1.5)<<endl;
    return 0;

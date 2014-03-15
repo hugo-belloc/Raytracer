@@ -15,6 +15,7 @@
 #ifndef _SCENE_HEADER_H
 #define _SCENE_HEADER_H
 
+#include <iostream>
 #include <vector>
 #include <iterator>
 #include "utils_glm.hpp"
@@ -24,10 +25,14 @@
 #include "LightPoint.hpp"
 #include "Object.hpp"
 #include "Camera.hpp"
+#include "ShadowRay.hpp"
+#include "ReflexionRay.hpp"
+#include "TransmissionRay.hpp"
 
 
 namespace scene
 {
+
     class Scene
     {
     public :
@@ -54,6 +59,8 @@ namespace scene
 	iterator_object end_object();
 	const_iterator_object begin_object() const;
 	const_iterator_object end_object() const;
+
+	 glm::vec3 getColor(const ray::Ray &);
 
 	const utils::Program & getProgram() const;
     private :

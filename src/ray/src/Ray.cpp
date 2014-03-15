@@ -30,10 +30,8 @@ namespace ray
  * @param tmax the maximum value during parametrisation
  * @param tmax the minimum value during parametrisation
  */
-   Ray::Ray(const glm::vec3 & origin ,const glm::vec3 & direction,
-	    RayType type,float tmin, float tmax):
-      _origin(origin),_direction(glm::normalize(direction)),
-      _type(type), _tmin(tmin),_tmax(tmax),_bounces((int)type)
+   Ray::Ray(const glm::vec3 & origin ,const glm::vec3 & direction,float tmin, float tmax, int bounces,int mri):
+      _origin(origin),_direction(glm::normalize(direction)), _tmin(tmin),_tmax(tmax),_bounces(bounces),_mri(mri)
    {}
 
 /**
@@ -58,7 +56,6 @@ namespace ray
    {
       _origin=ray._origin;
       _direction=ray._direction;
-      _type=ray._type;
       _tmax=ray._tmax;
       _tmin=ray._tmin;
       _bounces=ray._bounces;
@@ -74,6 +71,10 @@ namespace ray
    int Ray::getBounces() const
    {
       return _bounces;
+   }
+   void Ray::setBounces(int bounces)
+   {
+      _bounces = bounces;
    }
 
 
@@ -107,10 +108,27 @@ namespace ray
       return _origin;
    }
 
+   void Ray::setOrigin(const glm::vec3 & origin)
+   {
+      _origin = origin;
+   }
+
    glm::vec3 Ray::getDirection()const
    {
       return _direction;
    }
+
+   float Ray::getMRI() const
+   {
+      return _mri;
+   }
+
+   glm::vec3 Ray::getColor() const
+   {
+      glm::vec3 color(0,0,0);
+      return color;
+   }
+
 
 }
 

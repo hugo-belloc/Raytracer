@@ -36,7 +36,7 @@ namespace camera
 				getNearPlan(),getFarPlan());
     }
 
-    ray::Ray PinholeCamera::generateRay(unsigned int i,
+    ray::CameraRay PinholeCamera::generateRay(unsigned int i,
 					unsigned int j) const
     {
 	glm::vec3 view = glm::normalize(getTarget() - getPosition()); 
@@ -61,8 +61,7 @@ namespace camera
 	glm::vec3 pointCoordinates=getPosition()+getNearPlan()*view+
 	    h*x+v*y;
 	glm::vec3 rayDir=pointCoordinates-getPosition();
-	ray::Ray ray(getPosition(),rayDir,ray::CameraRay,
-		     getNearPlan(),getFarPlan());
+	ray::CameraRay ray(getPosition(),rayDir,getNearPlan(),getFarPlan(),5);
 	return ray;
     }
     
