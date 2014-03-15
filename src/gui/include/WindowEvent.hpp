@@ -2,9 +2,13 @@
 #define WINDOWEVENT_HPP
 
 #include <iostream>
+#include <SFML/Window/Keyboard.hpp>
 namespace gui
 {
 
+/**
+ * Show whether 
+ */
 enum KeyState
 {
     KEY_PRESSED,
@@ -12,18 +16,21 @@ enum KeyState
 };
 
 /**
- * @author Hugo Belloc
- * @brief The WindowEvent class
+ * Class that contains a Keyboard Event.
  */
 class WindowEvent
 {
 public :
-    WindowEvent(KeyState _state);
-    ~WindowEvent();
+    WindowEvent(const KeyState & state,
+		const sf::Keyboard::Key & key);
+    sf::Keyboard::Key getKey() const;
+    KeyState getState() const;
+    
 
 private :
     KeyState _state;
-    std::string _key;
+    sf::Keyboard::Key _key;
+    
 };
 
 }
