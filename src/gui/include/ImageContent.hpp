@@ -20,22 +20,28 @@
 #include "WindowContent.hpp"
 namespace gui
 {
-   class ImageContent : public WindowContent
-   {
-   public :
-      ImageContent(const sf::Image & image);
-      virtual ~ImageContent();
-      virtual void onTransition();
-      virtual void display();
-   private :
-      sf::Image _image;
-      sf::Shader _shader;
-      GLuint _positionsBuffer;
-      GLuint _texCoordsBuffer;
-      GLuint _indexBuffer;
-      GLuint _textureImageBuffer;
-      GLuint _vao;      
+    class ImageContent : public WindowContent
+    {
+    public :
+	ImageContent(sf::Image * image);
+
+	virtual ~ImageContent();
+	virtual void onTransition();
+	virtual void display();
+	void setImage(sf::Image * image);
+	void clearImage();
+ 
+     private :
+	void loadImage();
+
+	sf::Image  * _image;
+	sf::Shader _shader;
+	GLuint _positionsBuffer;
+	GLuint _texCoordsBuffer;
+	GLuint _indexBuffer;
+	GLuint _textureImageBuffer;
+	GLuint _vao;      
       
-   };
+    };
 }
 #endif

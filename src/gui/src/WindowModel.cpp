@@ -111,6 +111,7 @@ void WindowModel::nextContent()
         {
             _current=(_current+1>=((int)_contents.size()))?_current:_current+1;
         }
+	_contents[_current]->onTransition();
     }
 }
 

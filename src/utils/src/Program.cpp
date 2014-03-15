@@ -89,7 +89,7 @@ namespace utils
     void Program::loadFromMemory(const std::string & vertexShaderCode,
 				 const std::string &  fragmentShaderCode)
     {
-	cout<<"Create the shaders"<<endl;
+	
 	GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 	GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 	GLint Result = GL_FALSE;
@@ -120,7 +120,7 @@ namespace utils
 	cerr<<&FragmentShaderErrorMessage[0];
  
 	// Link the program 
-	cout<<"Create the program"<<endl;
+	
 	_progId= glCreateProgram();
 	glAttachShader(_progId, VertexShaderID);
 	glAttachShader(_progId, FragmentShaderID);

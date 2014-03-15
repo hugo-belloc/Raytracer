@@ -15,23 +15,23 @@ namespace gui
  * the main window of the gui.
  */
     class WindowView : public Observable<WindowEvent>//, public 
-{
+    {
 
-public :
+    public :
 
    
-    WindowView(int width,int height,const std::string &title="Raytracer");
-    virtual ~WindowView();
+	WindowView(int width,int height,const std::string &title="Raytracer");
+	virtual ~WindowView();
 
-    void beginMainLoop();
-    void resize(unsigned int width,unsigned int height);
-    WindowModel * getModel();
+	void beginMainLoop();
+	void resize(unsigned int width,unsigned int height);
+	WindowModel * getModel();
 
-private:
-    sf::ContextSettings getInitialContext();
-    sf::Window _window;
-    WindowModel * _model;
-};
+    private:
+	sf::ContextSettings getInitialContext();
+	sf::Window _window;
+	WindowModel * _model;
+    };
 
 }
 #endif // WINDOWVIEW_HPP

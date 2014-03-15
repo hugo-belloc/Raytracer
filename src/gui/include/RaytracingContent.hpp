@@ -20,20 +20,21 @@
 
 namespace gui
 {
-   class RaytracingContent : public WindowContent
-   {
-   public :
-      RaytracingContent(scene::Scene * scene);
-      virtual ~RaytracingContent();
-      virtual void onTransition();
-      virtual void display();
-      void update();
-   private :
-      sf::Image & initImage(sf::Image & img);
-      scene::Scene * _scene;
-      sf::Image _image;
-      engine::RaytracingEngine _engine;
-      ImageContent _content;
-   };
+    class RaytracingContent : public WindowContent
+    {
+    public :
+	RaytracingContent(scene::Scene & scene);
+	virtual ~RaytracingContent();
+	virtual void onTransition();
+	virtual void display();
+	void update();
+    private :
+	sf::Image & initImage(sf::Image & img);
+     
+	scene::Scene & _scene;
+	sf::Image _engineImage;        
+	engine::RaytracingEngine _engine;
+	ImageContent _imageContent;
+    };
 }
 #endif

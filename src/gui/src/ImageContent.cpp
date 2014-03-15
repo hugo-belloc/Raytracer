@@ -23,66 +23,84 @@
 
 namespace gui
 {
-   ImageContent::ImageContent(const sf::Image & image):
-      _image(image),_shader()
-   {
-      glEnable(GL_TEXTURE_2D);
-      _shader.loadFromFile("etc/simpleTexture.vert",
-			   "etc/simpleTexture.frag");
-      GLfloat positions[]=
-	 {
-	    -1,-1, 0,
-	    -1, 1, 0,
-	    1,-1, 0, 
-	    1, 1, 0,
-	 };
-      GLfloat texCoords[]=
-	 {
-	    0,1,
-	    0, 0,
-	    1,1,
-	    1, 0
-	 };
-      GLuint indices[]=
-	 {
-	    0,1,2,
-	    1,3,2
-	 };
+    ImageContent::ImageContent(sf::Image * image):
+	_image(image),_shader()
+    {
+	loadImage();      
+    }
 
-      utils::makeVBO(&_positionsBuffer,positions
+    ImageContent::~ImageContent()
+    {
+	clearImage();
+    }
+
+    void ImageContent::clearImage()
+    {
+	glDeleteBuffers(1,&_positionsBuffer);
+	glDeleteBuffers(1,&_indexBuffer);
+	glDeleteTextures(1,&_textureImageBuffer);
+	glDeleteVertexArrays(1,&_vao);
+    }
+
+    void ImageContent::loadImage()
+    {
+	glEnable(GL_TEXTURE_2D);
+	_shader.loadFromFile("etc/simpleTexture.vert",
+			     "etc/simpleTexture.frag");
+	GLfloat positions[]=
+	    {
+		-1,-1, 0,
+		-1, 1, 0,
+		1,-1, 0, 
+		1, 1, 0,
+	    };
+	GLfloat texCoords[]=
+	    {
+		0,1,
+		0,0,
+		1,1,
+		1, 0
+	    };
+	GLuint indices[]=
+	    {
+		0,1,2,
+		1,3,2
+	    };
+
+	utils::makeVBO(&_positionsBuffer,positions
 		       ,sizeof(positions));
-      utils::makeVBO(&_texCoordsBuffer,texCoords
+	utils::makeVBO(&_texCoordsBuffer,texCoords
 		       ,sizeof(texCoords));
-      utils::makeIBO(&_indexBuffer,indices,sizeof(indices));
-      utils::makeTexture2D(&_textureImageBuffer,_image);
-      utils::makeTextureVAO(&_vao,_positionsBuffer,
+	utils::makeIBO(&_indexBuffer,indices,sizeof(indices));
+	utils::makeTexture2D(&_textureImageBuffer,*_image);
+	utils::makeTextureVAO(&_vao,_positionsBuffer,
 			      _texCoordsBuffer,_indexBuffer);
+    }
+    
+
+    void ImageContent::onTransition()
+    {}
+
+    void ImageContent::display()
+    {
       
-   }
-
-   ImageContent::~ImageContent()
-   {
-      glDeleteBuffers(1,&_positionsBuffer);
-      glDeleteBuffers(1,&_indexBuffer);
-      glDeleteTextures(1,&_textureImageBuffer);
-      glDeleteVertexArrays(1,&_vao);
-   }
-
-   void ImageContent::onTransition()
-   {}
-
-   void ImageContent::display()
-   {
-      
-      sf::Shader::bind(&_shader);
-      glBindVertexArray(_vao);
-      glBindTexture(GL_TEXTURE_2D,_textureImageBuffer);
-      glDrawElements(GL_TRIANGLES,6, GL_UNSIGNED_INT, 0);
-      glBindTexture(GL_TEXTURE_2D,0);
-      glBindVertexArray(0);
-      sf::Shader::bind(0);
-   }
-
-
+	sf::Shader::bind(&_shader);
+	glBindVertexArray(_vao);
+	glBindTexture(GL_TEXTURE_2D,_textureImageBuffer);
+	glDrawElements(GL_TRIANGLES,6, GL_UNSIGNED_INT, 0);
+	glBindTexture(GL_TEXTURE_2D,0);
+	glBindVertexArray(0);
+	sf::Shader::bind(0);
+    }
+    void ImageContent::setImage(sf::Image* image)
+    {
+	clearImage();
+	sf::Vector2u sizeImage = image->getSize();
+	_image->create(sizeImage.x,sizeImage.y);
+	_image->copy(*image,0,0);
+	_image->saveToFile("copy.png");
+	loadImage();
+    }
+    
 }
 

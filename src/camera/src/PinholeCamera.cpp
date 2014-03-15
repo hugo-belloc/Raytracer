@@ -42,7 +42,7 @@ namespace camera
 	glm::vec3 view = glm::normalize(getTarget() - getPosition()); 
 
 	//Compute the horizontal and vertical vector of the clip plan
-	glm::vec3 h = -glm::cross( view, getUp() );
+	glm::vec3 h = glm::cross( view, getUp() );
 	h = glm::normalize(h);
 	glm::vec3 v = -glm::cross( h, view) ;
 	v = glm::normalize(v);
