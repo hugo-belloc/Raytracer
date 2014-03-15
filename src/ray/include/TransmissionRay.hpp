@@ -24,7 +24,7 @@ namespace ray
    class TransmissionRay : public Ray
    {
    public :
-      TransmissionRay(const glm::vec3 &origin,const glm::vec3 & direction, float tmin, float tmax, int bounces);
+      TransmissionRay(const glm::vec3 &origin,const glm::vec3 & direction, float tmin, float tmax, int bounces, int mri = 1.0);
       virtual ~TransmissionRay();
       virtual glm::vec3 getColor() const;
    

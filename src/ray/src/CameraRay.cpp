@@ -28,8 +28,8 @@ namespace ray
  * @param tmax the maximum value during parametrisation
  * @param tmax the minimum value during parametrisation
  */
-   CameraRay::CameraRay(const glm::vec3 & origin ,const glm::vec3 & direction,float tmin, float tmax, int bounces):
-      Ray(origin,direction,tmin,tmax,bounces)
+   CameraRay::CameraRay(const glm::vec3 & origin ,const glm::vec3 & direction,float tmin, float tmax, int bounces, int mri):
+      Ray(origin,direction,tmin,tmax,bounces,mri)
    {}
 
    /**

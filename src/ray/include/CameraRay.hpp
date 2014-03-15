@@ -24,7 +24,7 @@ namespace ray
    class CameraRay : public Ray
    {
    public :
-      CameraRay(const glm::vec3 &origin,const glm::vec3 & direction, float tmin, float tmax, int bounces);
+      CameraRay(const glm::vec3 &origin,const glm::vec3 & direction, float tmin, float tmax, int bounces, int mri = 1.0);
       virtual ~CameraRay();
       virtual glm::vec3 getColor() const;
    };

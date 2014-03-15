@@ -28,30 +28,33 @@ The CXX compiler identification is GNU, found in "/home/hicham/Desktop/projet/Ra
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1656743869/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1656743869.dir/build.make CMakeFiles/cmTryCompileExec1656743869.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2982529984/fast"
 make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2982529984.dir/build.make CMakeFiles/cmTryCompileExec2982529984.dir/build
+make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1656743869.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1656743869.dir/testCCompiler.c.o   -c /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTryCompileExec1656743869
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1656743869.dir/link.txt --verbose=1
-/usr/bin/cc         CMakeFiles/cmTryCompileExec1656743869.dir/testCCompiler.c.o  -o cmTryCompileExec1656743869 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec2982529984.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2982529984.dir/testCCompiler.c.o   -c /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec2982529984
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2982529984.dir/link.txt --verbose=1
+/usr/bin/cc         CMakeFiles/cmTryCompileExec2982529984.dir/testCCompiler.c.o  -o cmTryCompileExec2982529984 -rdynamic 
+make[2]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec4236124662/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec4236124662.dir/build.make CMakeFiles/cmTryCompileExec4236124662.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3806859832/fast"
 make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3806859832.dir/build.make CMakeFiles/cmTryCompileExec3806859832.dir/build
+make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec4236124662.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec4236124662.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
-Linking C executable cmTryCompileExec4236124662
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4236124662.dir/link.txt --verbose=1
-/usr/bin/cc       -v CMakeFiles/cmTryCompileExec4236124662.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec4236124662 -rdynamic  
+Building C object CMakeFiles/cmTryCompileExec3806859832.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3806859832.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec3806859832
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3806859832.dir/link.txt --verbose=1
+/usr/bin/cc       -v CMakeFiles/cmTryCompileExec3806859832.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3806859832 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -61,8 +64,9 @@ Thread model: posix
 gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4236124662' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec4236124662 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec4236124662.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3806859832' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3806859832 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec3806859832.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+make[2]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 
 
@@ -70,15 +74,16 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec4236124662/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec4236124662.dir/build.make CMakeFiles/cmTryCompileExec4236124662.dir/build]
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec3806859832/fast"]
   ignore line: [make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3806859832.dir/build.make CMakeFiles/cmTryCompileExec3806859832.dir/build]
+  ignore line: [make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp']
   ignore line: [/usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building C object CMakeFiles/cmTryCompileExec4236124662.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec4236124662.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTryCompileExec4236124662]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4236124662.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc       -v CMakeFiles/cmTryCompileExec4236124662.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec4236124662 -rdynamic  ]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec3806859832.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3806859832.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec3806859832]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3806859832.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc       -v CMakeFiles/cmTryCompileExec3806859832.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3806859832 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -88,8 +93,8 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec4236124662' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec4236124662 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec4236124662.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3806859832' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3806859832 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec3806859832.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -103,7 +108,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec4236124662] ==> ignore
+    arg [cmTryCompileExec3806859832] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -115,7 +120,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTryCompileExec4236124662.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec3806859832.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -147,30 +152,33 @@ Parsed C implicit link information from above output:
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1658490969/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1658490969.dir/build.make CMakeFiles/cmTryCompileExec1658490969.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec4197787027/fast"
 make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4197787027.dir/build.make CMakeFiles/cmTryCompileExec4197787027.dir/build
+make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec1658490969.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1658490969.dir/testCXXCompiler.cxx.o -c /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTryCompileExec1658490969
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1658490969.dir/link.txt --verbose=1
-/usr/bin/c++          CMakeFiles/cmTryCompileExec1658490969.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec1658490969 -rdynamic 
+Building CXX object CMakeFiles/cmTryCompileExec4197787027.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec4197787027.dir/testCXXCompiler.cxx.o -c /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec4197787027
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4197787027.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec4197787027.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec4197787027 -rdynamic 
+make[2]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec88886455/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec88886455.dir/build.make CMakeFiles/cmTryCompileExec88886455.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2148791993/fast"
 make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2148791993.dir/build.make CMakeFiles/cmTryCompileExec2148791993.dir/build
+make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec88886455.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec88886455.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTryCompileExec88886455
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec88886455.dir/link.txt --verbose=1
-/usr/bin/c++        -v CMakeFiles/cmTryCompileExec88886455.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec88886455 -rdynamic  
+Building CXX object CMakeFiles/cmTryCompileExec2148791993.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2148791993.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec2148791993
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2148791993.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec2148791993.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2148791993 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -180,8 +188,9 @@ Thread model: posix
 gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec88886455' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec88886455 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec88886455.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2148791993' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec2148791993 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec2148791993.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+make[2]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 
 
@@ -189,15 +198,16 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec88886455/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec88886455.dir/build.make CMakeFiles/cmTryCompileExec88886455.dir/build]
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec2148791993/fast"]
   ignore line: [make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec2148791993.dir/build.make CMakeFiles/cmTryCompileExec2148791993.dir/build]
+  ignore line: [make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp']
   ignore line: [/usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec88886455.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec88886455.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTryCompileExec88886455]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec88886455.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec88886455.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec88886455 -rdynamic  ]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec2148791993.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2148791993.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec2148791993]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2148791993.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec2148791993.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2148791993 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -207,8 +217,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec88886455' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec88886455 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec88886455.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2148791993' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec2148791993 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec2148791993.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -222,7 +232,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec88886455] ==> ignore
+    arg [cmTryCompileExec2148791993] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -234,7 +244,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTryCompileExec88886455.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec2148791993.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -264,90 +274,102 @@ Parsed CXX implicit link information from above output:
 Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
 Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2026492566/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2026492566.dir/build.make CMakeFiles/cmTryCompileExec2026492566.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1689301807/fast"
 make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1689301807.dir/build.make CMakeFiles/cmTryCompileExec1689301807.dir/build
+make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2026492566.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec2026492566.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2026492566
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2026492566.dir/link.txt --verbose=1
-/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec2026492566.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2026492566 -rdynamic -lX11 -lXext 
+Building C object CMakeFiles/cmTryCompileExec1689301807.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec1689301807.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1689301807
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1689301807.dir/link.txt --verbose=1
+/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec1689301807.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1689301807 -rdynamic -lX11 -lXext 
+make[2]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 
 
 Determining if the function gethostbyname exists passed with the following output:
 Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2504435685/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2504435685.dir/build.make CMakeFiles/cmTryCompileExec2504435685.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec3842961240/fast"
 make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3842961240.dir/build.make CMakeFiles/cmTryCompileExec3842961240.dir/build
+make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2504435685.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec2504435685.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2504435685
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2504435685.dir/link.txt --verbose=1
-/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec2504435685.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2504435685 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec3842961240.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec3842961240.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3842961240
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3842961240.dir/link.txt --verbose=1
+/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec3842961240.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3842961240 -rdynamic 
+make[2]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 
 
 Determining if the function connect exists passed with the following output:
 Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3668846867/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3668846867.dir/build.make CMakeFiles/cmTryCompileExec3668846867.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec909260140/fast"
 make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec909260140.dir/build.make CMakeFiles/cmTryCompileExec909260140.dir/build
+make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3668846867.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec3668846867.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec3668846867
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3668846867.dir/link.txt --verbose=1
-/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec3668846867.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3668846867 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec909260140.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec909260140.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec909260140
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec909260140.dir/link.txt --verbose=1
+/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec909260140.dir/CheckFunctionExists.c.o  -o cmTryCompileExec909260140 -rdynamic 
+make[2]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 
 
 Determining if the function remove exists passed with the following output:
 Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2845493954/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2845493954.dir/build.make CMakeFiles/cmTryCompileExec2845493954.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1826012653/fast"
 make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1826012653.dir/build.make CMakeFiles/cmTryCompileExec1826012653.dir/build
+make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2845493954.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec2845493954.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2845493954
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2845493954.dir/link.txt --verbose=1
-/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec2845493954.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2845493954 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec1826012653.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec1826012653.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1826012653
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1826012653.dir/link.txt --verbose=1
+/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec1826012653.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1826012653 -rdynamic 
+make[2]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 
 
 Determining if the function shmat exists passed with the following output:
 Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec486256898/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec486256898.dir/build.make CMakeFiles/cmTryCompileExec486256898.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec2022798958/fast"
 make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2022798958.dir/build.make CMakeFiles/cmTryCompileExec2022798958.dir/build
+make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec486256898.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec486256898.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec486256898
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec486256898.dir/link.txt --verbose=1
-/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec486256898.dir/CheckFunctionExists.c.o  -o cmTryCompileExec486256898 -rdynamic 
+Building C object CMakeFiles/cmTryCompileExec2022798958.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec2022798958.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2022798958
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2022798958.dir/link.txt --verbose=1
+/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec2022798958.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2022798958 -rdynamic 
+make[2]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 
 
 Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
 Change Dir: /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1899144026/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1899144026.dir/build.make CMakeFiles/cmTryCompileExec1899144026.dir/build
+Run Build Command:/usr/bin/make "cmTryCompileExec1629862398/fast"
 make[1]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1629862398.dir/build.make CMakeFiles/cmTryCompileExec1629862398.dir/build
+make[2]: Entering directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1899144026.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec1899144026.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec1899144026
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1899144026.dir/link.txt --verbose=1
-/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec1899144026.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1899144026 -rdynamic -lICE 
+Building C object CMakeFiles/cmTryCompileExec1629862398.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec1629862398.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1629862398
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1629862398.dir/link.txt --verbose=1
+/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec1629862398.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1629862398 -rdynamic -lICE 
+make[2]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 make[1]: Leaving directory `/home/hicham/Desktop/projet/Raytracer/CMakeFiles/CMakeTmp'
 
 

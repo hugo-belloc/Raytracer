@@ -26,12 +26,13 @@ namespace materials
    {
    public :
       Material(const glm::vec3 & color);
-      Material(const glm::vec3 & color,float reflexion,float transmission);
+      Material(const glm::vec3 & color,float reflexion,float transmission,float mri);
       glm::vec3 computeBRDF(const ray::Ray &shadowRay,
 			    const glm::vec3 & normal)const;
 
       float getReflexionAttenuation();
       float getTransmissionAttenuation();
+      float getMRI();
       
       void displayTTY()const;
 

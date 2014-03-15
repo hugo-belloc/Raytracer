@@ -23,8 +23,8 @@ using namespace engine;
 using namespace materials;
 using namespace light;
 
-#define WIDTH 1000
-#define HEIGHT 1000
+#define WIDTH 500
+#define HEIGHT 500
 int main()
 {
    sf::Image img;
@@ -33,18 +33,21 @@ int main()
    PinholeCamera *cam=new PinholeCamera(vec3(-5,0,1),vec3(0,0,0),
 					vec3(0,1,0),0.001,1000.f,WIDTH,
 					HEIGHT,45.f);
-   Sphere *sphere=new Sphere(vec3(0,0,-1),0.6);
-   Sphere *sphere2=new Sphere(vec3(0,0,0),0.4);
-   Sphere *sphere3=new Sphere(vec3(1,1,0),0.6);
+   Sphere *sphere=new Sphere(vec3(0,0,0),0.5);
+   Sphere *sphere2=new Sphere(vec3(0,1,0),0.5);
+   Sphere *sphere3=new Sphere(vec3(0,-0.5,1),0.5);
+   Sphere *sphere4=new Sphere(vec3(1,1,1),1.0);
 
-   Material *red=new Material(vec3(1,0,0),0.6,0);
-   Material *green=new Material(vec3(0,1,0),0,0);
-   Material *blue=new Material(vec3(0,0,1),0,0);
+   Material *red=new Material(vec3(1,0,0),0.2,0.7,2.4);
+   Material *green=new Material(vec3(0,1,0),0.5,0.0,1.6);
+   Material *blue=new Material(vec3(0,0,1),0.0,0.8,1.0);
+   Material *white=new Material(vec3(1,1,1),0,0.0,1.0);
    
 
    Object *redSphere=new Object(sphere,red);
    Object * greenSphere=new Object(sphere2,green);
    Object * blueSphere=new Object(sphere3,blue);
+   Object * whiteSphere=new Object(sphere4,white);
 
    LightPoint *light=new LightPoint(30,vec3(-6,-5,0),vec3(1,1,1),1.0);
    LightPoint *light2=new LightPoint(20,vec3(-6,2,0),vec3(1,1,1),1.0);
@@ -52,6 +55,7 @@ int main()
    scene.addObject(redSphere);
    scene.addObject(greenSphere);
    scene.addObject(blueSphere);
+   scene.addObject(whiteSphere);
 
    scene.addLightPoint(light);
    scene.addLightPoint(light2);

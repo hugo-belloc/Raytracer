@@ -23,7 +23,7 @@ namespace ray
    class Ray
    {
    public :
-      Ray(const glm::vec3 &origin,const glm::vec3 & direction,float tmin, float tmax, int bounces);
+      Ray(const glm::vec3 &origin,const glm::vec3 & direction,float tmin, float tmax, int bounces, int mri = 1.0);
       virtual ~Ray();
       glm::vec3 operator()(float t) const;
       Ray & operator=(const Ray & ray);
@@ -35,7 +35,10 @@ namespace ray
       float getTmax()const;
       void displayTTY()const;
       glm::vec3 getOrigin()const;
+      glm::vec3 setOrigin(glm::vec3 origin);
+
       glm::vec3 getDirection()const;
+      float getMRI() const;
 
       virtual glm::vec3 getColor() const;
 
@@ -45,6 +48,7 @@ namespace ray
       mutable float _tmin;
       mutable float _tmax;
       int _bounces;
+      int _mri;
    };
 
 }

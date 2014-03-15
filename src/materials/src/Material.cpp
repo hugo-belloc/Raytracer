@@ -19,11 +19,15 @@ namespace materials
       _properties.setScalarProperty("transmission",0.0);
    }
 
-   Material::Material(const glm::vec3 & color, float reflexion, float transmission):_properties()
+   Material::Material(const glm::vec3 & color, 
+		      float reflexion, 
+		      float transmission, 
+		      float mri):_properties()
    {
       _properties.setVectorProperty("color",color);
       _properties.setScalarProperty("reflexion",reflexion);
       _properties.setScalarProperty("transmission",transmission);
+      _properties.setScalarProperty("mri",mri);
    }
 
 
@@ -44,6 +48,10 @@ namespace materials
       return _properties.getScalarProperty("transmission");
    }
 
+   float Material::getMRI()
+   {
+      return _properties.getScalarProperty("mri");
+   }
 
    void Material::displayTTY()const
    {
