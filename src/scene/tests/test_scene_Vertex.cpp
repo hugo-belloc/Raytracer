@@ -32,7 +32,7 @@ int main()
    cout<<"v1 ";
    cout<<v1.getPosition()<<" "<<v1.getNormal()<<endl;
    
-
+  
 
    return 0;
 }

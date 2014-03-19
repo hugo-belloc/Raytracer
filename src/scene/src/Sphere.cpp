@@ -61,23 +61,26 @@ namespace scene
 	float tInterMin,tInterMax;
 	bool isIntersection=equation.solve(tInterMin,tInterMax);
 	
-	//if the first solution is not between tmin and tmax
-	//we take the other one
-	float tSol=tInterMin;
-	if(tSol<ray.getTmin() || tSol>ray.getTmax())
-	{
-	    tSol=tInterMax;
-	}
-
-	isIntersection = isIntersection &&
-	    tSol>=ray.getTmin() && 
-	    tSol<=ray.getTmax();
 	if(isIntersection)
 	{
-	    glm::vec3 interPoint=ray(tSol);
-	    glm::vec3 normal=glm::normalize(interPoint-_center);
-	    intersection.setPoint(interPoint);
-	    intersection.setNormal(normal);
+	    //if the first solution is not between tmin and tmax
+	    //we take the other one
+	    float tSol=tInterMin;
+	    if(tSol<ray.getTmin() || tSol>ray.getTmax())
+	    {
+		tSol=tInterMax;
+	    }
+
+	    isIntersection = isIntersection &&
+		tSol>=ray.getTmin() && 
+		tSol<=ray.getTmax();
+	    if(isIntersection)
+	    {
+		glm::vec3 interPoint=ray(tSol);
+		glm::vec3 normal=glm::normalize(interPoint-_center);
+		intersection.setPoint(interPoint);
+		intersection.setNormal(normal);
+	    }
 	}
 	return isIntersection;   
     }
@@ -106,7 +109,7 @@ namespace scene
     }
 
 
-     /**
+    /**
      * Computes the normal of a point on a sphere
      * @param theta the first angle in radian
      * @param phi the second angle in radiant
@@ -137,13 +140,13 @@ namespace scene
 	    for(double phi =0 ;phi < (1.0*pi); phi += dPhi)
 	    {
 		_mesh->addVertex(new Vertex(spherePoint(theta, phi, _radius,_center),
-					  sphereNormal(theta,phi)));
+					    sphereNormal(theta,phi)));
 		_mesh->addVertex(new Vertex(spherePoint(theta+dTheta, phi,_radius,_center),
-					  sphereNormal(theta+dTheta,phi)));
+					    sphereNormal(theta+dTheta,phi)));
 		_mesh->addVertex(new Vertex(spherePoint(theta+dTheta,phi+dPhi, _radius,_center),
-					  sphereNormal(theta+dTheta,phi+dPhi)));
+					    sphereNormal(theta+dTheta,phi+dPhi)));
 		_mesh->addVertex(new Vertex(spherePoint(theta,phi+dPhi,_radius,_center),
-					  sphereNormal(theta,phi+dPhi)));
+					    sphereNormal(theta,phi+dPhi)));
 
 		_mesh->addFace(new Face(cmpt,cmpt+1,cmpt+2));
 		_mesh->addFace(new Face(cmpt,cmpt+2,cmpt+3));

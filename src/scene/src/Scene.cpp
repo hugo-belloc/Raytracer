@@ -26,7 +26,7 @@ namespace scene
 	_prog(),_camera(camera),
 	_objects(), _lightPoints(),
 	_isProgramUpdated(false)
-    {}
+    { }
 
     Scene:: ~Scene()
     {

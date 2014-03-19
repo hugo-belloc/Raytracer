@@ -40,12 +40,12 @@ namespace gui
     {
 	_window.setVerticalSyncEnabled(true);
 	
-	    glewExperimental=true;
-	    if (glewInit() != GLEW_OK) 
-	    {
-		std::cerr<<"Failed to initialize GLEW"<<std::endl;
-		exit(-1);
-	    }
+	glewExperimental=true;
+	if (glewInit() != GLEW_OK) 
+	{
+	    std::cerr<<"Failed to initialize GLEW"<<std::endl;
+	    exit(-1);
+	}
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     }

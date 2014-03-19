@@ -23,5 +23,6 @@ int main()
    cout<<quad.solve(minSol,maxSol)<<endl;
    cout<<"Solution="<<minSol<<","<<maxSol<<endl;
 
+
    return 0;
 }

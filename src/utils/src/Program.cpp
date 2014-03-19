@@ -5,8 +5,8 @@
  */
 
 #include <vector>
-#include "FileLoader.hpp"
 
+#include "FileLoader.hpp"
 #include "Program.hpp"
 
 using namespace std;
@@ -20,8 +20,7 @@ namespace utils
  * must be loaded before being usable.
  */
     Program::Program():_progId(0),_empty(true)
-    {
-    }
+    { }
 
 /**
  * Destructor : desallocate the memeory in the
