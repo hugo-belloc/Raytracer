@@ -28,8 +28,8 @@ using namespace gui;
 #include <cmath>
 
 
-#define WIDTH 512
-#define HEIGHT 512
+#define WIDTH 256
+#define HEIGHT 256
 
 #define PI 3.14159265
 
@@ -37,17 +37,13 @@ using namespace gui;
 
 int main()
 {
-    gui::WindowView view(WIDTH,HEIGHT);
-   // sf::Image img;
-   // RaytracingEngine engine(&img);
-   // img.create(WIDTH,HEIGHT,sf::Color(0,0,20));
+   gui::WindowView view(WIDTH,HEIGHT);
    PinholeCamera *cam=new PinholeCamera(vec3(-5,0,0),vec3(0,0,0),
 					vec3(0,1,0),0.001,1000.f,WIDTH,
 					HEIGHT,45.f);
    Sphere *sphere =new Sphere(vec3(0,0,0),1);
    Sphere *sphere2=new Sphere(vec3(0,0,0),2);
    Sphere *sphere3=new Sphere(vec3(0,0,0),5);
-
 
    Material *red=new Material(vec3(1,0,0));
    Material *green=new Material(vec3(0,1,0));

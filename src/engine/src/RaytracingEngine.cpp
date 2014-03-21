@@ -29,7 +29,7 @@ namespace engine
       unsigned int width=_image->getSize().x;
       unsigned int height=_image->getSize().y;
       camera::Camera * camera=scene.getCamera();
-      camera->setFocalPlan(camera->getNearPlan()+1.0);
+      camera->setFocalPlan(camera->getNearPlan()+5.0);
       camera->setWidth(width);
       camera->setHeight(height);
 
