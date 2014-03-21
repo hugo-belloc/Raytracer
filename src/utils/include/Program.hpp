@@ -18,6 +18,7 @@
 #include <string>
 #include "utils_glm.hpp"
 #include <GL/glew.h>
+#include "OpenglObject.hpp"
 
 namespace utils
 {
@@ -25,7 +26,7 @@ namespace utils
      * A class containing a vertex shader and
      * a fragmant shader.
      */
-    class Program
+    class Program : public utils::OpenglObject
     {
     public :
 	Program();

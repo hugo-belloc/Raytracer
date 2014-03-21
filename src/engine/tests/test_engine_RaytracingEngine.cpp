@@ -40,15 +40,8 @@ using namespace gui;
 int main()
 {
     
-    //gui::WindowView view(WIDTH,HEIGHT);
-    //ensure that Opengl can be used
-    sf::Context context;
-    glewExperimental=true;
-    if (glewInit() != GLEW_OK) 
-    {
-	std::cerr<<"Failed to initialize GLEW"<<std::endl;
-	exit(-1);
-    }
+
+
 
     sf::Image img;
     RaytracingEngine engine(&img);

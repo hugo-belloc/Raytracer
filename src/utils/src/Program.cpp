@@ -19,7 +19,7 @@ namespace utils
  * allocate the memory in the GPU. The program
  * must be loaded before being usable.
  */
-    Program::Program():_progId(0),_empty(true)
+    Program::Program():OpenglObject(),_progId(0),_empty(true)
     { }
 
 /**

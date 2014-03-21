@@ -33,19 +33,19 @@ namespace gui
  * @param height the initial height of the WindowView
  */
     WindowView::WindowView(int width, int height,
-			   const std::string &title):
+			   const std::string &title):utils::OpenglObject(),
 	_window(sf::VideoMode(width,height),title,
 		sf::Style::Default,getInitialContext()),
 	_model(new WindowModel)
     {
 	_window.setVerticalSyncEnabled(true);
 	
-	glewExperimental=true;
-	if (glewInit() != GLEW_OK) 
-	{
-	    std::cerr<<"Failed to initialize GLEW"<<std::endl;
-	    exit(-1);
-	}
+	// glewExperimental=true;
+	// if (glewInit() != GLEW_OK) 
+	// {
+	//     std::cerr<<"Failed to initialize GLEW"<<std::endl;
+	//     exit(-1);
+	// }
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     }

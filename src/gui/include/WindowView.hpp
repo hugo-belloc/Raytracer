@@ -7,6 +7,7 @@
 #include "Observable.hpp"
 #include "WindowEvent.hpp"
 #include "WindowModel.hpp"
+#include "OpenglObject.hpp"
 
 namespace gui
 {
@@ -14,7 +15,8 @@ namespace gui
  * @brief This class contains a view of
  * the main window of the gui.
  */
-    class WindowView : public Observable<WindowEvent>//, public 
+    class WindowView : public utils::OpenglObject, 
+		       public Observable<WindowEvent>
     {
 
     public :
