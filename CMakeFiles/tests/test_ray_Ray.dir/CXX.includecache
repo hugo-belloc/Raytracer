@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hicham/projet/Raytracer/src/ray/tests/test_ray_Ray.cpp
+utils_glm.hpp
+/home/hicham/projet/Raytracer/src/ray/tests/utils_glm.hpp
+Ray.hpp
+/home/hicham/projet/Raytracer/src/ray/tests/Ray.hpp
+
+src/ray/include/Ray.hpp
+iostream
+-
+utils_glm.hpp
+src/ray/include/utils_glm.hpp
+
+src/utils/include/utils_glm.hpp
+iostream
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+glm/gtx/norm.hpp
+-
+glm/gtx/component_wise.hpp
+-
+cmath
+-
+

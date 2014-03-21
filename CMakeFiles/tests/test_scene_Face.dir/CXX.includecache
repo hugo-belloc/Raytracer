@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hicham/projet/Raytracer/src/scene/tests/test_scene_Face.cpp
+Face.hpp
+/home/hicham/projet/Raytracer/src/scene/tests/Face.hpp
+
+src/scene/include/Face.hpp
+iostream
+-
+vector
+-
+stdexcept
+-
+

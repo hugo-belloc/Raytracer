@@ -40,6 +40,10 @@ namespace engine
 	    for(unsigned int j=0;j<height;++j)
 
 	       {
+		  // Pixel position
+
+
+
 		  ray::Ray initialRay=camera->generateRay(i,j);
 		  initialRay.setBounces((int)bounces);
 		  glm::vec3 color(0,0,0);

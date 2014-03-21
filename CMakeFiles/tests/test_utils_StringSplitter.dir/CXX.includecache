@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hicham/projet/Raytracer/src/utils/tests/test_utils_StringSplitter.cpp
+FileLoader.hpp
+/home/hicham/projet/Raytracer/src/utils/tests/FileLoader.hpp
+StringSplitter.hpp
+/home/hicham/projet/Raytracer/src/utils/tests/StringSplitter.hpp
+
+src/utils/include/FileLoader.hpp
+iostream
+-
+string
+-
+stdexcept
+-
+
+src/utils/include/StringSplitter.hpp
+iostream
+-
+vector
+-
+string
+-
+stdexcept
+-
+
