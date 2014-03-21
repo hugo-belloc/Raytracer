@@ -67,7 +67,6 @@ namespace scene
 	const_iterator_vertex begin_vertex() const;
 	const_iterator_vertex end_vertex() const;
 	unsigned int getVertexIndex(const iterator_vertex & it);
-
 	iterator_face begin_face();
 	iterator_face end_face();
 	const_iterator_face begin_face() const;
@@ -83,7 +82,7 @@ namespace scene
 
 	// Methods of th Shape interface
 	virtual bool intersect(const ray::Ray & ray,
-			       Intersection & intersection)const;
+			       Intersection & inter)const;
 	virtual void displayTTY()const;
 	virtual void updateMesh(unsigned int resolution);
 	virtual const Mesh * getMesh() const;
@@ -93,6 +92,9 @@ namespace scene
 	
 
         bool isFaceRight(Face * face);
+	bool intersectTriangle(const Face* f,const ray::Ray & ray,
+			       Intersection & inter,float & t)const;
+
 	std::vector<GLfloat> getPositionArray();
 	std::vector<GLfloat> getNormalArray();
 	std::vector<GLuint> getIndexArray();

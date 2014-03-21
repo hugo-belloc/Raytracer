@@ -16,6 +16,7 @@
 #include "PinholeCamera.hpp"
 #include "Sphere.hpp"
 #include "WindowView.hpp"
+#include "Mesh.hpp"
 using namespace std;
 using namespace glm;
 using namespace scene;
@@ -29,8 +30,8 @@ using namespace gui;
 #include <cmath>
 
 
-#define WIDTH 512
-#define HEIGHT 512
+#define WIDTH 256
+#define HEIGHT 256
 
 #define PI 3.14159265
 
@@ -59,6 +60,7 @@ int main()
     Sphere *sphere2=new Sphere(vec3(0,1,0),0.5);
     Sphere *sphere3=new Sphere(vec3(0,-0.5,1),0.5);
     Sphere *sphere4=new Sphere(vec3(1,1,1),1.0);
+
 
     Material *red=new Material(vec3(1,0,0),0.2,0.7,2.4);
     Material *green=new Material(vec3(0,1,0),0.5,0.0,1.6);

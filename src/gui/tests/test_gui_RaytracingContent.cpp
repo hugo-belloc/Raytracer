@@ -42,12 +42,12 @@ using namespace gui;
 #define NUMBER_SPHERES 8
 #define X_SPHERES -0.5
 #define PI 3.14159265
-
+#define R 1.5
 int main()
 {
     gui::WindowView view(WIDTH,HEIGHT);
 
-    PinholeCamera *cam=new PinholeCamera(vec3(-5,0,0),vec3(0,0,0),
+    PinholeCamera *cam=new PinholeCamera(vec3(-5,0,3),vec3(0,0,0),
     					 vec3(0,0,1),0.001,1000.f,WIDTH,
     					 HEIGHT,45.f);
    
@@ -56,8 +56,8 @@ int main()
     for(int i=0;i<NUMBER_SPHERES;++i)
     {
 	float angle=(2*PI*i)/NUMBER_SPHERES;
-	Sphere *sphere=new Sphere(vec3(X_SPHERES,sin(angle),
-				       cos(angle)),0.40);
+	Sphere *sphere=new Sphere(vec3(X_SPHERES,R*sin(angle),
+				       R*cos(angle)),0.40);
 	Material *material=
 	    new Material(vec3(0,fabs(cos(angle/2)),fabs(sin(angle/2))),
 			 0.8,(i%3)?0:0.8,1.7);
@@ -66,15 +66,15 @@ int main()
     }
 
     Mesh * suzanne=new Mesh;
-    suzanne->loadFromOBJFile("etc/suzanne.obj");
-    Material *matSuzanne=new Material(vec3(1,1,1),0,0);
+    suzanne->loadFromOBJFile("etc/cube.obj");
+    Material *matSuzanne=new Material(vec3(0.7,0.7,0.7),0,0);
     Object * objSuzanne = new Object(suzanne,matSuzanne,
 				     vec3(0,0,0),vec3(180,0,90),
 				     vec3(0.5,0.5,0.5));
     scene.addObject(objSuzanne);
 
-    LightPoint *light=new LightPoint(40,vec3(-6,-5,0),vec3(1,1,1),1.0);    
-    LightPoint *light2=new LightPoint(20,vec3(-6,5,0),vec3(1,1,1),1.5);
+    LightPoint *light=new LightPoint(40,vec3(-6,0,-6),vec3(1,1,1),1.0);    
+    LightPoint *light2=new LightPoint(20,vec3(-6,0,7),vec3(1,1,1),1.5);
 
     scene.addLightPoint(light);
     scene.addLightPoint(light2);

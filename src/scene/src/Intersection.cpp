@@ -76,4 +76,22 @@ namespace scene
 	    _material->displayTTY();
 	}
     }
+    
+    /**
+     * Change the coordonnates system of the interesection
+     * tranfMat3
+     * @param transformationMatrix the matrix of the
+     * new coordonates system.
+     */
+    void Intersection::applyMatrix(const glm::mat4 & transformationMatrix)
+    {
+	glm::vec4 pointH=glm::vec4(getPoint(),1);
+	pointH=transformationMatrix*pointH;
+	setPoint(pointH.xyz*(1/pointH.w));
+	glm::mat3 normalMatrix=glm::mat3(transformationMatrix);
+	normalMatrix=glm::transpose(glm::inverse(normalMatrix));
+	glm::vec3 normal = getNormal();
+	setNormal(normalMatrix*normal);	
+    }
+
 }

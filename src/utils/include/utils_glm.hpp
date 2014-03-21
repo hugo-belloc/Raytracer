@@ -49,6 +49,13 @@ inline std::ostream & operator<<( std::ostream & os,
    return os;
 }
 
+inline std::ostream & operator<<( std::ostream & os,
+			   const glm::vec4 & vector)
+{
+   os<<"("<<vector.x<<","<<vector.y<<","<<vector.z<<","<<vector.w<<")";
+   return os;
+}
+
 inline glm::vec3 componentProduct(const glm::vec3 & a,const glm::vec3 b)
 {
    return glm::vec3(a.x*b.x,a.y*b.y,a.z*b.z);

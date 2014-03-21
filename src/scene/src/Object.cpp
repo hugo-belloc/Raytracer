@@ -69,14 +69,21 @@ namespace scene
     bool Object::intersect(const ray::Ray & ray,
 			   Intersection & intersection)const
     {
-	bool isIntersected= _shape->intersect(ray,intersection);
+	
+	glm::mat4 modelMat = getModelMatrix();
+	glm::mat4 invModel = glm::inverse(modelMat);
+	ray::Ray rayLocal=ray;
+
+	//Translate matrix to local space and compute inter in this space
+	rayLocal.applyMatrix(invModel);
+	bool isIntersected= _shape->intersect(rayLocal,intersection);
 	if(isIntersected)
 	{
 	    intersection.setMaterial(getMaterial());
+	    //Return in world space
+	    intersection.applyMatrix(modelMat);
 	}
 	return isIntersected;
-	//TODO change the intersection with the modelMatrix
-
     }
 
     /**

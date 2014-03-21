@@ -98,7 +98,6 @@ namespace gui
 	sf::Vector2u sizeImage = image->getSize();
 	_image->create(sizeImage.x,sizeImage.y);
 	_image->copy(*image,0,0);
-	_image->saveToFile("copy.png");
 	loadImage();
     }
     

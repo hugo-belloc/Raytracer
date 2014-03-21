@@ -30,15 +30,15 @@ namespace ray
  * @param tmax the maximum value during parametrisation
  * @param tmax the minimum value during parametrisation
  */
-   Ray::Ray(const glm::vec3 & origin ,const glm::vec3 & direction,float tmin, float tmax, int bounces,int mri):
-      _origin(origin),_direction(glm::normalize(direction)), _tmin(tmin),_tmax(tmax),_bounces(bounces),_mri(mri)
-   {}
+    Ray::Ray(const glm::vec3 & origin ,const glm::vec3 & direction,float tmin, float tmax, int bounces,int mri):
+	_origin(origin),_direction(glm::normalize(direction)), _tmin(tmin),_tmax(tmax),_bounces(bounces),_mri(mri)
+    {}
 
 /**
  * Virtual destructor
  */
-   Ray::~Ray()
-   {}
+    Ray::~Ray()
+    {}
    
 /**
  * Compute on point coordinate along the ray.
@@ -47,88 +47,114 @@ namespace ray
  * @param the parameter t of the formula
  * @return the computed coordinate
  */
-   glm::vec3 Ray::operator()(float t) const
-   {
-      return _origin+_direction*t;
-   }
+    glm::vec3 Ray::operator()(float t) const
+    {
+	return _origin+_direction*t;
+    }
    
-   Ray & Ray::operator=(const Ray & ray)
-   {
-      _origin=ray._origin;
-      _direction=ray._direction;
-      _tmax=ray._tmax;
-      _tmin=ray._tmin;
-      _bounces=ray._bounces;
+    Ray & Ray::operator=(const Ray & ray)
+    {
+	_origin=ray._origin;
+	_direction=ray._direction;
+	_tmax=ray._tmax;
+	_tmin=ray._tmin;
+	_bounces=ray._bounces;
 
-      return *this;
-   }
+	return *this;
+    }
 
 
 /**
  * Return the nomber of bounces left. When it
  * reach 0 the ray should not be launch
  */
-   int Ray::getBounces() const
-   {
-      return _bounces;
-   }
-   void Ray::setBounces(int bounces)
-   {
-      _bounces = bounces;
-   }
+    int Ray::getBounces() const
+    {
+	return _bounces;
+    }
+    void Ray::setBounces(int bounces)
+    {
+	_bounces = bounces;
+    }
 
 
-   void Ray::setTmax(float newTmax)const 
-   {
-      _tmax=newTmax;
-   }
+    void Ray::setTmax(float newTmax)const 
+    {
+	_tmax=newTmax;
+    }
 
-   void Ray::setTmin(float newTmin)const 
-   {
-      _tmin=newTmin;
-   }
+    void Ray::setTmin(float newTmin)const 
+    {
+	_tmin=newTmin;
+    }
 
-   float Ray::getTmax() const
-   {
-      return _tmax;
-   }
+    float Ray::getTmax() const
+    {
+	return _tmax;
+    }
    
-   float Ray::getTmin() const
-   {
-      return _tmin;
-   }   
+    float Ray::getTmin() const
+    {
+	return _tmin;
+    }   
    
-   void Ray::displayTTY()const
-   {
-      std::cout<<"Ray[origin="<<_origin;
-      std::cout<<",direction="<<_direction<<"]"<<std::endl;
-   }
-   glm::vec3 Ray::getOrigin()const
-   {
-      return _origin;
-   }
+    void Ray::displayTTY()const
+    {
+	std::cout<<"Ray[origin="<<_origin;
+	std::cout<<",direction="<<_direction<<"]"<<std::endl;
+    }
+    glm::vec3 Ray::getOrigin()const
+    {
+	return _origin;
+    }
 
-   void Ray::setOrigin(const glm::vec3 & origin)
-   {
-      _origin = origin;
-   }
+    void Ray::setOrigin(const glm::vec3 & origin)
+    {
+	_origin = origin;
+    }
 
-   glm::vec3 Ray::getDirection()const
-   {
-      return _direction;
-   }
+    glm::vec3 Ray::getDirection()const
+    {
+	return _direction;
+    }
 
-   float Ray::getMRI() const
-   {
-      return _mri;
-   }
+    void Ray::setDirection(const glm::vec3 & direction)
+    {
+	_direction=direction;
+    }
 
-   glm::vec3 Ray::getColor() const
-   {
-      glm::vec3 color(0,0,0);
-      return color;
-   }
+    float Ray::getMRI() const
+    {
+	return _mri;
+    }
 
+    glm::vec3 Ray::getColor() const
+    {
+	glm::vec3 color(0,0,0);
+	return color;
+    }
+
+    /**
+     * Generate the same ray in a different coordonate
+     * system. 
+     * @param transformationMatrix the transformation matrix
+     * of the new sytem. 
+     */
+    void Ray::applyMatrix(const glm::mat4 & transformationMatrix ) 
+    {
+	glm::vec4 dirH  = glm::vec4(getDirection(),0);
+	dirH = transformationMatrix * dirH;
+	glm::vec4 origH = glm::vec4(getOrigin(),1);
+	origH =  transformationMatrix * origH;
+	
+	_direction = dirH.xyz;
+	_origin = origH.xyz;
+
+	float norm = glm::l2Norm(_direction);
+	_tmin*=norm;
+	_tmax*=norm;
+	_direction *=(1/norm);	
+    }
 
 }
 

@@ -14,6 +14,8 @@
 #include "FileLoader.hpp"
 #include "StringSplitter.hpp"
 
+#define EPSILON 1e-6
+
 using namespace std;
 
 namespace scene
@@ -506,16 +508,89 @@ not a quad nor a triangle");
 
     }
 
-    bool Mesh::intersect(const ray::Ray &,
-			 Intersection & )const
+    /**
+     * Compute the intersection of a triangle (Face) with a ray
+     * @param f the face to intersect with the ray
+     * @param ray the ray to intersect
+     * @param inter the intersection computed
+     * @param t the distance to
+     * @return true if there is an intersection false
+     * otherwise.
+     */
+    bool Mesh::intersectTriangle(const Face* f,const ray::Ray & ray,
+				 Intersection & inter,float & t) const
     {
-	//TODO
-	return false;
+	
+	Vertex * v1=_vertexs[f->getVertex(0)];
+	Vertex * v2=_vertexs[f->getVertex(1)];
+	Vertex * v3=_vertexs[f->getVertex(2)];
+	
+	glm::vec3 e1=v2->getPosition()-v1->getPosition();
+	glm::vec3 e2=v3->getPosition()-v1->getPosition();
+	
+	glm::vec3 rdirxE2 = glm::cross(ray.getDirection(),e2);//P
+	float denom = glm::dot(e1,rdirxE2);
+
+	//If the ray is parallele to the triangle plan
+	if(denom<EPSILON && denom>-EPSILON)
+	{
+
+	    return false;	    
+	}
+	float invDenom=1/denom;
+
+	glm::vec3 orig2v1 = ray.getOrigin()-v1->getPosition();//T	
+	float u,v;
+	u = glm::dot(rdirxE2,orig2v1)*invDenom;
+	if(u<0 || u>1)
+	{
+	    return false;	    
+	}
+	glm::vec3 orig2v1xE1  = glm::cross(orig2v1,e1);//Q
+	v = glm::dot(orig2v1xE1,ray.getDirection())*invDenom;
+	if(v<0 || u+v>1)
+	{
+	    return false;	    
+	}
+	t= glm::dot(orig2v1xE1,e2)*invDenom;
+	if(t>ray.getTmax() || t<ray.getTmin())
+	{
+	    return false;	    
+	}
+
+	float w = 1-u-v;
+	inter.setPoint(ray(t));
+	inter.setNormal(glm::normalize(w*v1->getNormal()+
+				       u*v2->getNormal()+
+				       v*v3->getNormal()));
+
+	return true;
+    }
+
+    bool Mesh::intersect(const ray::Ray & ray,
+			 Intersection & inter)const
+    {
+	float tmin=INFINITY;
+	bool isIntersected=false;
+	Intersection currentInter;
+	float t;
+	const_iterator_face itFace;
+	for(itFace=begin_face();itFace!=end_face();++itFace)
+	{
+	    
+	    if(intersectTriangle(*itFace,ray,currentInter,t) && t<tmin)
+	    {
+		tmin=t;
+		isIntersected=true;
+		inter=currentInter;	
+	    }
+	}
+	return isIntersected;
     }
 
     void Mesh::updateMesh(unsigned int)
     {
-	//Do nothing since the mesh it itself...
+	//Do nothing since the mesh is a mesh itself...
 	updateVAO();
     }
 

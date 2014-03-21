@@ -19,9 +19,20 @@ using namespace std;
 
 int main()
 {
-   glm::vec3 origin(1,0,0), direction(1,1,0);
-   ray::Ray ray(origin,direction,0,100,5);
-   ray.displayTTY();
-   cout<<ray(1.0)<<endl<<ray(1.5)<<endl;
-   return 0;
+    glm::vec3 origin(1,0,0), direction(1,0,0);
+    ray::Ray ray(origin,direction,0,100,5);
+    ray.displayTTY();
+    cout<<"min"<<ray.getTmin()<<" max"<<ray.getTmax()<<endl;
+    glm::mat4 transfo= glm::mat4(1.f);
+    
+    transfo = glm::translate(transfo,glm::vec3(2,1,1));
+    transfo=glm::rotate(transfo,90.f,glm::vec3(0,0,1));
+    transfo = glm::scale(transfo,glm::vec3(2,1,1));
+
+    ray.applyMatrix(transfo);
+   
+    ray.displayTTY();
+    cout<<"min"<<ray.getTmin()<<" max"<<ray.getTmax()<<endl;
+
+    return 0;
 }
