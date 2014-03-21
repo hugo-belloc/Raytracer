@@ -40,9 +40,6 @@ using namespace gui;
 int main()
 {
     
-
-
-
     sf::Image img;
     RaytracingEngine engine(&img);
     img.create(WIDTH,HEIGHT,sf::Color(0,0,20));

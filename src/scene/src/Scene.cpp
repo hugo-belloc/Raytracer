@@ -15,7 +15,7 @@
 #include <sstream>
 #include "Scene.hpp"
 #include "FileLoader.hpp"
-
+#define EPSILON 1e-6
 
 using namespace std;
 namespace scene
@@ -229,34 +229,41 @@ namespace scene
 	    {
 		float coeff=fabs(glm::dot(currentRay.getDirection(),normalHit));
 		// Reflexion ray
-		ray::ReflexionRay reflexionRay(pointHit,glm::reflect(incident,normalHit),
-					       0.001,getCamera()->getFarPlan(),
-					       currentRay.getBounces()-1);
-		color+=coeff*materialHit->getReflexionAttenuation()*
-		    getColor(reflexionRay);
+		if(coeff*materialHit->getReflexionAttenuation()>EPSILON)
+		{
+		    ray::ReflexionRay reflexionRay(pointHit,glm::reflect(incident,normalHit),
+						   0.001,getCamera()->getFarPlan(),
+						   currentRay.getBounces()-1);
+		    color+=coeff*materialHit->getReflexionAttenuation()*
+			getColor(reflexionRay);
+		}
 		// Transmission ray
-		glm::vec3 dummyVec = glm::dot(incident,normalHit) * normalHit - incident;
-		float sinT1 = glm::dot(dummyVec,dummyVec);
-		float cosT1 = sqrt(fabs(1-sinT1*sinT1));
-
-		float eta12 = currentRay.getMRI()/materialHit->getMRI();
-		float c = 1-eta12*eta12*sinT1*sinT1;
-		c = (c>0) ? c : 0;
-		float dF1 = (eta12 * cosT1 - sqrt(c)); 
-		glm::vec3 transmittedDirection = eta12 * incident + (dF1 * normalHit); 
-		transmittedDirection = glm::normalize(transmittedDirection);
-
-		ray::TransmissionRay transmittedRay(pointHit,
-						    transmittedDirection,
-						    0.001,
-						    getCamera()->getFarPlan(),
-						    currentRay.getBounces()-1,
-						    (eta12==1.0) ? 1.0 : materialHit->getMRI()
-		    );	  
 
 		float alpha = materialHit->getTransmissionAttenuation();
 		alpha*=coeff;
-		color+=alpha*getColor(transmittedRay);
+		if(alpha>EPSILON)
+		{
+		    glm::vec3 dummyVec = glm::dot(incident,normalHit) * normalHit - incident;
+		    float sinT1 = glm::dot(dummyVec,dummyVec);
+		    float cosT1 = sqrt(fabs(1-sinT1*sinT1));
+
+		    float eta12 = currentRay.getMRI()/materialHit->getMRI();
+		    float c = 1-eta12*eta12*sinT1*sinT1;
+		    c = (c>0) ? c : 0;
+		    float dF1 = (eta12 * cosT1 - sqrt(c)); 
+		    glm::vec3 transmittedDirection = eta12 * incident + (dF1 * normalHit); 
+		    transmittedDirection = glm::normalize(transmittedDirection);
+
+		    ray::TransmissionRay transmittedRay(pointHit,
+							transmittedDirection,
+							0.001,
+							getCamera()->getFarPlan(),
+							currentRay.getBounces()-1,
+							(eta12==1.0) ? 1.0 : materialHit->getMRI()
+			);	  
+
+		    color+=alpha*getColor(transmittedRay);
+		}
 	    }
 	       
 	}
