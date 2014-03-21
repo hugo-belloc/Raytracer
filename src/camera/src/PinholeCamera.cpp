@@ -64,6 +64,15 @@ namespace camera
 	ray::CameraRay ray(getPosition(),rayDir,getNearPlan(),getFarPlan(),5);
 	return ray;
     }
+
+   ray::CameraRay PinholeCamera::generateRay(glm::vec3 point) const
+   {
+      glm::vec3 rayDir=point-getPosition();
+      ray::CameraRay ray(getPosition(),rayDir,getNearPlan(),getFarPlan(),5);
+      return ray;
+   }
+
+   
     
     void PinholeCamera::setFov(float fov)
     {

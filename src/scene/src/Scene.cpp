@@ -185,7 +185,8 @@ namespace scene
 	scene::Intersection inter;
 	if(intersect(currentRay,inter))
 	{
-	    glm::vec3 pointHit=inter.getPoint();
+	   glm::vec3 pointHit=inter.getPoint(); 
+	   currentIntersection = pointHit;
 	    glm::vec3 normalHit=inter.getNormal();
 	    glm::vec3 incident = currentRay.getDirection();
 	    materials::Material * materialHit=inter.getMaterial();
