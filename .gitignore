@@ -9,6 +9,7 @@
 *.la
 *.a
 
+Makefile
 build/*
 lib/*
 doc/*
