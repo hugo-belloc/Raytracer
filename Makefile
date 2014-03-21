@@ -164,6 +164,19 @@ tests/test_engine_RaytracingEngine/fast:
 .PHONY : tests/test_engine_RaytracingEngine/fast
 
 #=============================================================================
+# Target rules for targets named tests/test_engine_depthBlur
+
+# Build rule for target.
+tests/test_engine_depthBlur: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests/test_engine_depthBlur
+.PHONY : tests/test_engine_depthBlur
+
+# fast build rule for target.
+tests/test_engine_depthBlur/fast:
+	$(MAKE) -f CMakeFiles/tests/test_engine_depthBlur.dir/build.make CMakeFiles/tests/test_engine_depthBlur.dir/build
+.PHONY : tests/test_engine_depthBlur/fast
+
+#=============================================================================
 # Target rules for targets named tests/test_gui_Mesh
 
 # Build rule for target.
@@ -551,6 +564,30 @@ src/engine/tests/test_engine_RaytracingEngine.s: src/engine/tests/test_engine_Ra
 src/engine/tests/test_engine_RaytracingEngine.cpp.s:
 	$(MAKE) -f CMakeFiles/tests/test_engine_RaytracingEngine.dir/build.make CMakeFiles/tests/test_engine_RaytracingEngine.dir/src/engine/tests/test_engine_RaytracingEngine.cpp.s
 .PHONY : src/engine/tests/test_engine_RaytracingEngine.cpp.s
+
+src/engine/tests/test_engine_depthBlur.o: src/engine/tests/test_engine_depthBlur.cpp.o
+.PHONY : src/engine/tests/test_engine_depthBlur.o
+
+# target to build an object file
+src/engine/tests/test_engine_depthBlur.cpp.o:
+	$(MAKE) -f CMakeFiles/tests/test_engine_depthBlur.dir/build.make CMakeFiles/tests/test_engine_depthBlur.dir/src/engine/tests/test_engine_depthBlur.cpp.o
+.PHONY : src/engine/tests/test_engine_depthBlur.cpp.o
+
+src/engine/tests/test_engine_depthBlur.i: src/engine/tests/test_engine_depthBlur.cpp.i
+.PHONY : src/engine/tests/test_engine_depthBlur.i
+
+# target to preprocess a source file
+src/engine/tests/test_engine_depthBlur.cpp.i:
+	$(MAKE) -f CMakeFiles/tests/test_engine_depthBlur.dir/build.make CMakeFiles/tests/test_engine_depthBlur.dir/src/engine/tests/test_engine_depthBlur.cpp.i
+.PHONY : src/engine/tests/test_engine_depthBlur.cpp.i
+
+src/engine/tests/test_engine_depthBlur.s: src/engine/tests/test_engine_depthBlur.cpp.s
+.PHONY : src/engine/tests/test_engine_depthBlur.s
+
+# target to generate assembly for a file
+src/engine/tests/test_engine_depthBlur.cpp.s:
+	$(MAKE) -f CMakeFiles/tests/test_engine_depthBlur.dir/build.make CMakeFiles/tests/test_engine_depthBlur.dir/src/engine/tests/test_engine_depthBlur.cpp.s
+.PHONY : src/engine/tests/test_engine_depthBlur.cpp.s
 
 src/gui/src/ImageContent.o: src/gui/src/ImageContent.cpp.o
 .PHONY : src/gui/src/ImageContent.o
@@ -1765,6 +1802,7 @@ help:
 	@echo "... tests/test_camera_PinholeCamera"
 	@echo "... tests/test_engine_Mesh"
 	@echo "... tests/test_engine_RaytracingEngine"
+	@echo "... tests/test_engine_depthBlur"
 	@echo "... tests/test_gui_Mesh"
 	@echo "... tests/test_gui_ObserverPattern"
 	@echo "... tests/test_gui_RasterisationContent"
@@ -1803,6 +1841,9 @@ help:
 	@echo "... src/engine/tests/test_engine_RaytracingEngine.o"
 	@echo "... src/engine/tests/test_engine_RaytracingEngine.i"
 	@echo "... src/engine/tests/test_engine_RaytracingEngine.s"
+	@echo "... src/engine/tests/test_engine_depthBlur.o"
+	@echo "... src/engine/tests/test_engine_depthBlur.i"
+	@echo "... src/engine/tests/test_engine_depthBlur.s"
 	@echo "... src/gui/src/ImageContent.o"
 	@echo "... src/gui/src/ImageContent.i"
 	@echo "... src/gui/src/ImageContent.s"
