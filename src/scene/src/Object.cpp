@@ -45,6 +45,7 @@ namespace scene
 	_rotation(rotation),_scale(scale)
     {
 	_shape->updateMesh(defaultResolution);
+	updateMatrices();
     }
 
     /**
@@ -70,18 +71,16 @@ namespace scene
 			   Intersection & intersection)const
     {
 	
-	glm::mat4 modelMat = getModelMatrix();
-	glm::mat4 invModel = glm::inverse(modelMat);
 	ray::Ray rayLocal=ray;
 
 	//Translate matrix to local space and compute inter in this space
-	rayLocal.applyMatrix(invModel);
+	rayLocal.applyMatrix(_inverseModelMatrix);
 	bool isIntersected= _shape->intersect(rayLocal,intersection);
 	if(isIntersected)
 	{
 	    intersection.setMaterial(getMaterial());
 	    //Return in world space
-	    intersection.applyMatrix(modelMat);
+	    intersection.applyMatrix(_modelMatrix);
 	}
 	return isIntersected;
     }
@@ -93,20 +92,6 @@ namespace scene
     materials::Material * Object::getMaterial()const
     {
 	return _material;
-    }
-
-    /**
-     * Diplay the content of the object in the standart 
-     * output. For debug purpose.
-     */
-    void Object::diplayTTY()const
-    {
-	cout<<"Material"<<endl<<"["<<endl;
-	cout<<"   "<<endl;
-	_shape->displayTTY();
-	cout<<"   "<<endl;
-	_material->displayTTY();
-	cout<<"]"<<endl<<endl;
     }
 
     /**
@@ -143,6 +128,7 @@ namespace scene
     void Object::setLocation(const glm::vec3 & location)
     {
 	_location=location;
+	updateMatrices();
     }
 
     /**
@@ -153,6 +139,7 @@ namespace scene
     void Object::setRotation(const glm::vec3 & rotation)
     {
 	_rotation=rotation;
+	updateMatrices();
     }
 
     /**
@@ -163,6 +150,7 @@ namespace scene
     void Object::setScale(const glm::vec3 & scale)
     {
 	_scale=scale;
+	updateMatrices();
     }
 
     /**
@@ -170,15 +158,17 @@ namespace scene
      */
     glm::mat4 Object::getModelMatrix()const
     {
-	glm::mat4 modelMatrix(1.0);
-	modelMatrix = glm::scale(modelMatrix,_scale);
-	modelMatrix = glm::rotate(modelMatrix,_rotation.x,glm::vec3(1,0,0));
-	modelMatrix = glm::rotate(modelMatrix,_rotation.y,glm::vec3(0,1,0));
-	modelMatrix = glm::rotate(modelMatrix,_rotation.z,glm::vec3(0,0,1));
-	modelMatrix = glm::translate(modelMatrix,_location);
-
-	return modelMatrix;
+	return _modelMatrix;
     }
+
+    /**
+     * @return the inverse of the model Matrix
+     */
+    glm::mat4 Object::getInverseModelMatrix()const
+    {
+	return _inverseModelMatrix;
+    }
+        
 
     /**
      * Update the object representation.
@@ -193,7 +183,7 @@ namespace scene
 	_shape->updateMesh(resolution);
     }
 
-     /**
+    /**
      * Update the object representation.
      * with the default definition.
      *
@@ -220,5 +210,35 @@ namespace scene
 	_shape->getMesh()->draw();
     }
 
+    /**
+     * Diplay the content of the object in the standart 
+     * output. For debug purpose.
+     */
+    void Object::diplayTTY()const
+    {
+	cout<<"Object"<<endl<<"["<<endl;
+	cout<<"   ";
+	_shape->displayTTY();
+	cout<<"   ";
+	_material->displayTTY();
+	cout<<"   location: "<<_location<<endl;
+	cout<<"   rotation: "<<_rotation<<endl;
+	cout<<"   scale: "<<_scale<<endl;
+	cout<<"]"<<endl<<endl;
+    }
+
+    
+    void  Object::updateMatrices()
+    {
+	_modelMatrix = glm::scale(_modelMatrix,_scale);
+	_modelMatrix = glm::rotate(_modelMatrix,_rotation.x,
+				   glm::vec3(1,0,0));
+	_modelMatrix = glm::rotate(_modelMatrix,_rotation.y,
+				   glm::vec3(0,1,0));
+	_modelMatrix = glm::rotate(_modelMatrix,_rotation.z,
+				   glm::vec3(0,0,1));
+	_modelMatrix = glm::translate(_modelMatrix,_location);
+	_inverseModelMatrix = glm::inverse(_modelMatrix);	
+    }
 
 }

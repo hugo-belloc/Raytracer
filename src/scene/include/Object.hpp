@@ -47,7 +47,6 @@ namespace scene
 	bool intersect(const ray::Ray & ray,
 		       Intersection & intersection)const;
 	materials::Material * getMaterial()const;      
-	void diplayTTY()const;
 
 	glm::vec3 getLocation() const;
 	glm::vec3 getRotation() const;
@@ -57,20 +56,26 @@ namespace scene
 	void setScale(const glm::vec3 & scale);
 	
 	glm::mat4 getModelMatrix()const;
+	glm::mat4 getInverseModelMatrix()const;
 	
 	void updateMesh(unsigned int resolution);
 	void updateMesh();
 
 	void setUniforms(const utils::Program & prog) const;
 	void draw()const;
+
+	void diplayTTY()const;
 	
 
     private :
+	void updateMatrices();
 	scene::Shape * _shape;
 	materials::Material * _material;
 	glm::vec3 _location;
 	glm::vec3 _rotation;
 	glm::vec3 _scale;
+	glm::mat4 _modelMatrix;
+	glm::mat4 _inverseModelMatrix;
     };
 }
 #endif
