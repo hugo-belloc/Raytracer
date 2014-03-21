@@ -44,7 +44,7 @@ int main()
     RaytracingEngine engine(&img);
     img.create(WIDTH,HEIGHT,sf::Color(0,0,20));
     PinholeCamera *cam=new PinholeCamera(vec3(-5,0,1),vec3(0,0,0),
-					 vec3(0,1,0),0.001,1000.f,WIDTH,
+					 vec3(0,1,0),5,1000.f,WIDTH,
 					 HEIGHT,45.f);
     Sphere *sphere=new Sphere(vec3(0,0,0),0.5);
     Sphere *sphere2=new Sphere(vec3(0,1,0),0.5);
@@ -52,7 +52,7 @@ int main()
     Sphere *sphere4=new Sphere(vec3(1,1,1),1.0);
 
 
-    Material *red=new Material(vec3(1,0,0),0.2,0.7,2.4);
+    Material *red=new Material(vec3(1,1,0),0.2,0.7,2.4);
     Material *green=new Material(vec3(0,1,0),0.5,0.0,1.6);
     Material *blue=new Material(vec3(0,0,1),0.0,0.8,1.0);
     Material *white=new Material(vec3(1,1,1),0,0.0,1.0);

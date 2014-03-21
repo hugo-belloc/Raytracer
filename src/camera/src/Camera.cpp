@@ -89,6 +89,16 @@ namespace camera
       return _farPlan;
    }
 
+   void Camera::setFocalPlan(float focalPlan)
+   {
+      _focalPlan = focalPlan;
+   }
+
+   float Camera::getFocalPlan() const
+   {
+      return _focalPlan;
+   }
+
 
    void Camera::setHeight(unsigned int height)
    {
