@@ -40,7 +40,7 @@ namespace engine
 	    for(unsigned int j=0;j<height;++j)
 
 	       {
-		  // Pixel position
+		  // Pixel center position
 
 
 
