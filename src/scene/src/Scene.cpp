@@ -186,11 +186,10 @@ namespace scene
 	if(intersect(currentRay,inter))
 	{
 	   glm::vec3 pointHit=inter.getPoint(); 
-	   currentIntersection = pointHit;
-	    glm::vec3 normalHit=inter.getNormal();
-	    glm::vec3 incident = currentRay.getDirection();
-	    materials::Material * materialHit=inter.getMaterial();
-	    float alpha = 1.0;
+	   glm::vec3 normalHit=inter.getNormal();
+	   glm::vec3 incident = currentRay.getDirection();
+	   materials::Material * materialHit=inter.getMaterial();
+	   float alpha = 1.0;
 	
 	    // Part 1 : Light contribution
 	    for(iterator_light it=begin_light();

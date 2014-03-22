@@ -36,7 +36,6 @@ namespace scene
     class Scene
     {
     public :
-       glm::vec3 currentIntersection; // to remove
 	typedef std::vector<light::LightPoint*>::iterator iterator_light;
 	typedef std::vector<scene::Object*>::iterator iterator_object;
 	typedef std::vector<light::LightPoint*>::const_iterator const_iterator_light;
