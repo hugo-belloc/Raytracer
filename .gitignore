@@ -8,6 +8,7 @@
 *.lai
 *.la
 *.a
+*.png
 
 Makefile
 build/*

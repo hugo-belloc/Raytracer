@@ -72,15 +72,21 @@ namespace gui
 		    case sf::Event::Closed:
 			_window.close();
 			break;
-		    case sf::Event::Resized:		
-			glViewport(0, 0, event.size.width,
-				   event.size.height);
+		    // case sf::Event::Resized:		
+		    // 	glViewport(0, 0, event.size.width,
+		    // 		   event.size.height);
 			break;
 		    case sf::Event::KeyPressed:
-			if(event.key.code == sf::Keyboard::A)
-			{
-			    _model->nextContent();
-			}
+			// if(event.key.code == sf::Keyboard::A)
+			// {
+			//     _model->nextContent();
+			// }
+			fireEvent(WindowEvent(KEY_PRESSED,
+					      event.key.code));
+
+		    case sf::Event::KeyReleased:
+			fireEvent(WindowEvent(KEY_RELEASE,
+					      event.key.code));
 			    
 			break;
 		    default:

@@ -1,10 +1,14 @@
 #ifndef WINDOWCONTROLLER_HPP
 #define WINDOWCONTROLLER_HPP
 
+#include "utils_glm.hpp"
 #include "Observer.hpp"
 #include "WindowEvent.hpp"
 #include "WindowModel.hpp"
 #include "WindowView.hpp"
+#include "Scene.hpp"
+#include "RaytracingContent.hpp"
+#include "RasterisationContent.hpp"
 
 namespace gui
 {
@@ -19,17 +23,18 @@ namespace gui
 class WindowController : public Observer<WindowEvent>
 {
 public:
-    static WindowController * getInstance();
+    WindowController(WindowView *view,scene::Scene * scene);
     virtual ~WindowController();
-    void update();
+    virtual void update(const WindowEvent & event);
+    void activate();
 
 private:
-    WindowController();
-    WindowController * instance;
+    glm::vec3 sphericalTransform(const glm::vec3 & pos,
+				 float dr,float dphi,float dtheta);
+    void moveSphereCamera(float dr,float dphi,float dtheta);
 
-    WindowView * _view;
-    WindowModel * _model;
-
+    gui::WindowView * _view;
+    scene::Scene * _scene;
 
 };
 
