@@ -24,6 +24,7 @@ namespace camera
    class PinholeCamera : public Camera
    {
    public :
+
       PinholeCamera(glm::vec3 position,glm::vec3 target,
 		    glm::vec3 up,float nearPlan,float farPlan,
 		    unsigned int width, unsigned int height,float fov);

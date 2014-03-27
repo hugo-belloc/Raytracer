@@ -46,7 +46,6 @@ namespace camera
 	h = glm::normalize(h);
 	glm::vec3 v = -glm::cross( h, view) ;
 	v = glm::normalize(v);
-	
 	// convert fovy to radians 
 	float radFovy = (getFov()*M_PI) / 180;
 	float vScale = tan( radFovy / 2 )*getNearPlan();
