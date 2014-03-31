@@ -24,6 +24,7 @@
 #include "Vertex.hpp"
 #include "Face.hpp"
 #include "Shape.hpp"
+#include "BoundingBox.hpp"
 
 namespace scene
 {
@@ -86,23 +87,23 @@ namespace scene
 	virtual void displayTTY()const;
 	virtual void updateMesh(unsigned int resolution);
 	virtual const Mesh * getMesh() const;
-	
+	void updateBBox();
 	
     private :
 	
-
-        bool isFaceRight(Face * face);
 	bool intersectTriangle(const Face* f,const ray::Ray & ray,
 			       Intersection & inter,float & t)const;
 
 	std::vector<GLfloat> getPositionArray();
 	std::vector<GLfloat> getNormalArray();
 	std::vector<GLuint> getIndexArray();
+	
 
 	std::vector<Vertex*> _vertexs;
 	std::vector<Face*> _faces;
 	GLuint _vao;
 	bool _isVao;
+	BoundingBox _bbox;
        
     };
 

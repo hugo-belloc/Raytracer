@@ -63,7 +63,8 @@ int main()
     }
 
     Mesh * suzanne=new Mesh;
-    suzanne->loadFromOBJFile("etc/cube.obj");
+    suzanne->loadFromOBJFile("etc/suzanne.obj");
+    suzanne->updateBBox();
     Material *matSuzanne=new Material(vec3(0.7,0.7,0.7),0,0);
     Object * objSuzanne = new Object(suzanne,matSuzanne,
 				     vec3(0,0,0),vec3(180,0,90),

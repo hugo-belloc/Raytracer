@@ -24,7 +24,7 @@ namespace scene
     /**
      * Create an empty Mesh
      */
-    Mesh::Mesh():_vertexs(),_faces(),_vao(0),_isVao(false)
+    Mesh::Mesh():_vertexs(),_faces(),_vao(0),_isVao(false),_bbox()
     {}
 
     /**
@@ -95,6 +95,7 @@ namespace scene
 	    throw invalid_argument("Attempt to add a null vertex to a Mesh");
 	}
 	_vertexs.push_back(vertex);
+	updateBBox();
     }
 
     /**
@@ -575,6 +576,12 @@ not a quad nor a triangle");
 	Intersection currentInter;
 	float t;
 	const_iterator_face itFace;
+
+	if(!_bbox.intersect(ray))
+	{
+	    return false;
+	}
+
 	for(itFace=begin_face();itFace!=end_face();++itFace)
 	{
 	    
@@ -598,6 +605,15 @@ not a quad nor a triangle");
     {
 	//return itself
 	return this;
+    }
+
+    void Mesh::updateBBox()
+    {
+	iterator_vertex itVert;
+	for(itVert=begin_vertex();itVert!=end_vertex();++itVert)
+	{
+	    _bbox.surroundPoint((*itVert)->getPosition());
+	}
     }
 
 }

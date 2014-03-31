@@ -34,6 +34,8 @@ namespace scene
       void setMaterial(materials::Material * mat);      
       Intersection & operator=(const Intersection & intersection);
       void displayTTY();
+      void applyMatrix(const glm::mat4 & transformationMatrix,
+		       const glm::mat3 & normalMatrix);
       void applyMatrix(const glm::mat4 & transformationMatrix);
 
    private :

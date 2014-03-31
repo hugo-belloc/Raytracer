@@ -57,6 +57,7 @@ namespace scene
 	
 	glm::mat4 getModelMatrix()const;
 	glm::mat4 getInverseModelMatrix()const;
+	glm::mat3 getNormalMatrix()const;
 	
 	void updateMesh(unsigned int resolution);
 	void updateMesh();
@@ -76,6 +77,7 @@ namespace scene
 	glm::vec3 _scale;
 	glm::mat4 _modelMatrix;
 	glm::mat4 _inverseModelMatrix;
+	glm::mat3 _normalMatrix;
     };
 }
 #endif

@@ -28,7 +28,7 @@ using namespace utils;
 using namespace gui;
 
 #include <cmath>
-
+#include <exception> 
 
 #define WIDTH 256
 #define HEIGHT 256
@@ -41,41 +41,57 @@ int main()
 {
     
     sf::Image img;
-    RaytracingEngine engine(&img);
-    img.create(WIDTH,HEIGHT,sf::Color(0,0,20));
-    PinholeCamera *cam=new PinholeCamera(vec3(-5,0,1),vec3(0,0,0),
-					 vec3(0,1,0),5,1000.f,WIDTH,
-					 HEIGHT,45.f);
-    Sphere *sphere=new Sphere(vec3(0,0,0),0.5);
-    Sphere *sphere2=new Sphere(vec3(0,1,0),0.5);
-    Sphere *sphere3=new Sphere(vec3(0,-0.5,1),0.5);
-    Sphere *sphere4=new Sphere(vec3(1,1,1),1.0);
+    try
+    {
+	utils::OpenglObject obj;
+	RaytracingEngine engine(&img);
+	img.create(WIDTH,HEIGHT,sf::Color(0,0,20));
+	PinholeCamera *cam=new PinholeCamera(vec3(-5,0,1),vec3(0,0,0),
+					     vec3(0,1,0),5,1000.f,WIDTH,
+					     HEIGHT,45.f);
+	Sphere *sphere=new Sphere(vec3(0,0,0),0.5);
+	Sphere *sphere2=new Sphere(vec3(0,1,0),0.5);
+	Sphere *sphere3=new Sphere(vec3(0,-0.5,1),0.5);
+	Sphere *sphere4=new Sphere(vec3(1,1,1),1.0);
 
 
-    Material *red=new Material(vec3(1,1,0),0.2,0.7,2.4);
-    Material *green=new Material(vec3(0,1,0),0.5,0.0,1.6);
-    Material *blue=new Material(vec3(0,0,1),0.0,0.8,1.0);
-    Material *white=new Material(vec3(1,1,1),0,0.0,1.0);
+	Material *red=new Material(vec3(1,1,0),0.2,0.7,2.4);
+	Material *green=new Material(vec3(0,1,0),0.5,0.0,1.6);
+	Material *blue=new Material(vec3(0,0,1),0.0,0.8,1.0);
+	Material *white=new Material(vec3(1,1,1),0,0.0,1.0);
+
+	cout<<"Finish0"<<endl;  
    
+//	Object *redSphere=new Object(sphere,red);
+	cout<<"Finish0"<<endl;  
+	Object * greenSphere=new Object(sphere2,green);
+	Object * blueSphere=new Object(sphere3,blue);
+	Object * whiteSphere=new Object(sphere4,white);
 
-    Object *redSphere=new Object(sphere,red);
-    Object * greenSphere=new Object(sphere2,green);
-    Object * blueSphere=new Object(sphere3,blue);
-    Object * whiteSphere=new Object(sphere4,white);
+	cout<<"Finish1"<<endl;
+	LightPoint *light=new LightPoint(30,vec3(-6,-5,0),vec3(1,1,1),1.0);
+	LightPoint *light2=new LightPoint(20,vec3(-6,2,0),vec3(1,1,1),1.0);
+	cout<<"Finish2"<<endl;
+	Scene scene(cam);
+	cout<<"Finish3"<<endl;
+//	scene.addObject(redSphere);
+	scene.addObject(greenSphere);
+	scene.addObject(blueSphere);
+	scene.addObject(whiteSphere);
+	cout<<"Finish4"<<endl;
+	scene.addLightPoint(light);
+	scene.addLightPoint(light2);
+	cout<<"Finish5"<<endl;
+	engine.raytrace(scene);
+	img.saveToFile("backup.png");
+	cout<<"Finish6"<<endl;
 
-    LightPoint *light=new LightPoint(30,vec3(-6,-5,0),vec3(1,1,1),1.0);
-    LightPoint *light2=new LightPoint(20,vec3(-6,2,0),vec3(1,1,1),1.0);
-    Scene scene(cam);
-    scene.addObject(redSphere);
-    scene.addObject(greenSphere);
-    scene.addObject(blueSphere);
-    scene.addObject(whiteSphere);
-
-    scene.addLightPoint(light);
-    scene.addLightPoint(light2);
-    engine.raytrace(scene);
-    img.saveToFile("img.png");
-
+    }
+    catch(const std::exception & e)
+    {
+	cout<<"Exception :"<<e.what()<<endl;
+	return EXIT_FAILURE;
+    }
    
     return 0;
 }
