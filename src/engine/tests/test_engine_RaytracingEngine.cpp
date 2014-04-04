@@ -59,32 +59,28 @@ int main()
 	Material *green=new Material(vec3(0,1,0),0.5,0.0,1.6);
 	Material *blue=new Material(vec3(0,0,1),0.0,0.8,1.0);
 	Material *white=new Material(vec3(1,1,1),0,0.0,1.0);
-
-	cout<<"Finish0"<<endl;  
    
-//	Object *redSphere=new Object(sphere,red);
-	cout<<"Finish0"<<endl;  
+	Object *redSphere=new Object(sphere,red);
 	Object * greenSphere=new Object(sphere2,green);
 	Object * blueSphere=new Object(sphere3,blue);
 	Object * whiteSphere=new Object(sphere4,white);
 
-	cout<<"Finish1"<<endl;
 	LightPoint *light=new LightPoint(30,vec3(-6,-5,0),vec3(1,1,1),1.0);
 	LightPoint *light2=new LightPoint(20,vec3(-6,2,0),vec3(1,1,1),1.0);
-	cout<<"Finish2"<<endl;
+
 	Scene scene(cam);
-	cout<<"Finish3"<<endl;
-//	scene.addObject(redSphere);
+
+	scene.addObject(redSphere);
 	scene.addObject(greenSphere);
 	scene.addObject(blueSphere);
 	scene.addObject(whiteSphere);
-	cout<<"Finish4"<<endl;
+
 	scene.addLightPoint(light);
 	scene.addLightPoint(light2);
-	cout<<"Finish5"<<endl;
+
 	engine.raytrace(scene);
 	img.saveToFile("backup.png");
-	cout<<"Finish6"<<endl;
+
 
     }
     catch(const std::exception & e)

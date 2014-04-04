@@ -20,8 +20,9 @@ namespace camera
 
     PinholeCamera::PinholeCamera(glm::vec3 position,glm::vec3 target,
 				 glm::vec3 up,float nearPlan,float farPlan,
-				 unsigned int width,unsigned int height,float fov) :
-	Camera(position,target,up,nearPlan,farPlan,width,height),
+				 unsigned int width,unsigned int height,
+				 float fov,float aperture) :
+	Camera(position,target,up,nearPlan,farPlan,width,height,aperture),
 	_fov(fov)
 	
     {}

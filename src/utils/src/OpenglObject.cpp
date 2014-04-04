@@ -35,7 +35,6 @@ namespace utils
 		std::cerr<<"Failed to initialize GLEW"<<std::endl;
 		exit(-1);
 	    }
-	    std::cout<<"coucou"<<std::endl;
 	}
     }
 }

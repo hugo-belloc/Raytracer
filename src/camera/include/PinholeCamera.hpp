@@ -27,7 +27,8 @@ namespace camera
 
       PinholeCamera(glm::vec3 position,glm::vec3 target,
 		    glm::vec3 up,float nearPlan,float farPlan,
-		    unsigned int width, unsigned int height,float fov);
+		    unsigned int width, unsigned int height,float fov,
+		    float aperture=0.02);
       virtual ~PinholeCamera();
       
       virtual glm::mat4 getPerspectiveMatrice()const;

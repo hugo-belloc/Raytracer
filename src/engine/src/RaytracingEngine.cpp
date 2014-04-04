@@ -61,7 +61,7 @@ namespace engine
 
 		if(_dofEnabled)
 		{
-		    float r = 0.1;
+		    float r = 0.03;
 
 		    for(unsigned int i = 0 ; i < _samplingDof ; i++)
 		    {	
@@ -78,7 +78,7 @@ namespace engine
 		    }
 
 		    camera->setPosition(cameraInitialPosition);
-		    color/=100;
+		    color/=_samplingDof;
 		}
 		else
 		{
