@@ -59,9 +59,11 @@ namespace engine
 
 		// DOF
 
+		glm::vec3 pointAimed = cameraInitialPosition + camera->getFocalPlan() * initialRay.getDirection();
+
 		if(_dofEnabled)
 		{
-		    float r = 0.03;
+		    float r = camera->getAperture();
 
 		    for(unsigned int i = 0 ; i < _samplingDof ; i++)
 		    {	
@@ -69,8 +71,6 @@ namespace engine
 			float dj =((rand()%2)?-1:1)*rand()/float(RAND_MAX+1.0);
 			glm::vec3 newPos(cameraInitialPosition+r*di*u+r*dj*v);
 			camera->setPosition(newPos);
-
-			glm::vec3 pointAimed = newPos + camera->getFocalPlan() * initialRay.getDirection();
 
 			ray::Ray jRay = camera->generateRay(pointAimed);
 			jRay.setBounces((int)bounces);

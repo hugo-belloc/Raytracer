@@ -26,10 +26,6 @@ namespace camera
 	       glm::vec3 up,float nearPlan,float farPlan,
 	       unsigned int width, unsigned int height,float aperture);
 	virtual ~Camera();
-	virtual glm::mat4 getViewMatrice()const;
-	virtual glm::mat4 getPerspectiveMatrice()const=0;
-	virtual glm::mat4 getViewPerspectiveMatrice()const;
-
 	virtual ray::CameraRay generateRay(unsigned int i,unsigned int j) const=0;
 	virtual ray::CameraRay generateRay(glm::vec3 point) const = 0;
     
@@ -56,7 +52,13 @@ namespace camera
 	virtual void setAperture(float aperture);
 	virtual float getAperture()const;
 
+	virtual const glm::mat4 & getViewMatrice()const;
+	virtual const glm::mat4 & getInverseViewMatrix()const;
+	virtual const glm::mat4 & getPerspectiveMatrice()const;
+	virtual const glm::mat4 & getInversePerspectiveMatrice()const;
 
+	virtual void updateViewMatrix()const;
+	virtual void updatePerspectiveMatrix()const=0;
     private :
 	glm::vec3 _position;
 	glm::vec3 _target;
@@ -67,7 +69,12 @@ namespace camera
 	unsigned int _width;
 	unsigned int _height;
 	float _aperture;
-
+	
+    protected :
+	mutable glm::mat4 _viewMatrix;
+	mutable glm::mat4 _inverseViewMatrix;
+	mutable glm::mat4 _perspectiveMatrix;
+	mutable glm::mat4 _inversePerspectiveMatrix;
     };
 }
 

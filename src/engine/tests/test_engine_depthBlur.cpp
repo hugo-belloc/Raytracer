@@ -43,7 +43,7 @@ int main()
     utils::OpenglObject obj;
    
     sf::Image img;
-    RaytracingEngine engine(&img,true);
+    RaytracingEngine engine(&img,true,10);
     img.create(WIDTH,HEIGHT,sf::Color(0,0,20));
     PinholeCamera *cam=new PinholeCamera(vec3(-5,0,0),vec3(0,0,0),
 					 vec3(0,1,0),0.001,1000.f,WIDTH,
@@ -52,7 +52,6 @@ int main()
     Sphere *sphere2=new Sphere(vec3(2,0,0),2);
     Sphere *sphere3=new Sphere(vec3(3,0,0),5);
     Sphere *sphere4=new Sphere(vec3(10,0,0),10);
-
 
     Material *red=new Material(vec3(1,0,0));
     Material *green=new Material(vec3(0,1,0));

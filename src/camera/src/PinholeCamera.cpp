@@ -25,52 +25,43 @@ namespace camera
 	Camera(position,target,up,nearPlan,farPlan,width,height,aperture),
 	_fov(fov)
 	
-    {}
+    {
+	updatePerspectiveMatrix();
+    }
 
     PinholeCamera::~PinholeCamera()
     {}
 
-    glm::mat4 PinholeCamera::getPerspectiveMatrice()const
-    {
-	float aspectRatio=((float)getWidth())/((float)getHeight());
-	return glm::perspective(getFov(),aspectRatio,
-				getNearPlan(),getFarPlan());
-    }
+  
 
     ray::CameraRay PinholeCamera::generateRay(unsigned int i,
-					unsigned int j) const
+					      unsigned int j) const
     {
-	glm::vec3 view = glm::normalize(getTarget() - getPosition()); 
-
-	//Compute the horizontal and vertical vector of the clip plan
-	glm::vec3 h = glm::cross( view, getUp() );
-	h = glm::normalize(h);
-	glm::vec3 v = -glm::cross( h, view) ;
-	v = glm::normalize(v);
-	// convert fovy to radians 
-	float radFovy = (getFov()*M_PI) / 180;
-	float vScale = tan( radFovy / 2 )*getNearPlan();
-	float hScale = vScale * (getWidth() / getHeight());
-	//Scale the v and h vector
-	v*= vScale;
-	h*= hScale;
+	//nds space 
+	float x=(2.0f*(float)i)/getWidth()-1.0;
+	float y=1.0-(2.0*(float)j)/getHeight();
 	
-	//From the image space to ndc coordonate
-	float x=(2/(float)getWidth())*(i+0.5)-1;
-	float y=(2/(float)getHeight())*(j+0.5)-1;	
-	glm::vec3 pointCoordinates=getPosition()+getNearPlan()*view+
-	    h*x+v*y;
-	glm::vec3 rayDir=pointCoordinates-getPosition();
-	ray::CameraRay ray(getPosition(),rayDir,getNearPlan(),getFarPlan(),5);
+	//homogenous clip space
+	glm::vec4 dir_homogenous_clip (x,y,-1.0,1.0);
+	
+        //projection
+	glm::vec4 dir_eye=_inversePerspectiveMatrix*dir_homogenous_clip;
+	dir_eye=glm::vec4(dir_eye.xy,-1.0,0.0);
+
+	glm::vec4 dir_world=_inverseViewMatrix*dir_eye;
+
+	ray::CameraRay ray(getPosition(),dir_world.xyz,
+			   getNearPlan(),getFarPlan(),2);
 	return ray;
     }
 
-   ray::CameraRay PinholeCamera::generateRay(glm::vec3 point) const
-   {
-      glm::vec3 rayDir=point-getPosition();
-      ray::CameraRay ray(getPosition(),rayDir,getNearPlan(),getFarPlan(),5);
-      return ray;
-   }
+
+    ray::CameraRay PinholeCamera::generateRay(glm::vec3 point) const
+    {
+	glm::vec3 rayDir=point-getPosition();
+	ray::CameraRay ray(getPosition(),rayDir,getNearPlan(),getFarPlan(),5);
+	return ray;
+    }
 
    
     
@@ -82,6 +73,18 @@ namespace camera
     float PinholeCamera::getFov() const
     {
 	return _fov;
+    }
+
+    
+    /**
+     * Update the perspective matrix and it inverse.
+     */
+    void PinholeCamera::updatePerspectiveMatrix()const
+    {
+	float aspectRatio=((float)getWidth())/((float)getHeight());
+	_perspectiveMatrix =  glm::perspective(getFov(),aspectRatio,
+				getNearPlan(),getFarPlan());    
+	_inversePerspectiveMatrix=glm::inverse(_perspectiveMatrix);
     }
 
 }

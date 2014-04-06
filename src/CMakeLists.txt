@@ -76,3 +76,18 @@ set(
   ${test_files}
   PARENT_SCOPE
 )
+
+### Setting up demos variable ###
+
+file(
+  GLOB_RECURSE
+  demos_files
+  ${CMAKE_CURRENT_SOURCE_DIR}/demos/*.cpp  
+)
+
+set(
+  demos
+  ${demos}
+  ${demos_files}
+  PARENT_SCOPE
+)

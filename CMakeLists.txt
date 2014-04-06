@@ -5,10 +5,11 @@ set(CMAKE_BUILD_TYPE DEBUG)
 
 set(EXECUTABLE_OUTPUT_PATH build)
 set(TESTS_DIR tests)
+set(DEMOS_DIR demos)
 set(LIBRARY_OUTPUT_PATH lib)
 
 set(CMAKE_CXX_FLAGS "-std=c++0x  -Wall -Wextra -pedantic  -DGL_GLEXT_PROTOTYPES -I/opt/X11/include")
-set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_DEBUG "-g -pg")
 
 
 LINK_DIRECTORIES("~/local_install/lib")
@@ -60,6 +61,9 @@ set(headers "")
 # Contains a list of the test files
 set(tests "")
 
+# Contains a list of the demos files
+set(demos "")
+
 # Set the src header_dir main and tests variables
 add_subdirectory(src)
 
@@ -93,6 +97,21 @@ if (CMAKE_BUILD_TYPE STREQUAL "DEBUG")
        ${TESTS_DIR}/${test_name}
        ${test_file}
     )
-  target_link_libraries(${TESTS_DIR}/${test_name} raytracer_src_lib ${GL_LIBRARIES} glfw ${SFML_LIBRARIES})
+  target_link_libraries(${TESTS_DIR}/${test_name} raytracer_src_lib ${GL_LIBRARIES}  ${SFML_LIBRARIES})
   endforeach()
 endif()
+
+if(NOT EXISTS ${EXECUTABLE_OUTPUT_PATH}/${DEMOS_DIR})
+    file(MAKE_DIRECTORY ${EXECUTABLE_OUTPUT_PATH}/${DEMOS_DIR})
+endif()
+
+
+foreach (demos_file ${demos})
+  get_filename_component(demos_name ${demos_file} NAME_WE)
+  add_executable(
+     ${DEMOS_DIR}/${demos_name}
+     ${demos_file}
+  )
+  target_link_libraries(${DEMOS_DIR}/${demos_name} raytracer_src_lib ${GL_LIBRARIES}  ${SFML_LIBRARIES})
+endforeach()
+

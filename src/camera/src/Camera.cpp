@@ -24,25 +24,20 @@ namespace camera
 		   float aperture=0.02) :
 	_position(position),_target(target),_up(up),
 	_nearPlan(nearPlan),_farPlan(farPlan),
-	_width(width),_height(height),_aperture(aperture)
-    {}
+	_width(width),_height(height),_aperture(aperture),
+	_viewMatrix(), _inverseViewMatrix(),_perspectiveMatrix(),
+	_inversePerspectiveMatrix()
+    {
+	updateViewMatrix();
+    }
 
     Camera::~Camera()
     {}
 
-    glm::mat4 Camera::getViewMatrice() const
-    {
-	return glm::lookAt(getPosition(),getTarget(),getUp());
-    }
-     
-    glm::mat4 Camera::getViewPerspectiveMatrice()const
-    {
-	return getViewMatrice()*getPerspectiveMatrice();
-    }
-
     void Camera::setPosition(const glm::vec3 & pos)
     {
 	_position=pos;
+	updatePerspectiveMatrix();
     }
 
     glm::vec3 Camera::getPosition() const
@@ -53,6 +48,7 @@ namespace camera
     void Camera::setTarget(const glm::vec3 & target)
     {
 	_target=target;
+	updateViewMatrix();
     }
 
     glm::vec3 Camera::getTarget() const
@@ -63,6 +59,7 @@ namespace camera
     void  Camera::setUp(const glm::vec3 & up)
     {
 	_up=up;
+	updateViewMatrix();
     }
 
     glm::vec3 Camera::getUp()const
@@ -73,6 +70,7 @@ namespace camera
     void Camera::setNearPlan(float nearPlan)
     {
 	_nearPlan=nearPlan;
+	updatePerspectiveMatrix();
     }
 
     float Camera::getNearPlan() const
@@ -83,6 +81,7 @@ namespace camera
     void Camera::setFarPlan(float farPlan)
     {
 	_farPlan=farPlan;
+	updatePerspectiveMatrix();
     }
 
     float Camera::getFarPlan() const
@@ -104,6 +103,7 @@ namespace camera
     void Camera::setHeight(unsigned int height)
     {
 	_height=height;
+	updatePerspectiveMatrix();
     }
 
     unsigned int Camera::getHeight() const
@@ -114,6 +114,7 @@ namespace camera
     void Camera::setWidth(unsigned int width)
     {
 	_width=width;
+	updatePerspectiveMatrix();
     }
 
     unsigned int Camera::getWidth() const
@@ -130,5 +131,37 @@ namespace camera
 	return _aperture;
     }
 
+    /**
+     * @return the 
+     */
+    const glm::mat4 & Camera::getViewMatrice() const
+    {
+	return _viewMatrix;
+    }
+
+    const glm::mat4 & Camera::getInverseViewMatrix()const
+    {
+	return _inverseViewMatrix;
+    }
+     
+    const glm::mat4 & Camera::getPerspectiveMatrice()const
+    {
+	return _perspectiveMatrix;
+    }
+
+    const glm::mat4 & Camera::getInversePerspectiveMatrice()const
+    {
+	return _inversePerspectiveMatrix;
+    }
+    
+
+    /**
+     * Update the view matrix and it inverse.
+     */
+    void Camera::updateViewMatrix()const
+    {
+	_viewMatrix=glm::lookAt(getPosition(),getTarget(),getUp());
+	_inverseViewMatrix=glm::inverse(_viewMatrix);
+    }
 
 }

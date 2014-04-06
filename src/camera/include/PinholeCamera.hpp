@@ -31,11 +31,11 @@ namespace camera
 		    float aperture=0.02);
       virtual ~PinholeCamera();
       
-      virtual glm::mat4 getPerspectiveMatrice()const;
       virtual ray::CameraRay generateRay(unsigned int i,unsigned int j)const;
       ray::CameraRay generateRay(glm::vec3 point) const;
       void setFov(float fov);
       float getFov()const;      
+      virtual void updatePerspectiveMatrix()const;
 
       private :
       float _fov;
