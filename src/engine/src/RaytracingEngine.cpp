@@ -104,4 +104,43 @@ namespace engine
 	_image=image;
     }
 
+    /**
+     * @return true if the Depth of field effect is
+     * activated, false otherwise
+     */
+    bool RaytracingEngine::getDofEnabled()const
+    {
+	return _dofEnabled;
+    }
+
+    /**
+     * Controls if the Depth of field effect is enabled or not
+     * @param enabled true if the Depth of field effect is to
+     * be enabled false otherwise
+     */
+    void RaytracingEngine::setDofEnabled(bool enabled)
+    {
+	_dofEnabled=enabled;
+    }
+
+    /**
+     * @return the amount of sampling of the engine
+     * for the Depth of field effect.
+     * 
+     */
+    unsigned int RaytracingEngine::getSamplingDof()const
+    {
+	return (unsigned int)_samplingDof;
+    }
+
+    /**
+     * Controls if the amount of sampling for the Depth of field effect
+     * @param samplingDof the new number of sample to use if DOF is activated.
+     */
+    void RaytracingEngine::setSamplingDof(unsigned int samplingDof)
+    {
+	_samplingDof=(int)samplingDof;
+    }
+
+    
 }

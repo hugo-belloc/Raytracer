@@ -28,6 +28,7 @@ namespace gui
 	virtual void onTransition();
 	virtual void display();
 	void update();
+	bool toogleDOF();
     private :
 	sf::Image & initImage(sf::Image & img);
      

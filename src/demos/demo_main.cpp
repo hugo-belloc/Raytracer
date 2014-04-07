@@ -38,7 +38,6 @@ using namespace gui;
 #define NUMBER_SPHERES 8
 #define X_SPHERES -0.5
 #define PI 3.14159265
-#define R 1.5
 int main()
 {
     gui::WindowView *view =new WindowView(WIDTH,HEIGHT,"Raytracer");

@@ -39,7 +39,7 @@ namespace gui
 
     RaytracingContent::RaytracingContent(scene::Scene & scene):
 	_scene(scene),_engineImage(),
-	_engine(& initImage(_engineImage)),_imageContent(initImage2(_scene ))
+	_engine(& initImage(_engineImage),false,100),_imageContent(initImage2(_scene ))
     {
     }
 
@@ -56,12 +56,30 @@ namespace gui
 	_imageContent.display();
     }
 
+    /**
+     * Update the image by computing 
+     * the raytraced render of the scene.
+     * Then the image is saved.
+     */
     void RaytracingContent::update()
     {
+	cout<<"Begining of ray tracing"<<endl;
 	_engine.raytrace(_scene);
 	_engineImage.saveToFile("save.png");
 	_imageContent.setImage(&_engineImage);
 	cout<<"Finish"<<endl;
     }
 
+    /**
+     * Toogle the dof of the engine
+     * @return the new state of dof ie :
+     * true for dof enable, false otherwise.
+     */
+    bool RaytracingContent::toogleDOF()
+    {
+	bool dofEnabled = _engine.getDofEnabled();
+	dofEnabled = !dofEnabled;
+	_engine.setDofEnabled(dofEnabled);
+	return dofEnabled;
+    }
 }

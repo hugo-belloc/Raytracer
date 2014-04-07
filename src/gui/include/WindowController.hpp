@@ -35,6 +35,7 @@ private:
 
     gui::WindowView * _view;
     scene::Scene * _scene;
+    gui::RaytracingContent * _raytracingContent;
 
 };
 

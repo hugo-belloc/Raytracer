@@ -26,7 +26,6 @@ namespace utils
     {
 	if(!_isInitialised)
 	{
-	    std::cout<<"coucou"<<std::endl;
 	    sf::Context context;
 	    _isInitialised=true;
 	    glewExperimental=true;

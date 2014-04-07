@@ -45,7 +45,7 @@ int main()
 
     camera::PinholeCamera *cam=
 	new camera::PinholeCamera(vec3(-5,0,0),vec3(0,0,0),
-    					 vec3(0,0,1),0.001,1000.f,WIDTH,
+    					 vec3(0,0,1),0.5,1000.f,WIDTH,
     					 HEIGHT,45.f);
    
     scene::Scene * scene=new scene::Scene(cam);
@@ -63,11 +63,11 @@ int main()
     }
 
     Mesh * suzanne=new Mesh;
-    suzanne->loadFromOBJFile("etc/suzanne.obj");
+    suzanne->loadFromOBJFile("etc/suzanne_borgne.obj");
     suzanne->updateBBox();
     Material *matSuzanne=new Material(vec3(0.7,0.7,0.7),0,0);
     Object * objSuzanne = new Object(suzanne,matSuzanne,
-				     vec3(0,0,0),vec3(180,0,90),
+				     vec3(0,0,0),vec3(0,-90,90),
 				     vec3(0.5,0.5,0.5));
     scene->addObject(objSuzanne);
 

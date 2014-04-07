@@ -37,7 +37,7 @@ namespace camera
     void Camera::setPosition(const glm::vec3 & pos)
     {
 	_position=pos;
-	updatePerspectiveMatrix();
+	updateViewMatrix();
     }
 
     glm::vec3 Camera::getPosition() const

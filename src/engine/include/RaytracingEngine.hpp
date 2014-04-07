@@ -33,6 +33,11 @@ namespace engine
 	void raytrace(scene::Scene &scene,unsigned int bounces=3);
 	sf::Image * getImage()const;
 	void setImage(sf::Image * image);
+
+	bool getDofEnabled()const;
+	void setDofEnabled(bool enabled);
+	unsigned int getSamplingDof()const;
+	void setSamplingDof(unsigned int samplingDof);
 	
 	
     private :
