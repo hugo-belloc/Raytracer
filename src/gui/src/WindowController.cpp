@@ -40,6 +40,7 @@ namespace gui
 	
 	WindowModel * model=_view->getModel();
 	float step=0.1;
+	int increaseSampling=10;
 
 	if(event.getState()==KEY_RELEASE)
 	{
@@ -80,6 +81,17 @@ namespace gui
 		    else
 			std::cout<<"DOF is now disabled"<<std::endl;
 		    break;   
+		case sf::Keyboard::Add :	
+			
+		    std::cout<<"DOF sampling is now "<<
+			_raytracingContent->increaseDOFSampling(increaseSampling)
+			     <<std::endl;
+		    break;
+		case sf::Keyboard::Subtract :
+		    std::cout<<"DOF sampling is now "<<
+			_raytracingContent->increaseDOFSampling(-increaseSampling)
+			     <<std::endl;
+		    break;
 
 		default:
 		    break;

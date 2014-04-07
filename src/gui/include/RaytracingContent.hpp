@@ -29,6 +29,8 @@ namespace gui
 	virtual void display();
 	void update();
 	bool toogleDOF();
+	int increaseDOFSampling(int toAdd);
+
     private :
 	sf::Image & initImage(sf::Image & img);
      

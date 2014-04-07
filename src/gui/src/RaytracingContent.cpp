@@ -39,7 +39,7 @@ namespace gui
 
     RaytracingContent::RaytracingContent(scene::Scene & scene):
 	_scene(scene),_engineImage(),
-	_engine(& initImage(_engineImage),false,100),_imageContent(initImage2(_scene ))
+	_engine(& initImage(_engineImage),false),_imageContent(initImage2(_scene ))
     {
     }
 
@@ -81,5 +81,22 @@ namespace gui
 	dofEnabled = !dofEnabled;
 	_engine.setDofEnabled(dofEnabled);
 	return dofEnabled;
+    }
+
+     /**
+     * Change the amount of sampling of the raytracing engine
+     * @param toAdd the amount to be added to the current
+     * sampling, can be negative. If the new quantity is negative
+     * it will be 0.
+     * @return the new amount of sampling.
+     */
+    int RaytracingContent::increaseDOFSampling(int toAdd)
+    {
+	int sampling =(int)_engine.getSamplingDof();
+	sampling+=toAdd;
+	sampling = (sampling>0)?sampling:0;
+	_engine.setSamplingDof((unsigned int)sampling);
+
+	return sampling;
     }
 }
