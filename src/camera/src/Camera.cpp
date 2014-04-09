@@ -18,6 +18,22 @@ using namespace std;
 namespace camera
 {
 
+    /**
+     * Constructs a camera.
+     * @param position the origin of the camera
+     * @param target the place the camera is looking
+     * @param up a vector pointing up in the camera view 
+     * @param nearPlan the minimum distance where the objects
+     * are drawn.
+     * @param farPlan the maximum distane where the objects
+     * are drawn
+     * @param width the width (in pixels) of the image generated
+     * with the camera
+     * @param height the height (in pixels) of the image generated
+     * with the camera
+     * @param aperture 
+     *
+     */
     Camera::Camera(glm::vec3 position,glm::vec3 target,
 		   glm::vec3 up,float nearPlan,float farPlan,
 		   unsigned int width, unsigned int height,
@@ -132,7 +148,8 @@ namespace camera
     }
 
     /**
-     * @return the 
+     * @return the view matrix of the camera.
+     *
      */
     const glm::mat4 & Camera::getViewMatrice() const
     {

@@ -7,8 +7,6 @@
 /**
  * @file RaytracingContent.cpp
  *  
- * Description of the program objectives.
- * All necessary references.
  */
 
 #include "RaytracingContent.hpp"
