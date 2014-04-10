@@ -248,7 +248,7 @@ public :
 private :
     void setUniforms()
     {
-	mat4 viewMat=_cam.getViewMatrice();
+	mat4 viewMat=_cam.getViewMatrix();
 
 	// modelMat=glm::rotate(modelMat,-90.0f,vec3(0,0,1));
 	// modelMat=glm::rotate(modelMat,180.0f,vec3(1,0,0));
@@ -257,7 +257,7 @@ private :
 	mat4 mvw = viewMat*_object->getModelMatrix();		     
 
 	_prog.setUniform("modelViewMatrix",mvw);
-	_prog.setUniform("projectionMatrix",_cam.getPerspectiveMatrice());
+	_prog.setUniform("projectionMatrix",_cam.getPerspectiveMatrix());
 	mat3 normalMatrix= transpose(inverse(mat3(mvw)));
 	_prog.setUniform("normalMatrix", normalMatrix);
 

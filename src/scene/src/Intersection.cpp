@@ -46,7 +46,7 @@ namespace scene
 
     void Intersection::setNormal(const glm::vec3 & normal)
     {
-	_normal=normal;
+	_normal=glm::normalize(normal);
     }
 
     materials::Material * Intersection::getMaterial()const

@@ -46,9 +46,9 @@ namespace engine
 
       
 	//S C E N E   U N I F O R M S
-	glm::mat4 viewMat=scene.getCamera()->getViewMatrice();
+	glm::mat4 viewMat=scene.getCamera()->getViewMatrix();
 	prog.setUniform("projectionMatrix",
-			scene.getCamera()->getPerspectiveMatrice());
+			scene.getCamera()->getPerspectiveMatrix());
       
 	int i=0;
 	for(scene::Scene::const_iterator_light it=scene.begin_light();

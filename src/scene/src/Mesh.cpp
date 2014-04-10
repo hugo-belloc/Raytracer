@@ -280,7 +280,6 @@ namespace scene
 		       normals.size()*sizeof(GLfloat));
 	utils::makeIBO(&ibo,&indexs[0],indexs.size()*sizeof(GLuint));
 	utils::makeNormalVAO(&_vao,positionBuffer,normalBuffer,ibo);
-	//utils::makeSimpleVAO(&_vao,positionBuffer,ibo);	
     }
 
     /**

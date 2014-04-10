@@ -28,7 +28,7 @@ namespace gui
 					     float dn)
     {
 	camera::Camera * camera = _scene->getCamera();
-	glm::mat4 matView = camera->getViewMatrice();
+	glm::mat4 matView = camera->getViewMatrix();
 	glm::vec4 newPos = glm::inverse(matView)*glm::vec4(du,dv,dn,1);
 	glm::vec4 newUp = glm::inverse(matView)*glm::vec4(0,1,0,0);
 	camera->setPosition(newPos.xyz*(1/newPos.w));

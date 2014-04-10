@@ -13,11 +13,26 @@
  */
 
 #include "RaytracingEngine.hpp"
-#include "SFMLConversions.hpp"
+
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/OpenGL.hpp>
+
 using namespace std;
 
 namespace engine
 {
+    inline sf::Color glmToColorSfml(const glm::vec3 & vec)
+    {
+	glm::vec3 vecScale=vec*255.f;
+	float x=(vecScale.x>255)?255:vecScale.x;
+	float y=(vecScale.y>255)?255:vecScale.y;
+	float z=(vecScale.z>255)?255:vecScale.z;
+	return sf::Color((unsigned int)x,
+			 (unsigned int)y,
+			 (unsigned int)z);
+    }
+
     RaytracingEngine::RaytracingEngine(sf::Image *image,bool dofEnabled,
 				       unsigned int samplingDof):
 	_image(image),_dofEnabled(dofEnabled),_samplingDof(samplingDof)
@@ -87,7 +102,7 @@ namespace engine
 		
 		  
 		// Converting color
-		sf::Color colorSFML = conversions::glmToColorSfml(color);
+		sf::Color colorSFML = glmToColorSfml(color);
 		_image->setPixel(i,j,colorSFML);
 	       
 	    }

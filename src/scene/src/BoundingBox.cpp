@@ -26,7 +26,7 @@ namespace scene
  */
     BoundingBox::BoundingBox(const glm::vec3 & pMin,
 			     const glm::vec3 & pMax):
-	BoundingShape(),_pMin(pMin),_pMax(pMax)
+	BoundingShape(),_empty(false),_pMin(pMin),_pMax(pMax)
     {}
 
 /**
@@ -36,7 +36,7 @@ namespace scene
  * surroundPoint methods.
  */
     BoundingBox::BoundingBox():
-	BoundingShape(),
+	BoundingShape(),_empty(true),
 	_pMin(glm::vec3(+INFINITY,+INFINITY,+INFINITY)),
 	_pMax(glm::vec3(-INFINITY,-INFINITY,-INFINITY))
     {}
@@ -62,6 +62,7 @@ namespace scene
     void BoundingBox::setPmin(const glm::vec3 & pMin)
     {
 	_pMin=pMin;
+	_empty=false;
     }
 
 /**
@@ -79,6 +80,8 @@ namespace scene
     void BoundingBox::setPmax(const glm::vec3 & pMax)
     {
 	_pMax=pMax;
+	_empty=false;
+
     }
 
 /**
@@ -113,17 +116,26 @@ namespace scene
 	{
 	    _pMax.z=point.z;
 	}
+	_empty=false;
+
 
     }
 
 
 /**
  * Check if the bounding box intersect the ray.
+ * An empty BoundingBox will always return false.
+ *
  * @param ray the ray that may intersect the BoundingBox.
  * @return true if there is an intersection
  */
     bool BoundingBox::intersect(const ray::Ray & ray)const
     {
+	if(getEmpty())
+	{
+	    return true;
+	}
+
 	const glm::vec3 & rDir = ray.getDirection();
 	const glm::vec3 & rOrig = ray.getOrigin();
 	glm::bvec3 positiveDir=glm::greaterThan(rDir,glm::vec3(0,0,0));    
@@ -208,6 +220,17 @@ namespace scene
 	return true;    
     }
 
+    
+    /**
+     * Indicate whether the bounding box is empty or
+     * not.
+     * @return true if the bounding box is empty, false otherwise.
+     */
+    bool BoundingBox::getEmpty()const
+    {
+	return _empty;
+    }
+
     /**
      * Displays the content of the Bounding Box.
      * For debug purpose only.
@@ -217,5 +240,6 @@ namespace scene
 	std::cout<<"Bounding Box[Min corner="<<_pMin;
 	std::cout<<", Max corner="<<_pMax<<"]"<<std::endl;	
     }
+
 
 }

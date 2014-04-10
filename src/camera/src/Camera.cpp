@@ -151,7 +151,7 @@ namespace camera
      * @return the view matrix of the camera.
      *
      */
-    const glm::mat4 & Camera::getViewMatrice() const
+    const glm::mat4 & Camera::getViewMatrix() const
     {
 	return _viewMatrix;
     }
@@ -161,12 +161,12 @@ namespace camera
 	return _inverseViewMatrix;
     }
      
-    const glm::mat4 & Camera::getPerspectiveMatrice()const
+    const glm::mat4 & Camera::getPerspectiveMatrix()const
     {
 	return _perspectiveMatrix;
     }
 
-    const glm::mat4 & Camera::getInversePerspectiveMatrice()const
+    const glm::mat4 & Camera::getInversePerspectiveMatrix()const
     {
 	return _inversePerspectiveMatrix;
     }

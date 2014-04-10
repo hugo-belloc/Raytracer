@@ -37,10 +37,12 @@ namespace scene
    
 	void surroundPoint(const glm::vec3 & point);
 	virtual bool intersect(const ray::Ray & ray)const;
+	bool getEmpty()const;
 	void displayTTY();
    
 
     private :
+	bool _empty;
 	glm::vec3 _pMin;
 	glm::vec3 _pMax; 
        

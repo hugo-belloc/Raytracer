@@ -218,6 +218,8 @@ namespace scene
 		glm::vec3 lightColor=(*it)->powerAt(pointHit);
 		glm::vec3 lightContribution=componentProduct(matColor,
 							     lightColor);
+		lightContribution = glm::clamp(lightContribution,
+					       glm::vec3(0),glm::vec3(1));
 		alpha = materialHit->getTransmissionAttenuation();
 		color+=(1-attenuation)*(1-alpha)*lightContribution;
 		

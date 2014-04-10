@@ -52,10 +52,10 @@ namespace camera
 	virtual void setAperture(float aperture);
 	virtual float getAperture()const;
 
-	virtual const glm::mat4 & getViewMatrice()const;
+	virtual const glm::mat4 & getViewMatrix()const;
 	virtual const glm::mat4 & getInverseViewMatrix()const;
-	virtual const glm::mat4 & getPerspectiveMatrice()const;
-	virtual const glm::mat4 & getInversePerspectiveMatrice()const;
+	virtual const glm::mat4 & getPerspectiveMatrix()const;
+	virtual const glm::mat4 & getInversePerspectiveMatrix()const;
 
 	virtual void updateViewMatrix()const;
 	virtual void updatePerspectiveMatrix()const=0;

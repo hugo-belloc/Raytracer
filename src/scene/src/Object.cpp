@@ -240,14 +240,15 @@ namespace scene
     
     void  Object::updateMatrices()
     {
-	_modelMatrix = glm::scale(_modelMatrix,_scale);
+	_modelMatrix = glm::translate(_modelMatrix,_location);
+	
 	_modelMatrix = glm::rotate(_modelMatrix,_rotation.x,
 				   glm::vec3(1,0,0));
 	_modelMatrix = glm::rotate(_modelMatrix,_rotation.y,
 				   glm::vec3(0,1,0));
 	_modelMatrix = glm::rotate(_modelMatrix,_rotation.z,
 				   glm::vec3(0,0,1));
-	_modelMatrix = glm::translate(_modelMatrix,_location);
+	_modelMatrix = glm::scale(_modelMatrix,_scale);
 	_inverseModelMatrix = glm::inverse(_modelMatrix);
 	_normalMatrix=glm::mat3(glm::transpose(_inverseModelMatrix));
     }
