@@ -35,11 +35,15 @@ namespace gui
 	    
     }
 
+    /**
+     * Construct a content used to save a raytraced image 
+     * of the scene.
+     * @param scene : the scene to be raytraced.
+     */
     RaytracingContent::RaytracingContent(scene::Scene & scene):
 	_scene(scene),_engineImage(),
 	_engine(& initImage(_engineImage),false),_imageContent(initImage2(_scene ))
-    {
-    }
+    { }
 
     RaytracingContent::~RaytracingContent()
     {}

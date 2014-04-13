@@ -75,9 +75,9 @@ namespace scene
 	glm::vec3 _location;
 	glm::vec3 _rotation;
 	glm::vec3 _scale;
-	glm::mat4 _modelMatrix;
-	glm::mat4 _inverseModelMatrix;
-	glm::mat3 _normalMatrix;
+	mutable glm::mat4 _modelMatrix;
+	mutable glm::mat4 _inverseModelMatrix;
+	mutable glm::mat3 _normalMatrix;
     };
 }
 #endif

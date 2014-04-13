@@ -7,7 +7,7 @@ namespace gui
 
 /**
  * @author Hugo Belloc
- * @brief Represents one type of content
+ * Represents one type of content
  * that can be displayed in the window.
  */
     class WindowContent

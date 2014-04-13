@@ -4,12 +4,6 @@
  * 
  */
 
-/**
- * @file Intersection.hpp
- *  
- * Description of the program objectives.
- * All necessary references.
- */
 
 
 #ifndef _INTERSECTION_HEADER_H
@@ -19,6 +13,10 @@
 #include "Material.hpp"
 namespace scene
 {
+    /**
+     * A class storing the useful data of the intersection of a Ray and
+     * a Shape.
+     */
    class Intersection
    {
    public :

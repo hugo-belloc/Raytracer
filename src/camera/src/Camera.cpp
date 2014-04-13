@@ -4,13 +4,6 @@
  * 
  */
 
-/**
- * @file Camera.cpp
- *  
- * Description of the program objectives.
- * All necessary references.
- */
-
 #include "Camera.hpp"
 
 using namespace std;
@@ -47,59 +40,112 @@ namespace camera
 	updateViewMatrix();
     }
 
+    /**
+     * Virtual destructor 
+     */   
     Camera::~Camera()
     {}
 
+    /**
+     * Set the position of the Camera ie the origin of
+     * the ray.
+     * @param pos the position of the camera
+     */
     void Camera::setPosition(const glm::vec3 & pos)
     {
 	_position=pos;
 	updateViewMatrix();
     }
 
+    /**
+     * Give the position of the Camera ie the origin of
+     * the ray.
+     * @return the position of the camera
+     */
     glm::vec3 Camera::getPosition() const
     {
 	return _position;
     }
 
+    /**
+     * Specifies the point that the camera looks.
+     *
+     * @param the new target of the camera.
+     */
     void Camera::setTarget(const glm::vec3 & target)
     {
 	_target=target;
 	updateViewMatrix();
     }
 
+
+    /**
+     * @return the point that the camera is aiming at.
+     */
     glm::vec3 Camera::getTarget() const
     {
 	return _target;
     }
 
+    /**
+     * Set the vector whose direction indicate the
+     * axis y in the image.
+     * @param the new up vector.
+     */
     void  Camera::setUp(const glm::vec3 & up)
     {
 	_up=up;
 	updateViewMatrix();
     }
 
+    /**
+     * Return a vector whose direction is pointing toward the
+     * axis y in the image.
+     */
     glm::vec3 Camera::getUp()const
     {
 	return _up;
     }
    
+    /**
+     * Change the distance between the camera and the
+     * near plan. All the objects/vertices with a lesser
+     * distance to that plan will not be displayed.
+     * @param nearPlan the new nearPlan distance
+     */
     void Camera::setNearPlan(float nearPlan)
     {
 	_nearPlan=nearPlan;
 	updatePerspectiveMatrix();
     }
 
+    /**
+     * @return the distance between the camera and the
+     * near plan. All the objects/vertices with a lesser
+     * distance to that plan will not be displayed.
+     */
     float Camera::getNearPlan() const
     {
 	return _nearPlan;
     }
 
+    /**
+     * Change the distance between the camera and the
+     * far plan. All the objects/vertices with a greater
+     * distance to that plan will not be displayed.
+     * @param farPlan the new far plan distance
+     */
     void Camera::setFarPlan(float farPlan)
     {
 	_farPlan=farPlan;
 	updatePerspectiveMatrix();
     }
 
+   /**
+     * @return the distance between the camera and the
+     * far plan. All the objects/vertices with a greater
+     * distance to that plan will not be displayed.
+     */
     float Camera::getFarPlan() const
     {
 	return _farPlan;

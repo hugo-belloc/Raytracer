@@ -19,6 +19,9 @@
 
 namespace scene
 {
+    /**
+     * A class representing a perfect Sphere
+     */
     class Sphere:public Shape
     {
     public :

@@ -52,7 +52,7 @@ int main()
    camera::PinholeCamera *cam=
       new camera::PinholeCamera(vec3(-5,0,0),vec3(0,0,0),
 				vec3(0,0,1),0.001,1000.f,WIDTH,
-				HEIGHT,45.f,0.1);
+				HEIGHT,45.f,0.3);
    cam->setFocalPlan(5);
    
    scene::Scene * scene=new scene::Scene(cam);
@@ -76,16 +76,6 @@ int main()
    scene::Object *blueSphere=new Object(sphere3,blueDiffuse,vec3(1,-1,-1));
    scene->addObject(blueSphere);
    
-
-   // Mesh * suzanne=new Mesh;
-   // suzanne->loadFromOBJFile("etc/suzanne.obj");
-   // suzanne->updateBBox();
-   // Material *matSuzanne=new Material(vec3(0.7,0.7,0.7),0,0);
-   // Object * objSuzanne = new Object(suzanne,matSuzanne,
-   // 				    vec3(0,0,0),vec3(180,0,90),
-   // 				    vec3(0.5,0.5,0.5));
-   // scene->addObject(objSuzanne);
-
    LightPoint *light1=new LightPoint(15,vec3(-6,0,2),
 				     vec3(1,1,1),1.0);   
    LightPoint *light2=new LightPoint(5,vec3(-6,0,-3),

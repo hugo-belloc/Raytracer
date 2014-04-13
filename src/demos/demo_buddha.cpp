@@ -25,8 +25,8 @@ using namespace utils;
 using namespace gui;
 
 
-#define WIDTH 500
-#define HEIGHT 500
+#define WIDTH 200
+#define HEIGHT 200
 
 
 int main()
@@ -49,27 +49,27 @@ int main()
 				    vec3(8));
     scene->addObject(objBuddha);
 
-    Mesh * plan=new Mesh;
-    plan->loadFromOBJFile("etc/plan.obj");
-    plan->updateBBox();
-    Material *matPlan=new Material(vec3(1),0,0);
-    Object * objPlan = new Object(plan,matPlan,
-    				  vec3(0,0,-0.7),vec3(0,0,0),
+    Mesh * ground=new Mesh;
+    ground->loadFromOBJFile("etc/plan.obj");
+    ground->updateBBox();
+    Material *matGround=new Material(vec3(1),0,0);
+    Object * objGround = new Object(ground,matGround,
+    				  vec3(0,0,-0.6),vec3(0,0,0),
     				  vec3(5));
-    scene->addObject(objPlan);
+    scene->addObject(objGround);
 
-    Mesh * plan2=new Mesh;
-    plan2->loadFromOBJFile("etc/plan.obj");
-    plan2->updateBBox();
-    Material *matPlan2=new Material(vec3(5),0,0);
-    Object * objPlan2 = new Object(plan2,matPlan2,
-				   vec3(0,0,1),vec3(0,0,0),
+    Mesh * ceiling=new Mesh;
+    ceiling->loadFromOBJFile("etc/plan.obj");
+    ceiling->updateBBox();
+    Material *matCeiling=new Material(vec3(2),0,0);
+    Object * objCeiling = new Object(ceiling,matCeiling,
+				   vec3(0,0,2),vec3(180,0,0),
 				  vec3(200));
-    scene->addObject(objPlan2);
+    scene->addObject(objCeiling);
 
 
-    LightPoint *light=new LightPoint(4,vec3(-2,0,-0.4),vec3(1,0.6,0.6),4.0);    
-    LightPoint *light2=new LightPoint(4,vec3(-2,0,0.7),vec3(0.6,0.8,1),4.0);
+    LightPoint *light=new LightPoint(2,vec3(-5,0,-0.2),vec3(1,1,1),0.4);    
+    LightPoint *light2=new LightPoint(1,vec3(-5,0,0.5),vec3(1),0.2);
 
     scene->addLightPoint(light);
     scene->addLightPoint(light2);

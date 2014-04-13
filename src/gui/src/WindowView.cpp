@@ -12,7 +12,7 @@
 namespace gui
 {
 /**
- * @brief Create the opengl context that we will need
+ * Create the opengl context that we will need
  * later during the construction of the WindowView.
  * @return the ContextSetting generated
  */
@@ -28,7 +28,7 @@ namespace gui
     }
 
 /**
- * @brief Construct a window with a specified size
+ *  Construct a window with a specified size
  * @param width the initial width of the WindowView
  * @param height the initial height of the WindowView
  */
@@ -39,14 +39,6 @@ namespace gui
 	_model(new WindowModel)
     {
 	_window.setVerticalSyncEnabled(true);
-	
-	// glewExperimental=true;
-	// if (glewInit() != GLEW_OK) 
-	// {
-	//     std::cerr<<"Failed to initialize GLEW"<<std::endl;
-	//     exit(-1);
-	// }
-
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
@@ -72,15 +64,8 @@ namespace gui
 		    case sf::Event::Closed:
 			_window.close();
 			break;
-		    // case sf::Event::Resized:		
-		    // 	glViewport(0, 0, event.size.width,
-		    // 		   event.size.height);
 			break;
 		    case sf::Event::KeyPressed:
-			// if(event.key.code == sf::Keyboard::A)
-			// {
-			//     _model->nextContent();
-			// }
 			fireEvent(WindowEvent(KEY_PRESSED,
 					      event.key.code));
 
@@ -102,7 +87,7 @@ namespace gui
     }
 
 /**
- * @brief resize the window
+ * Resizes the window
  * @param width the new width of the window
  * @param height the new height of the window
  */

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 project(Raytracer)
-set(CMAKE_BUILD_TYPE DEBUG)
+set(CMAKE_BUILD_TYPE RELEASE)
 
 set(EXECUTABLE_OUTPUT_PATH build)
 set(TESTS_DIR tests)
@@ -10,6 +10,7 @@ set(LIBRARY_OUTPUT_PATH lib)
 
 set(CMAKE_CXX_FLAGS "-std=c++0x  -Wall -Wextra -pedantic  -DGL_GLEXT_PROTOTYPES -I/opt/X11/include")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -pg")
+set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 
 LINK_DIRECTORIES("~/local_install/lib")

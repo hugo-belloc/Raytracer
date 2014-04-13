@@ -4,12 +4,6 @@
  * 
  */
 
-/**
- * @file Intersection.cpp
- *  
- * Description of the program objectives.
- * All necessary references.
- */
 
 #include "Intersection.hpp"
 
@@ -17,11 +11,21 @@ using namespace std;
 
 namespace scene
 {
+    /**
+     * Constructs an empty intersection with default value.
+     * Those value should be changed later.
+     */
     Intersection::Intersection():
 	_hitPoint(glm::vec3(0,0,0)),
 	_normal(glm::vec3(0,0,0)),_material(0)
     {}
 
+    /**
+     * Create an intersection.
+     * @param hitPoint the point where the intersection happens.
+     * @param normal the normal to the surface hit.
+     * @param material a pointer to the material of the surface
+     */
     Intersection::Intersection(const glm::vec3 & hitPoint,
 			       const glm::vec3 & normal,
 			       materials::Material * material) :
@@ -29,36 +33,62 @@ namespace scene
 	_material(material)
     {}
 
+    /**
+     * @return the origin of the intersection
+     */
     glm::vec3 Intersection::getPoint()const
     {
 	return _hitPoint;
     }
 
+    /**
+     * @return the normal to the surface intersected
+     */
     glm::vec3 Intersection::getNormal()const
     {
 	return _normal;
     }
 
+    /**
+     * Change the origin of the intersection
+     * @param the new origin ie the point of the
+     * surface hit by the ray.
+     */
     void Intersection::setPoint(const glm::vec3 & point)
     {
 	_hitPoint=point;
     }
 
+    /**
+     * Change the normal to the surface intersected
+     * @param the new normal.
+     */
     void Intersection::setNormal(const glm::vec3 & normal)
     {
 	_normal=glm::normalize(normal);
     }
 
+    /**
+     * @return a pointer over the material of the intersected surface.
+     */
     materials::Material * Intersection::getMaterial()const
     {
 	return _material;
     }
 
+    /**
+     * Change the material of the surface intersected
+     * @param the new material.
+     */
     void Intersection::setMaterial(materials::Material * mat)
     {
 	_material=mat;
     }
 
+    /**
+     * Make the current intersectino a copy of another intersection.
+     * @param the intersection we should copy. 
+     */
     Intersection & Intersection::operator=(const Intersection & intersection)
     {
 	_hitPoint=intersection._hitPoint;
@@ -67,6 +97,9 @@ namespace scene
 	return *this;
     }
 
+    /**
+     * Displays the intersection, only for debug purpose.
+     */
     void Intersection::displayTTY()
     {
 	cout<<"Intersection"<<"[Point="<<_hitPoint;
@@ -77,7 +110,7 @@ namespace scene
 	}
     }
 
-     /**
+    /**
      * Change the coordonnates system of the interesection
      * tranfMat3
      * @param transformationMatrix the matrix of the
@@ -86,7 +119,7 @@ namespace scene
      * normally transpose(inverse(transformationMatrix)).
      */
     void Intersection::applyMatrix(const glm::mat4 & transformationMatrix,
-		       const glm::mat3 & normalMatrix)
+				   const glm::mat3 & normalMatrix)
     {
 	glm::vec4 pointH=glm::vec4(getPoint(),1);
 	pointH=transformationMatrix*pointH;

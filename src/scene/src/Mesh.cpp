@@ -567,6 +567,13 @@ not a quad nor a triangle");
 	return true;
     }
 
+    /* Computes the intersection between a ray and the Mesh
+     * in local space
+     * @param the ray to be intersected
+     * @param intersection the generated intersection 
+     * if there is one
+     * @return true if there is an intersection , false otherwise.
+     */
     bool Mesh::intersect(const ray::Ray & ray,
 			 Intersection & inter)const
     {
@@ -594,18 +601,27 @@ not a quad nor a triangle");
 	return isIntersected;
     }
 
+    /**
+     * Update the VAO associated with the mesh.
+     */ 
     void Mesh::updateMesh(unsigned int)
     {
 	//Do nothing since the mesh is a mesh itself...
 	updateVAO();
     }
 
+    /**
+     * Returns the mesh itself
+     */
     const Mesh * Mesh::getMesh() const
     {
 	//return itself
 	return this;
     }
 
+    /**
+     * Computes the BoundingBox surrounding the Mesh
+     */
     void Mesh::updateBBox()
     {
 	iterator_vertex itVert;

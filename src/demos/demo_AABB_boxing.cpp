@@ -28,8 +28,8 @@ using namespace utils;
 using namespace gui;
 
 
-#define WIDTH 100
-#define HEIGHT 100
+#define WIDTH 200
+#define HEIGHT 200
 
 
 int main(int argc,char ** argv)

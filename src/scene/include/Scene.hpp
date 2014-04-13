@@ -29,16 +29,36 @@
 #include "ReflexionRay.hpp"
 #include "TransmissionRay.hpp"
 
-
+/**
+ * Main module containing most of the object necessary
+ * to create a scene.
+ */
 namespace scene
 {
-
+    /**
+     * A class containing all the objects and data necessary to compute
+     * an image.
+     */
     class Scene
     {
     public :
+	/**
+	 * A  type of iterator for the lightpoints in the scene
+	 */
 	typedef std::vector<light::LightPoint*>::iterator iterator_light;
+	/**
+	 * A  type of iterator for the objects in the scene
+	 */
 	typedef std::vector<scene::Object*>::iterator iterator_object;
+	
+	/**
+	 * A  type of constant iterator for the lightpoints in the scene
+	 */
 	typedef std::vector<light::LightPoint*>::const_iterator const_iterator_light;
+
+	 /**
+	 * A  type of constant iterator for the objects in the scene
+	 */
 	typedef std::vector<scene::Object*>::const_iterator const_iterator_object;
 
 	Scene(camera::Camera * camera);

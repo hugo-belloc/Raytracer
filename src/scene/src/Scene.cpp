@@ -5,13 +5,6 @@
  * 
  */
 
-/**
- * @file Scene.cpp
- *  
- * Description of the program objectives.
- * All necessary references.
- */
-
 #include <sstream>
 #include "Scene.hpp"
 #include "FileLoader.hpp"
@@ -21,13 +14,20 @@ using namespace std;
 namespace scene
 {
    
- 
+    /**
+     * Constructs a Scene
+     * @param camera the scene camera.
+     */
     Scene::Scene(camera::Camera * camera):
 	_prog(),_camera(camera),
 	_objects(), _lightPoints(),
 	_isProgramUpdated(false)
     { }
 
+    /**
+     * Destroy the scene and its camera, its lights
+     * and its objects.
+     */
     Scene:: ~Scene()
     {
 	delete _camera;
@@ -43,17 +43,33 @@ namespace scene
 	}
     }
 
+    /**
+     * Add an object in the scene
+     * @param object the object to be added
+     */
     void Scene::addObject(scene::Object * object)
     {
 	_objects.push_back(object);
     }
 
+    /**
+     * Add a light point in the scene.
+     * @param lightpoint the lightpoint to be added.
+     **/
     void Scene::addLightPoint(light::LightPoint * lightPoint)
     {
 	_lightPoints.push_back(lightPoint);
 	_isProgramUpdated=false;
     }
 
+    /**
+     * Computes the first intersection between a ray and all
+     * the Objects of the scene.
+     * @param ray the ray to be intersected
+     * @param intersection the first intersection computed if
+     * there is one
+     * @return true if there is an intersection, false otherwise.
+     **/
     bool Scene::intersect(const ray::Ray & ray,
 			  scene::Intersection & intersection)
     {
@@ -78,52 +94,81 @@ namespace scene
 	return isIntersected;
     }
 
+    /**
+     * @return the Camera of the scene
+     */
     camera::Camera* Scene::getCamera()
     {
 	return _camera;
     }
 
+    /**
+     * @return the Camera of the scene
+     */
     const camera::Camera* Scene::getCamera() const
     {
 	return _camera;
     }
 
+    /**
+     * @return an iterator over the first lightpoint of the scene
+     */
     Scene::iterator_light Scene::begin_light()
     {
 	return _lightPoints.begin();
     }
 
+    /**
+     * @return an iterator over the last lightpoint of the scene
+     */
     Scene::iterator_light Scene::end_light()
     {
 	return _lightPoints.end();
     }
 
+    /**
+     * @return a constant iterator over the first lightpoint of the scene
+     */
     Scene::const_iterator_light Scene::begin_light() const
     {
 	return _lightPoints.begin();
     }
 
+    /**
+     * @return a constant iterator over the last lightpoint of the scene
+     */
     Scene::const_iterator_light Scene::end_light() const
     {
 	return _lightPoints.end();
     }
 
-
+    /**
+     * @return an iterator over the first object of the scene
+     */
     Scene::iterator_object Scene::begin_object()
     {
 	return _objects.begin();
     }
 
+    /**
+     * @return an iterator over the last object of the scene
+     */
     Scene::iterator_object Scene::end_object()
     {
 	return _objects.end();
     }
 
+    /**
+     * @return a constant iterator over the first object of the scene
+     */
     Scene::const_iterator_object Scene::begin_object() const
     {
 	return _objects.begin();
     }
 
+    /**
+     * @return a constant over the last object of the scene
+     */
     Scene::const_iterator_object Scene::end_object() const
     {
 	return _objects.end();
@@ -177,8 +222,11 @@ namespace scene
 	return _prog;
     }
 
-  
-
+    /**
+     * Compute recursivly the color contribution of one ray.
+     * @param currentRay the ray whose contribution is computed.
+     * @return the color associated with the ray contribution.
+     */
     glm::vec3 Scene::getColor(const ray::Ray & currentRay)
     {
 	glm::vec3 color(0,0,0);

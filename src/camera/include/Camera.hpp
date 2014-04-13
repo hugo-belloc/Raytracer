@@ -17,8 +17,16 @@
 
 #include "utils_glm.hpp"
 #include "CameraRay.hpp"
+
+/**
+ * This module contains the different type of camera.
+ */
 namespace camera
 {
+    /**
+     * This abstract class represent a particular point of view of the
+     * objects of the scene.
+     */
     class Camera
     {
     public :
@@ -26,7 +34,23 @@ namespace camera
 	       glm::vec3 up,float nearPlan,float farPlan,
 	       unsigned int width, unsigned int height,float aperture);
 	virtual ~Camera();
+	
+	/**
+	 * Generate a ray for a given pixel the generated
+	 * ray is compatible with the Rasterisation conventions.
+	 *
+	 * @param i the pixel row.
+	 * @param j the pixel columns.
+	 */
 	virtual ray::CameraRay generateRay(unsigned int i,unsigned int j) const=0;
+
+	/**
+	 * Generate a ray from the origin of the Camera 
+	 * aiming at a particular point 
+	 *
+	 * @param i the pixel row.
+	 * @param j the pixel columns.
+	 */
 	virtual ray::CameraRay generateRay(glm::vec3 point) const = 0;
     
 	//getter and setter

@@ -11,10 +11,16 @@
 #include "BoundingShape.hpp"
 namespace scene
 {
-   BoundingShape::BoundingShape()
-   {}
+    /**
+     * Create an empty BoundingShape
+     */
+    BoundingShape::BoundingShape()
+    {}
 
-   BoundingShape::~BoundingShape()
-   {}
+    /**
+     * virtual destructor
+     */
+    BoundingShape::~BoundingShape()
+    {}
 
 }

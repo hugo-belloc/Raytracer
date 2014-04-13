@@ -237,7 +237,10 @@ namespace scene
 	cout<<"]"<<endl<<endl;
     }
 
-    
+    /**
+     * Updates the modelMatrix, its inverse and the normal
+     * matrix.
+     */
     void  Object::updateMatrices()
     {
 	_modelMatrix = glm::translate(_modelMatrix,_location);

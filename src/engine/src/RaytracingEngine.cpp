@@ -5,12 +5,8 @@
  * 
  */
 
-/**
- * @file RaytracingEngine.cpp
- *  
- * Description of the program objectives.
- * All necessary references.
- */
+
+ 
 
 #include "RaytracingEngine.hpp"
 
@@ -22,6 +18,10 @@ using namespace std;
 
 namespace engine
 {
+    /**
+     * Convert a glm::vec3 in sf::Color.
+     * @param the vector to convert.
+     */
     inline sf::Color glmToColorSfml(const glm::vec3 & vec)
     {
 	glm::vec3 vecScale=vec*255.f;
@@ -33,6 +33,9 @@ namespace engine
 			 (unsigned int)z);
     }
 
+    /**
+     * Create a 
+     */
     RaytracingEngine::RaytracingEngine(sf::Image *image,bool dofEnabled,
 				       unsigned int samplingDof):
 	_image(image),_dofEnabled(dofEnabled),_samplingDof(samplingDof)

@@ -27,8 +27,22 @@ namespace scene
     class Shape
     {
     public :
+	/**
+	 * Virtual destructor
+	 */
 	virtual ~Shape();
+
+	/* Computes the intersection between a ray and the Shape
+	 * in local space
+	 * @param the ray to be intersected
+	 * @param intersection the generated intersection 
+	 * if there is one
+	 * @return true if there is an intersection , false otherwise.
+	 */
 	virtual bool intersect(const ray::Ray & ray,Intersection & intersection)const=0;
+	 /**
+          * Displays the Shape (only for debug purpose.)
+	  */
 	virtual void displayTTY()const=0;
 	//later for rasterisation purpose
       
@@ -39,7 +53,7 @@ namespace scene
 	virtual void updateMesh(unsigned int resolution)=0;
 
 	/**
-	 * Return the last Mesh computed with the updateMesh
+	 * Return the lastest Mesh computed with the updateMesh
 	 * method.
 	 * @return a pointer to the Mesh
 	 **/

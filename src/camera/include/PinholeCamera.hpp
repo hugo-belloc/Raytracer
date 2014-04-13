@@ -21,6 +21,11 @@
 
 namespace camera
 {
+   /**
+    * A camera with the Pinhole model : ie all
+    * the ray cames from a single point arround a given 
+    * direction with a given angles.
+    */
    class PinholeCamera : public Camera
    {
    public :

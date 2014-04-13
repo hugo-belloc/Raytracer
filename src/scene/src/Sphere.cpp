@@ -21,34 +21,67 @@ using namespace std;
 namespace scene
 {
 
+    /**
+     * Constructs a Sphere
+     * @param center describe the center of the sphere
+     * in local coordinate.
+     * @param radius the radius of the sphere created
+     */
     Sphere::Sphere(const glm::vec3 &center,float radius):/*Shape(),*/_center(center),_radius(radius),_mesh(new Mesh)
     {}
 
+    /**
+     * Destroy the sphere by desallocating the 
+     * memory.
+     */
     Sphere::~Sphere()
     {
 	delete _mesh;
     }
 
+    /**
+     * Change the center of the sphere
+     * @param center the new center of the sphere.
+     */
     void  Sphere::setCenter(const glm::vec3 &center)
     {
 	_center=center;
     }
 
+    /**
+     * @return The center of the sphere (in local coordinate)
+     *
+     */
     glm::vec3  Sphere::getCenter()const
     {
 	return _center;
     }
 
+    /**
+     * @return the radius of the sphere
+     */
     float  Sphere::getRadius()const 
     {
 	return _radius;
     }
 
+    /**
+     * Change the radius of the sphere.
+     * @param radius the new radius
+     */
     void  Sphere::setRadius(float radius)
     {
 	_radius=radius;
     }
 
+    /**
+     * Computes the intersection between a ray and the sphere
+     * in local space
+     * @param the ray to be intersected
+     * @param intersection the generated intersection 
+     * if there is one
+     * @return true if there is an intersection , false otherwise.
+     */
     bool Sphere::intersect(const ray::Ray & ray,
 			   Intersection & intersection)const 
     {
@@ -85,6 +118,9 @@ namespace scene
 	return isIntersection;   
     }
 
+    /**
+     * Displays the sphere only for debug purpose.
+     */
     void Sphere::displayTTY()const
     {
 	cout<<"Sphere"<<"[Center="<<_center;
@@ -125,6 +161,11 @@ namespace scene
 	return glm::vec3(x,y,z);
     }
 
+    /**
+     * Change the mesh representation of the sphere in the
+     * rasterisation engine.
+     * @param the resolution ie 
+     */
     void Sphere::updateMesh(unsigned int resolution)
     {
 	_mesh->clear();
@@ -160,6 +201,11 @@ namespace scene
 
     }
 
+    /**
+     * Return the lastest Mesh computed with the updateMesh
+     * method.
+     * @return a pointer to the Mesh
+     **/
     const Mesh * Sphere::getMesh() const
     {
 	return _mesh;
