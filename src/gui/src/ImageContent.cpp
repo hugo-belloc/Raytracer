@@ -83,7 +83,6 @@ namespace gui
 
     void ImageContent::display()
     {
-      
 	sf::Shader::bind(&_shader);
 	glBindVertexArray(_vao);
 	glBindTexture(GL_TEXTURE_2D,_textureImageBuffer);

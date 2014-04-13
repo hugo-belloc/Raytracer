@@ -49,27 +49,29 @@ int main()
 				    vec3(8));
     scene->addObject(objBuddha);
 
-    Mesh * ground=new Mesh;
-    ground->loadFromOBJFile("etc/plan.obj");
-    ground->updateBBox();
-    Material *matGround=new Material(vec3(1),0,0);
-    Object * objGround = new Object(ground,matGround,
-    				  vec3(0,0,-0.6),vec3(0,0,0),
-    				  vec3(5));
-    scene->addObject(objGround);
+   
 
     Mesh * ceiling=new Mesh;
     ceiling->loadFromOBJFile("etc/plan.obj");
     ceiling->updateBBox();
-    Material *matCeiling=new Material(vec3(2),0,0);
+    Material *matCeiling=new Material(vec3(1),0,0);
     Object * objCeiling = new Object(ceiling,matCeiling,
 				   vec3(0,0,2),vec3(180,0,0),
 				  vec3(200));
     scene->addObject(objCeiling);
 
+     Mesh * ground=new Mesh;
+    ground->loadFromOBJFile("etc/plan.obj");
+    ground->updateBBox();
+    Material *matGround=new Material(vec3(1),0,0);
+    Object * objGround = new Object(ground,matGround,
+				   vec3(0,0,-0.6),vec3(0,0,0),
+				  vec3(200));
+    scene->addObject(objGround);
 
-    LightPoint *light=new LightPoint(2,vec3(-5,0,-0.2),vec3(1,1,1),0.4);    
-    LightPoint *light2=new LightPoint(1,vec3(-5,0,0.5),vec3(1),0.2);
+
+    LightPoint *light=new LightPoint(0.4,vec3(-1,0,0.5),vec3(1),0.4);    
+    LightPoint *light2=new LightPoint(1,vec3(-5,0,0),vec3(1),0.4);
 
     scene->addLightPoint(light);
     scene->addLightPoint(light2);

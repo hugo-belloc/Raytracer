@@ -31,10 +31,10 @@ using namespace utils;
 using namespace gui;
 
 
-#define WIDTH 512
-#define HEIGHT 512
+#define WIDTH 500
+#define HEIGHT 500
 
-
+#define R 1.5
 #define NUMBER_SPHERES 8
 #define X_SPHERES -0.5
 #define PI 3.14159265

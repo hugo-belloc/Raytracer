@@ -69,6 +69,7 @@ namespace gui
 	_engine.raytrace(_scene);
 	_engineImage.saveToFile("save.png");
 	_imageContent.setImage(&_engineImage);
+	display();
 	cout<<"Finish"<<endl;
     }
 

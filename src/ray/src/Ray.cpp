@@ -128,12 +128,6 @@ namespace ray
 	return _mri;
     }
 
-    glm::vec3 Ray::getColor() const
-    {
-	glm::vec3 color(0,0,0);
-	return color;
-    }
-
     /**
      * Generate the same ray in a different coordonate
      * system. 

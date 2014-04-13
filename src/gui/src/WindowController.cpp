@@ -18,10 +18,12 @@ namespace gui
 	_view(view),_scene(scene)
     {
 	WindowModel * model=view->getModel();   
+	
 	model->addContent(new RasterisationContent(*_scene));
 	_raytracingContent = 
 	    new RaytracingContent(*_scene);
 	model->addContent(_raytracingContent);
+
 
 	_view->addObserver(this);	
     }
@@ -63,10 +65,7 @@ namespace gui
 	if(event.getState()==KEY_RELEASE)
 	{
 	    switch(event.getKey())
-	    {
-		case sf::Keyboard::A :		    
-		    model->nextContent();
-		    break;
+	    {	
 		default:
 		    break;
 	    }
@@ -75,6 +74,9 @@ namespace gui
 	{
 	    switch(event.getKey())
 	    {
+		case sf::Keyboard::A :		    
+		    model->nextContent();
+		    break;
 		case sf::Keyboard::Up :
 		    moveSphereCamera(0,step,0);
 		    break;
