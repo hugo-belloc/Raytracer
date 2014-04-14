@@ -37,14 +37,6 @@ namespace ray
  */
    TransmissionRay::~TransmissionRay()
    {}
-   
-
-   glm::vec3 TransmissionRay::getColor() const
-   {
-      glm::vec3 color(0,0,0);
-      return color;
-   }
-
 
 }
 

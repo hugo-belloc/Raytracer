@@ -39,12 +39,6 @@ namespace ray
    {}
    
 
-   glm::vec3 CameraRay::getColor() const
-   {
-      glm::vec3 color(0,0,0);
-      return color;
-   }
-
 
 }
 

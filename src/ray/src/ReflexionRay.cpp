@@ -37,14 +37,6 @@ namespace ray
  */
    ReflexionRay::~ReflexionRay()
    {}
-   
-
-   glm::vec3 ReflexionRay::getColor() const
-   {
-      glm::vec3 color(0,0,0);
-      return color;
-   }
-
 
 }
 

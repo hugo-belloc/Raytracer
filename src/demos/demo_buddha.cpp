@@ -57,7 +57,7 @@ int main()
     Material *matCeiling=new Material(vec3(1),0,0);
     Object * objCeiling = new Object(ceiling,matCeiling,
 				   vec3(0,0,2),vec3(180,0,0),
-				  vec3(200));
+				  vec3(50));
     scene->addObject(objCeiling);
 
      Mesh * ground=new Mesh;

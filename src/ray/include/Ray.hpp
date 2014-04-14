@@ -40,8 +40,6 @@ namespace ray
 	void setDirection(const glm::vec3 & direction);
 
 	float getMRI() const;
-	virtual glm::vec3 getColor() const;
-
 	void applyMatrix(const glm::mat4 & transformationMatrix );
 
     private :

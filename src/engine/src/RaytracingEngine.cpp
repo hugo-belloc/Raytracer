@@ -34,7 +34,11 @@ namespace engine
     }
 
     /**
-     * Create a 
+     * Create a Raytracing engine .
+     * @param image an image used to render the scene. (Can be saved
+     * after)
+     * @param dofEnabled true if Depht of Field is to be enabled, false
+     * otherwise
      */
     RaytracingEngine::RaytracingEngine(sf::Image *image,bool dofEnabled,
 				       unsigned int samplingDof):
