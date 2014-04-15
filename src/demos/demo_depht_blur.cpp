@@ -35,10 +35,57 @@ using namespace utils;
 using namespace gui;
 
 
-#define WIDTH 512
-#define HEIGHT 512
+#define WIDTH 400
+#define HEIGHT 400
 
 #define SPHERE_RADIUS 0.6
+
+
+#define YMIN -3.3f
+#define YMAX 3.3f
+#define NB_COLUMNS 5
+
+#define ZMIN -3.3f
+#define ZMAX 3.3f
+#define NB_ROWS 5
+
+
+#define YMIN -3.3f
+#define YMAX 3.3f
+#define NB_COLUMNS 5
+
+#define ZMIN -3.3f
+#define ZMAX 3.3f
+#define NB_ROWS 5
+
+
+
+void addCheckerBackground(Scene * scene,float x)
+{
+   vec3 black(0);
+   vec3 white(1);
+   float stepY = (YMAX-YMIN)/(float)NB_COLUMNS;
+   float stepZ = (ZMAX-ZMIN)/(float)NB_COLUMNS;
+   
+   for(int i=0;i<NB_COLUMNS;++i)
+   {
+      for(int j=0;j<NB_COLUMNS;++j)
+      {
+	 
+	 Mesh * plan=new Mesh;
+	 plan->loadFromOBJFile("etc/plan.obj");
+	 plan->updateBBox();
+ 
+	 Material *matPlan=new Material(((i+j)%2)?white:black,0,0);
+	 Object * objPlan = new Object(plan,matPlan,
+				       vec3(x,YMIN+(i+0.5)*stepY,
+					    ZMIN+(j+0.5)*stepZ),
+				       vec3(0,(x>0)?-90:90,0), vec3(stepY*0.5,stepZ*0.5,1));
+	 scene->addObject(objPlan);
+      }
+   }
+}
+
 int main()
 {
    utils::OpenglObject obj;
@@ -52,7 +99,7 @@ int main()
    camera::PinholeCamera *cam=
       new camera::PinholeCamera(vec3(-5,0,0),vec3(0,0,0),
 				vec3(0,0,1),0.001,1000.f,WIDTH,
-				HEIGHT,45.f,0.3);
+				HEIGHT,45.f,1);
    cam->setFocalPlan(5);
    
    scene::Scene * scene=new scene::Scene(cam);
@@ -75,6 +122,9 @@ int main()
       new Material(vec3(0,0,1));
    scene::Object *blueSphere=new Object(sphere3,blueDiffuse,vec3(1,-1,-1));
    scene->addObject(blueSphere);
+
+    addCheckerBackground(scene,3);
+
    
    LightPoint *light1=new LightPoint(15,vec3(-6,0,2),
 				     vec3(1,1,1),1.0);   
