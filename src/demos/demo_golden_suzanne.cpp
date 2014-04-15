@@ -1,5 +1,4 @@
 
-
 #include <iostream>
 #include "TriangleContent.hpp"
 #include "ImageContent.hpp"
@@ -25,8 +24,8 @@ using namespace utils;
 using namespace gui;
 
 
-#define WIDTH 500
-#define HEIGHT 500
+#define WIDTH 300
+#define HEIGHT 300
 
 
 int main()
@@ -40,14 +39,14 @@ int main()
    
     scene::Scene * scene=new scene::Scene(cam);
 
-    Mesh * buddha=new Mesh;
-    buddha->loadFromOBJFile("etc/buddha.obj");
-    buddha->updateBBox();
-    Material *matBuddha=new Material(vec3(0.6,0.5,0.05),0.8,0);
-    Object * objBuddha = new Object(buddha,matBuddha,
-				    vec3(0,0,0),vec3(180,0,90),
-				    vec3(8));
-    scene->addObject(objBuddha);
+    Mesh * suzanne=new Mesh;
+    suzanne->loadFromOBJFile("etc/suzanne.obj");
+    suzanne->updateBBox();
+    Material *matSuzanne=new Material(vec3(0.6,0.6,0.05),0.8,0);
+    Object * objSuzanne = new Object(suzanne,matSuzanne,
+				    vec3(0,0,0),vec3(180,-30,90),
+				    vec3(0.8));
+    scene->addObject(objSuzanne);
 
     scene::Sphere *sphere1=new scene::Sphere(vec3(0,0,16),12);
    materials::Material *redDiffuse=

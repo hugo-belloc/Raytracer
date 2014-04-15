@@ -28,8 +28,8 @@ using namespace utils;
 using namespace gui;
 
 
-#define WIDTH 200
-#define HEIGHT 200
+#define WIDTH 300
+#define HEIGHT 300
 
 
 int main(int argc,char ** argv)
@@ -65,13 +65,12 @@ int main(int argc,char ** argv)
    scene::Scene * scene=new scene::Scene(cam);    
 
    Mesh * suzanne=new Mesh;
-   suzanne->loadFromOBJFile("etc/cube.obj");
-   cout<<suzanne->getVertexsNumber()<<" "<<suzanne->getFacesNumber();
+   suzanne->loadFromOBJFile("etc/suzanne.obj");
    if(isBBoxEnable)
    {
       suzanne->updateBBox();
    }
-   Material *matSuzanne=new Material(vec3(1),0,0);
+   Material *matSuzanne=new Material(vec3(0.7),0,0);
    Object * objSuzanne = new Object(suzanne,matSuzanne,
 				    vec3(0,0,0),vec3(180,0,90),
 				    vec3(size));

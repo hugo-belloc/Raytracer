@@ -52,20 +52,11 @@ int main()
    scene::Object *sphereObj=new Object(sphere,whiteDiffuse,vec3(0),vec3(0,0,90));
    scene->addObject(sphereObj);
 
-   Mesh * ceiling=new Mesh;
-   ceiling->loadFromOBJFile("etc/plan.obj");
-   ceiling->updateBBox();
-   Material *matCeiling=new Material(vec3(1),0,0);
-   Object * objCeiling = new Object(ceiling,matCeiling,
-				    vec3(0,0,40),vec3(180,0,0),
-				    vec3(100));
-   scene->addObject(objCeiling);
 
-
-   LightPoint *light=new LightPoint(20,vec3(-2,0,1),vec3(1,0.4,0.4),2.0);   
+   LightPoint *light=new LightPoint(2.5,vec3(-2,0,1),vec3(1),2.0);   
+   LightPoint *light2=new LightPoint(2,vec3(-2,0,-1),vec3(1),2.0);   
    scene->addLightPoint(light);
-   // LightPoint *light2=new LightPoint(20,vec3(-5,0,-3),vec3(0.2,0.2,1),2.0);   
-   scene->addLightPoint(light);
+   scene->addLightPoint(light2);
 
    WindowController controller(view,scene);
    controller.activate();   
